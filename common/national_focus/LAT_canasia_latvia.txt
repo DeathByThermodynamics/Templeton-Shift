@@ -1,0 +1,1052 @@
+focus_tree = { 
+id = canasia_latvia
+country = { 
+factor = 0 
+modifier = { 
+add = 10 
+tag = LAT 
+} 
+} 
+continuous_focus_position = { x = 50 y = 1200 }
+#Focus for The Canasian Dream
+focus = { 
+id = LAT_thecanasiandream
+icon = GFX_goal_generic_major_alliance
+x = 11
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 150
+ } 
+
+ } 
+
+#Focus for Diplomats in Western Europe
+focus = { 
+id = LAT_diplomatsinwesterneurope
+icon = GFX_goal_generic_intelligence_exchange
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_seekaccommodationwiththeurd } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_opinion_modifier = {
+target = GER
+modifier = medium_increase
+}
+reverse_add_opinion_modifier = {
+target = GER
+modifier = medium_increase
+}
+add_opinion_modifier = {
+target = FRA
+modifier = medium_increase
+}
+reverse_add_opinion_modifier = {
+target = FRA
+modifier = medium_increase
+}
+ } 
+
+ } 
+
+#Focus for Tallinn Line
+focus = { 
+id = LAT_tallinnline
+icon = GFX_focus_generic_coastal_fort
+x = 1
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_NZTJBVgR } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = { tallinn_line_construction }
+ } 
+
+ } 
+
+#Focus for Hit and Run strategy
+focus = { 
+id = LAT_hitandrunstrategy
+icon = GFX_focus_secret_rearmament
+x = 3
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_NZTJBVgR } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = hit_and_run
+ } 
+
+ } 
+
+#Focus for Emeraldia Research
+focus = { 
+id = LAT_emeraldiaresearch
+icon = GFX_goal_tfv_generic_tech_sharing
+x = 5
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_seekaccommodationwithemeraldia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_to_tech_sharing_group = emeraldia_research
+ } 
+
+ } 
+
+#Focus for Authoritarian Propaganda
+focus = { 
+id = LAT_authoritarianpropaganda
+icon = GFX_goal_generic_propaganda
+x = 7
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_seekaccommodationwithemeraldia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity = {
+ideology = neutrality
+popularity = 0.1
+}
+ } 
+
+ } 
+
+#Focus for Baltic Line
+focus = { 
+id = LAT_NZTJBVgR
+icon = GFX_goal_generic_fortify_city
+x = 2
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_prepareforthenextwar } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+is_puppet = no
+ } 
+completion_reward = { 
+add_ideas = infiltrated_emerald_doctrine
+ } 
+
+ } 
+
+#Focus for It Takes All Kinds
+focus = { 
+id = LAT_ittakesallkinds
+icon = GFX_goal_generic_dangerous_deal
+x = 8
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_prepareforthenextwar } 
+ai_will_do = { 
+ factor = 100
+ } 
+available = { 
+OR = {
+SWE = {has_idea = reasserted_baltic}
+POL = {has_idea = reasserted_baltic}
+}
+ } 
+completion_reward = { 
+add_political_power = 250
+ } 
+
+ } 
+
+#Focus for Seek Accommodation with Emeraldia
+focus = { 
+id = LAT_seekaccommodationwithemeraldia
+icon = GFX_goal_generic_improve_relations
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_ittakesallkinds } 
+mutually_exclusive = { focus = LAT_seekaccommodationwiththeurd } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+NOT = { POL = { has_idea = reasserted_baltic } }
+ } 
+completion_reward = { 
+add_opinion_modifier = {
+target = POL
+modifier = medium_increase }
+reverse_add_opinion_modifier = {
+target = POL
+modifier = medium_increase }
+ } 
+
+ } 
+
+#Focus for Prepare for the Next War
+focus = { 
+id = LAT_prepareforthenextwar
+icon = GFX_goal_generic_more_territorial_claims
+x = 5
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_thecanasiandream } 
+ai_will_do = { 
+ factor = 100
+ } 
+completion_reward = { 
+add_ideas = RUS_civilian_investments
+ } 
+
+ } 
+
+#Focus for Army Innovations
+focus = { 
+id = LAT_armyinnovations
+icon = GFX_goal_rhineland
+x = 25
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 2
+bonus = 1
+category = infantry_tech
+}
+ } 
+
+ } 
+
+#Focus for Maardu-Alytus Railway
+focus = { 
+id = LAT_maardualytusrailway
+icon = GFX_goal_generic_construct_infrastructure
+x = 18
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_civilianexpansioni } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.35
+uses = 3
+category = industry
+}
+ } 
+
+ } 
+
+#Focus for Virtsu Dockyards
+focus = { 
+id = LAT_virtsudockyards
+icon = GFX_goal_generic_navy_submarine
+x = 14
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_militaryexpansionii } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = virtsu_dockyards
+ } 
+
+ } 
+
+#Focus for Research Fascination
+focus = { 
+id = LAT_researchfascination
+icon = GFX_goal_tfv_generic_tech_sharing
+x = 16
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_militaryexpansionii } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Civilian Expansion II
+focus = { 
+id = LAT_civilianexpansionii
+icon = GFX_goal_generic_construct_civ_factory
+x = 18
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_maardualytusrailway } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for The Secret Weapon
+focus = { 
+id = LAT_thesecretweapon
+icon = GFX_focus_wonderweapons
+x = 18
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_civilianexpansionii } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = nuclear
+}
+ } 
+
+ } 
+
+#Focus for Military Expansion II
+focus = { 
+id = LAT_militaryexpansionii
+icon = GFX_goal_generic_construct_mil_factory
+x = 16
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_militaryexpansioni } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Advanced Fighter Production
+focus = { 
+id = LAT_advancedfighterproduction
+icon = GFX_goal_generic_air_fighter2
+x = 11
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_diplomatsinwesterneurope } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = advanced_fighter_corporations
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = heavy_air
+}
+ } 
+
+ } 
+
+#Focus for Stronger Global Stance
+focus = { 
+id = LAT_strongerglobalstance
+icon = GFX_goal_generic_demand_territory
+x = 13
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_diplomatsinwesterneurope } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = onto_the_world_stage
+ } 
+
+ } 
+
+#Focus for 1937 E.N.I.G.M.A.
+focus = { 
+id = LAT_1937enigma
+icon = GFX_focus_generic_self_management
+x = 0
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_tallinnline } 
+ai_will_do = { 
+ factor = 1000
+ } 
+available = { 
+date > 1937.01.01
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 8
+uses = 1
+category = decryption_tech
+}
+ } 
+
+ } 
+
+#Focus for Anti-Fascist Diplomacy
+focus = { 
+id = LAT_antifascistdiplomacy
+icon = GFX_goal_generic_political_pressure
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_tallinnline } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_opinion_modifier = {
+target = SWE
+modifier = medium_decrease
+}
+add_opinion_modifier = {
+target = ICE
+modifier = medium_decrease
+}
+reverse_add_opinion_modifier = {
+target = SWE
+modifier = medium_decrease
+}
+reverse_add_opinion_modifier = {
+target = ICE
+modifier = medium_decrease
+}
+ } 
+
+ } 
+
+#Focus for Support Emeraldia Claims
+focus = { 
+id = LAT_supportemeraldiaclaims
+icon = GFX_goal_generic_forceful_treaty
+x = 5
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_emeraldiaresearch } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 50
+reverse_add_opinion_modifier = {
+target = TUR
+modifier = medium_decrease
+}
+reverse_add_opinion_modifier = {
+target = ARM
+modifier = medium_decrease
+}
+reverse_add_opinion_modifier = {
+target = GRE
+modifier = medium_decrease
+}
+ } 
+
+ } 
+
+#Focus for Defensive Alliance
+focus = { 
+id = LAT_defensivealliance
+icon = GFX_goal_support_democracy
+x = 11
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_afreepeople } 
+prerequisite = { focus = LAT_strongerglobalstance } 
+prerequisite = { focus = LAT_advancedfighterproduction } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+give_guarantee = ENG
+ENG = { give_guarantee = LAT }
+ } 
+
+ } 
+
+#Focus for Cooperative Industry
+focus = { 
+id = LAT_cooperativeindustry
+icon = GFX_goal_generic_construct_infrastructure
+x = 3
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_emeraldiaresearch } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = industry
+}
+give_military_access = POL
+ } 
+
+ } 
+
+#Focus for Polish Non-Aggression Pact
+focus = { 
+id = LAT_polishnonaggressionpact
+icon = GFX_goal_generic_dangerous_deal
+x = 5
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_supportemeraldiaclaims } 
+prerequisite = { focus = LAT_disposeofundesirables } 
+prerequisite = { focus = LAT_cooperativeindustry } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+diplomatic_relation = {
+    country = POL
+    relation = non_aggression_pact
+    active = yes
+}
+ } 
+
+ } 
+
+#Focus for Join Emeraldia
+focus = { 
+id = LAT_joinemeraldia
+icon = GFX_goal_generic_military_deal
+x = 5
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_polishnonaggressionpact } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+date > 1939.01.01
+has_government = neutrality
+ } 
+completion_reward = { 
+POL = {
+puppet = LAT
+if = { limit = { has_idea = reasserted_baltic }
+remove_ideas = reasserted_baltic } }
+ } 
+
+ } 
+
+#Focus for Join the European Union
+focus = { 
+id = LAT_jointheeuropeanunion
+icon = GFX_goal_generic_national_unity
+x = 11
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_defensivealliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+if = { limit = { ENG = { is_faction_leader = yes } } 
+ENG = { add_to_faction = LAT } }
+else_if = { limit = { ENG = { is_in_faction_with = FRA } } 
+FRA = { add_to_faction = LAT } }
+ }
+
+ } 
+
+#Focus for Ally the Murmansk Republic
+focus = { 
+id = LAT_allythemurmanskrepublic
+icon = GFX_goal_tripartite_pact
+x = 1
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_antifascistdiplomacy } 
+prerequisite = { focus = LAT_1937enigma } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+give_guarantee = MUR
+MUR = {give_guarantee = LAT}
+ } 
+
+ } 
+
+#Focus for Permanent Enigma Program
+focus = { 
+id = LAT_permanentenigmaprogram
+icon = GFX_goal_generic_alliance
+x = 1
+y = 7
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_allythemurmanskrepublic } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+date > 1938.11.01
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 8
+uses = 1
+category = decryption_tech
+}
+add_tech_bonus = {
+bonus = 8
+uses = 1
+category = encryption_tech
+}
+ } 
+
+ } 
+
+#Focus for Internal Affairs
+focus = { 
+id = LAT_internalaffairs
+icon = GFX_goal_generic_production2
+x = 17
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_thecanasiandream } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = labour_organizations
+ } 
+
+ } 
+
+#Focus for All-Party Coalition
+focus = { 
+id = LAT_allpartycoalition
+icon = GFX_goal_molotov_ribbentrop_pact
+x = 16
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_internalaffairs } 
+mutually_exclusive = { focus = LAT_firstpastthepost } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 85
+add_popularity = {
+ideology= democratic
+popularity = 0.15
+}
+ } 
+
+ } 
+
+#Focus for First Past the Post
+focus = { 
+id = LAT_firstpastthepost
+icon = GFX_focus_generic_treaty
+x = 18
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_internalaffairs } 
+mutually_exclusive = { focus = LAT_allpartycoalition } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = liberty_ethos_focus
+ } 
+
+ } 
+
+#Focus for Civilian Expansion I
+focus = { 
+id = LAT_civilianexpansioni
+icon = GFX_goal_generic_production
+x = 17
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_allpartycoalition focus = LAT_firstpastthepost } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Military Expansion I
+focus = { 
+id = LAT_militaryexpansioni
+icon = GFX_goal_generic_construct_mil_factory
+x = 16
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_civilianexpansioni } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1			add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for A Free People
+focus = { 
+id = LAT_afreepeople
+icon = GFX_focus_generic_treaty
+x = 9
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_regionalelections } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 100
+add_to_tech_sharing_group = entente_joint_research
+ } 
+
+ } 
+
+#Focus for Dispose of Undesirables
+focus = { 
+id = LAT_disposeofundesirables
+icon = GFX_goal_demand_sudetenland
+x = 7
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_authoritarianpropaganda } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = pressure_from_emeraldia
+ } 
+
+ } 
+
+#Focus for Seek Accommodation with the URD
+focus = { 
+id = LAT_seekaccommodationwiththeurd
+icon = GFX_goal_generic_improve_relations
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_ittakesallkinds } 
+mutually_exclusive = { focus = LAT_seekaccommodationwithemeraldia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_opinion_modifier = {
+target = ENG
+modifier = medium_increase }
+reverse_add_opinion_modifier = {
+target = ENG
+modifier = medium_increase }
+ } 
+
+ } 
+
+#Focus for Regional Elections
+focus = { 
+id = LAT_regionalelections
+icon = GFX_goal_support_democracy
+x = 9
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_seekaccommodationwiththeurd } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_popularity = {
+ideology = democratic
+popularity = 0.05
+}
+add_popularity = {
+ideology = parliamentary_democratic
+popularity = 0.05
+}
+ } 
+
+ } 
+
+#Focus for Material
+focus = { 
+id = LAT_material
+icon = GFX_goal_generic_political_pressure
+x = 27
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_armyinnovations } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = artillery }
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = infantry_weapons }
+ } 
+
+ } 
+
+#Focus for Strategy
+focus = { 
+id = LAT_strategy
+icon = GFX_goal_generic_position_armies
+x = 23
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_armyinnovations } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 1
+bonus = 0.75
+category = land_doctrine }
+add_tech_bonus = {
+uses = 1
+bonus = 0.75
+category = naval_doctrine }
+add_tech_bonus = {
+uses = 1
+bonus = 0.75
+category = air_doctrine }
+ } 
+
+ } 
+
+#Focus for Army Reform
+focus = { 
+id = LAT_YBCeVmKh
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 24
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_strategy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = support_tech }
+ } 
+
+ } 
+
+#Focus for Tank Production
+focus = { 
+id = LAT_tankproduction
+icon = GFX_goal_generic_political_pressure
+x = 26
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_material } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 1
+bonus = 2
+category = armor }
+ } 
+
+ } 
+
+#Focus for Noteikt debesis
+focus = { 
+id = LAT_noteiktdebesis
+icon = GFX_goal_generic_air_fighter2
+x = 26
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_tankproduction } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 2
+bonus = 1
+category = light_air }
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = medium_air }
+ } 
+
+ } 
+
+#Focus for Encirclement Practice
+focus = { 
+id = LAT_encirclementpractice
+icon = GFX_goal_generic_army_doctrines
+x = 22
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_strategy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1.5
+uses = 1
+category = land_doctrine }
+ } 
+
+ } 
+
+#Focus for Baltic Security
+focus = { 
+id = LAT_balticsecurity
+icon = GFX_goal_generic_navy_battleship
+x = 28
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = LAT_material } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+	add_tech_bonus = {
+		bonus = 1
+		uses = 1
+		category = dd_tech }
+	add_tech_bonus = {
+		bonus = 1
+		uses = 1
+		category = ss_tech }
+	add_tech_bonus = {
+		bonus = 1
+		uses = 1
+		category = naval_doctrine } }
+ } 
+
+#End of focuses 
+ }

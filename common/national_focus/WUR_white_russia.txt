@@ -1,0 +1,328 @@
+focus_tree = {
+	id = white_russia
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = WUR
+		}
+	}
+	#Focus for Address Russian Legacy
+	focus = {
+		id = WUR_address_russian_legacy
+		icon = GFX_goal_generic_national_unity
+		x = 7
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Continue White Cooperation
+	focus = {
+		id = WUR_continue_white_cooperation
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_address_russian_legacy }
+		mutually_exclusive = { focus = WUR_new_stance }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for New Stance
+	focus = {
+		id = WUR_new_stance
+		icon = GFX_goal_generic_forceful_treaty
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_address_russian_legacy }
+		mutually_exclusive = { focus = WUR_continue_white_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for New Siberia
+	focus = {
+		id = WUR_new_siberia
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_new_stance }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Reduce Collateral Damage
+	focus = {
+		id = WUR_reduce_collateral_damage
+		icon = GFX_goal_generic_alliance
+		x = 2
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_continue_white_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Compromise with Siberians
+	focus = {
+		id = WUR_compromise_with_siberians
+		icon = GFX_goal_generic_improve_relations
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_continue_white_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Crackdown on Dissent
+	focus = {
+		id = WUR_crackdown_on_dissent
+		icon = GFX_goal_generic_secret_weapon
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_new_stance }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Command the East
+	focus = {
+		id = WUR_command_the_east
+		icon = GFX_goal_demand_sudetenland
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_compromise_with_siberians }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Restructure the Army
+	focus = {
+		id = WUR_restructure_the_army
+		icon = GFX_focus_generic_support_the_left_right
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_new_siberia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Pick a Fight
+	focus = {
+		id = WUR_pick_a_fight
+		icon = GFX_focus_rom_parties_end
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = WUR_restructure_the_army 
+			focus = WUR_command_the_east 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tips from Austin
+	focus = {
+		id = WUR_tips_from_austin
+		icon = GFX_WUR_tips_from_austin-129219
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_reduce_collateral_damage }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Seize Siberia
+	focus = {
+		id = WUR_seize_siberia
+		icon = GFX_WUR_seize_siberia-50762
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_pick_a_fight }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Claim the Far East
+	focus = {
+		id = WUR_claim_the_far_east
+		icon = GFX_WUR_claim_the_far_east-129220
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_crackdown_on_dissent }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tackle the Soviet Union
+	focus = {
+		id = WUR_tackle_the_soviet_union
+		icon = GFX_goal_anti_comintern_pact
+		x = 4
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = WUR_seize_siberia 
+		}
+		prerequisite = { 
+			focus = WUR_tips_from_austin 
+		}
+		prerequisite = { 
+			focus = WUR_command_the_east 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Tackle Japan
+	focus = {
+		id = WUR_tackle_japan
+		icon = GFX_focus_generic_diplomatic_treaty
+		x = 10
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = WUR_restructure_the_army 
+		}
+		prerequisite = { 
+			focus = WUR_seize_siberia 
+		}
+		prerequisite = { 
+			focus = WUR_claim_the_far_east 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Exploit Siberian Mines
+	focus = {
+		id = WUR_exploit_siberian_mines
+		icon = GFX_goal_generic_construction2
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_claim_the_far_east }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Sweep the Urals
+	focus = {
+		id = WUR_sweep_the_urals
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_seize_siberia }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Assume the Mantle
+	focus = {
+		id = WUR_assume_the_mantle
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 7
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = WUR_tackle_the_soviet_union 
+			focus = WUR_tackle_japan 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Absolute War Economy
+	focus = {
+		id = WUR_absolute_war_economy
+		icon = GFX_WUR_absolute_war_economy-129221
+		x = 11
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_exploit_siberian_mines }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Manchurian Research
+	focus = {
+		id = WUR_manchurian_research
+		icon = GFX_goal_generic_production2
+		x = 13
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_exploit_siberian_mines }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for Seek Tudor Assistance
+	focus = {
+		id = WUR_seek_tudor_assistance
+		icon = GFX_WUR_seek_tudor_assistance-116580
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = WUR_tips_from_austin }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#End of focuses 
+ }

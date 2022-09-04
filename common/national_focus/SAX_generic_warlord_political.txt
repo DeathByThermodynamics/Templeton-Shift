@@ -1,0 +1,2131 @@
+focus_tree = {
+	id = generic_warlord_political
+	country = {
+		factor = 0
+		modifier = {
+			add = 100
+			OR = {
+				tag = SAX
+				tag = BAY
+				tag = SHL
+				tag = SAM
+				tag = TMS
+				tag = BRI
+				tag = TAJ
+				tag = COR
+				tag = MEK
+				tag = KYR
+				tag = HAN
+			}
+		}  
+	}
+	#Focus for Reevaluate the State of the Continent
+	focus = {
+		id = SAX_reevaluate_the_state_of_the_continent
+		icon = GFX_SAX_reevaluate_the_state_of_the_continent-116785
+		x = 9
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 70
+			custom_effect_tooltip = yields_5
+			add_to_variable = {
+							var = supreme_favour
+							value = 5
+			}
+		}
+	}
+
+	#Focus for People's Revolution
+	focus = {
+		id = SAX_peoples_revolution
+		icon = GFX_goal_support_communism
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SAX_trust_in_nonalignment }
+		mutually_exclusive = { focus = SAX_great_russian_dream }
+		prerequisite = { focus = SAX_reevaluate_the_state_of_the_continent }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = internationalism
+								days = 720 }
+		}
+	}
+
+	#Focus for Trust in Non-Alignment
+	focus = {
+		id = SAX_trust_in_nonalignment
+		icon = GFX_goal_generic_neutrality_focus
+		x = 9
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SAX_peoples_revolution }
+		mutually_exclusive = { focus = SAX_great_russian_dream }
+		prerequisite = { focus = SAX_reevaluate_the_state_of_the_continent }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = -0.15
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.15
+			}
+		}
+	}
+
+	#Focus for Great Russian Dream
+	focus = {
+		id = SAX_great_russian_dream
+		icon = GFX_goal_support_fascism
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = SAX_trust_in_nonalignment }
+		mutually_exclusive = { focus = SAX_peoples_revolution }
+		prerequisite = { focus = SAX_reevaluate_the_state_of_the_continent }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = nationalism
+								days = 720 }
+			every_country = {
+				limit = { has_government = fascism }
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = huge_increase
+				}
+			}
+		}
+	}
+
+	#Focus for Democratic Bastion
+	focus = {
+		id = SAX_democratic_bastion
+		icon = GFX_goal_support_democracy
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_trust_in_nonalignment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = ITA_freedom_of_press
+								days = 360 }
+		}
+	}
+
+	#Focus for Investment Campaign
+	focus = {
+		id = SAX_investment_campaign
+		icon = GFX_goal_generic_propaganda
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_trust_in_nonalignment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Appeal to the European Entente
+	focus = {
+		id = SAX_appeal_to_the_european_entente
+		icon = GFX_SAX_appeal_to_the_european_entente-116800
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_democratic_bastion }
+		mutually_exclusive = { focus = SAX_authoritarianism }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_country = {
+				has_idea = western_european_entente_member
+			}
+		}
+		completion_reward = {
+			every_country = {
+				limit = { has_idea = western_european_entente_member }
+				country_event = { id = templetonshift.123 hours = 6 }
+			}
+		
+		}
+	}
+
+	#Focus for Stavka
+	focus = {
+		id = SAX_stavka
+		icon = GFX_goal_generic_war_with_comintern
+		x = 3
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_peoples_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_stavka
+		}
+	}
+
+	#Focus for Pick a Fight
+	focus = {
+		id = SAX_pick_a_fight
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_great_russian_dream }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ROOT = {
+			random_neighbor_country = {
+				limit = {
+					OR = { 
+						tag = SAM 
+						tag = SAX 
+						tag = BRI
+						tag = COR 
+						tag = MEK 
+						tag = TMS 
+						tag = KYR
+						tag = HAN 
+						tag = TAJ
+					}
+				}
+				ROOT = { 
+					create_wargoal = {
+						type = annex_everything 
+						target = PREV 
+					}
+				}
+			}
+			}
+		}
+	}
+
+	#Focus for Increase Fascist Influence
+	focus = {
+		id = SAX_increase_fascist_influence
+		icon = GFX_focus_generic_support_the_left_right
+		x = 15
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_great_russian_dream }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+			ICE = {
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = large_increase
+				}
+			}
+			SWE = {
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = large_increase
+				}
+			}
+		}
+	}
+
+	#Focus for Authoritarianism
+	focus = {
+		id = SAX_authoritarianism
+		icon = GFX_SAX_authoritarianism-129220
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_investment_campaign }
+		mutually_exclusive = { focus = SAX_appeal_to_the_european_entente }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			POL = {
+				add_opinion_modifier = {
+					target = ROOT 
+					modifier = huge_increase
+				}
+			}
+		}
+	}
+
+	#Focus for Political Commissars
+	focus = {
+		id = SAX_political_commissars
+		icon = GFX_focus_chi_mission_to_the_soviet_union
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_peoples_revolution }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = political_commissars_focus
+		}
+	}
+
+	#Focus for Ruthless Capitalism
+	focus = {
+		id = SAX_ruthless_capitalism
+		icon = GFX_goal_generic_trade
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_appeal_to_the_european_entente 
+			focus = SAX_authoritarianism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_ruthless_capitalism
+		}
+	}
+
+	#Focus for Transformation of Nature
+	focus = {
+		id = SAX_transformation_of_nature
+		icon = GFX_goal_generic_soviet_construction
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_political_commissars }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = rubber
+					amount = 8
+				}
+			}
+			random_owned_state = {
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+		}
+	}
+
+	#Focus for Sea of Thieves
+	focus = {
+		id = SAX_sea_of_thieves
+		icon = GFX_SAX_sea_of_thieves-129238
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_increase_fascist_influence }
+		ai_will_do = {
+			factor = 1
+		} 
+		completion_reward = {
+			add_country_leader_trait = rarely_sober
+		}
+	}
+
+	#Focus for Defense of the Heartland
+	focus = {
+		id = SAX_defense_of_the_heartland
+		icon = GFX_goal_generic_military_sphere
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_stavka }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				swap_ideas = {
+					remove_idea = RUS_stavka
+					add_idea = RUS_stavka1
+				}  
+		}
+	}
+
+	#Focus for Secure the Revolution
+	focus = {
+		id = SAX_secure_the_revolution
+		icon = GFX_focus_por_workers_of_iberia
+		x = 4
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_transformation_of_nature 
+		}
+		prerequisite = { 
+			focus = SAX_defense_of_the_heartland 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = {
+			has_government = communism 
+		}
+		available = {
+			communism > 0.4
+		}
+		completion_reward = {
+			add_popularity = {
+				popularity = 0.1
+				ideology = communism
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+		}
+	}
+
+	#Focus for Expansionism
+	focus = {
+		id = SAX_expansionism
+		icon = GFX_goal_generic_political_pressure
+		x = 14
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_sea_of_thieves }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_nationalism_II
+		}
+	}
+
+	#Focus for Research Agreements
+	focus = {
+		id = SAX_research_agreements
+		icon = GFX_goal_generic_scientific_exchange
+		x = 9
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_ruthless_capitalism 
+		}
+		prerequisite = { 
+			focus = SAX_expansionism 
+		}
+		prerequisite = { 
+			focus = SAX_secure_the_revolution 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = { num_of_factories > 50
+				AND = { is_in_faction = yes 
+						any_allied_country = {
+						num_of_factories > 50
+					}
+				}
+			
+			}
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}	
+	}
+	
+	# Focus for Infantry Doctrine
+	focus = {
+		id = SAX_infantry_doctrine
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 40
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_modernize_the_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_tech
+			}
+		}
+	}
+
+	#Focus for Increase Navy Research
+	focus = {
+		id = SAX_increase_navy_research
+		icon = GFX_goal_generic_navy_carrier
+		x = 37
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_allrussian_shipyards }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_increase_navy_research
+		}
+	}
+
+	#Focus for Rebuild Infrastructure
+	focus = {
+		id = SAX_rebuild_infrastructure
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 27
+		y = 0
+		cost = 10 
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		} 
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_building_construction = {
+						type = infrastructure
+						level = 2
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Civilian Investments
+	focus = {
+		id = SAX_civilian_investments
+		icon = GFX_SAX_civilian_investments-85362
+		x = 23
+		y = 1
+		cost = 10
+		available_if_capitulated = no
+		prerequisite = { focus = SAX_rebuild_infrastructure }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_civilian_investments
+		}
+	}
+
+	#Focus for Foreign Investment
+	focus = {
+		id = SAX_foreign_investment
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 31
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_rebuild_infrastructure }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+
+	#Focus for Democratic Investment
+	focus = {
+		id = SAX_democratic_investment
+		icon = GFX_SAX_democratic_investment-116794
+		x = 28
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_foreign_investment }
+		mutually_exclusive = { 
+			focus = SAX_fascist_investment 
+		}
+		mutually_exclusive = { 
+			focus = SAX_walk_the_dark_path 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = parliamentary_democratic
+				FRA = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = { idea = democratic_popularity
+								days = 360 }
+		}
+	}
+
+	#Focus for Fascist Investment
+	focus = {
+		id = SAX_fascist_investment
+		icon = GFX_SAX_fascist_investment-116793
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_foreign_investment }
+		mutually_exclusive = { 
+			focus = SAX_democratic_investment 
+		}
+		mutually_exclusive = { 
+			focus = SAX_walk_the_dark_path 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		available = {
+			OR = {
+				has_government = fascism
+				ICE = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+			}
+		}
+		completion_reward = {
+			add_timed_idea = { idea = fascist_popularity
+								days = 360 }
+		}
+	}
+
+	#Focus for Walk the Dark Path
+	focus = {
+		id = SAX_walk_the_dark_path
+		icon = GFX_SAX_walk_the_dark_path-116791
+		x = 34
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_foreign_investment }
+		mutually_exclusive = { 
+			focus = SAX_democratic_investment 
+		}
+		mutually_exclusive = { 
+			focus = SAX_fascist_investment 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		available = {
+				POL = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+		}
+		completion_reward = {
+			add_timed_idea = { idea = neutrality_popularity
+								days = 360 }
+			remove_ideas = RUS_unquenchable_spirit
+		}
+	}
+
+	#Focus for Industrial Commitments
+	focus = {
+		id = SAX_industrial_commitments
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_civilian_investments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Prospect for Resources
+	focus = {
+		id = SAX_prospect_for_resources
+		icon = GFX_goal_generic_construction2
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_civilian_investments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_resource = {
+					type = aluminum
+					amount = 8
+				}
+			}
+			random_owned_state = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1
+				category = excavation_tech
+			}
+		}
+	}
+
+	#Focus for Military Factories
+	focus = {
+		id = SAX_military_factories
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 22
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_industrial_commitments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 2
+						instant_build = yes
+					}
+			}
+			random_owned_state = {
+				limit = { is_core_of = ROOT }
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Self-Sustainability
+	focus = {
+		id = SAX_selfsustainability
+		icon = GFX_SAX_selfsustainability-116682
+		x = 24
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_industrial_commitments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_self_sustainability
+		}
+	}
+ 
+	#Focus for Manatee Airlift
+	focus = {
+		id = SAX_manatee_airlift
+		icon = GFX_goal_generic_air_fighter2
+		x = 29
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_democratic_investment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience = 25
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1.5
+				category = cas_bomber
+			}
+		}
+	}
+
+	#Focus for Secure U.R.D. Investors
+	focus = {
+		id = SAX_secure_urd_investors
+		icon = GFX_SAX_secure_urd_investors-125198
+		x = 27
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_democratic_investment }
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = parliamentary_democratic
+				ENG = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+			}
+		}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 3 }
+		}
+	}
+
+	#Focus for Approach Arislantia
+	focus = {
+		id = SAX_approach_arislantia
+		icon = GFX_SAX_approach_arislantia-125201
+		x = 27
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_secure_urd_investors }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_government = democratic
+				has_government = parliamentary_democratic
+				GER = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+			}
+		}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+		}
+	}
+
+	#Focus for Nationalism
+	focus = {
+		id = SAX_nationalism
+		icon = GFX_goal_support_fascism
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_fascist_investment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_ideas = RUS_nationalism
+		}
+	}
+
+	#Focus for Defense Systems
+	focus = {
+		id = SAX_defense_systems
+		icon = GFX_goal_generic_fortify_city
+		x = 30
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_manatee_airlift 
+			focus = SAX_nationalism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_defense_systems
+		}
+	}
+
+	#Focus for Allied Shipping Firms
+	focus = {
+		id = SAX_allied_shipping_firms
+		icon = GFX_focus_generic_the_giant_wakes
+		x = 29
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_defense_systems 
+		}
+		prerequisite = { 
+			focus = SAX_manatee_airlift 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_allied_shipping_firms
+		}
+	}
+
+	#Focus for Airish Interventionism
+	focus = {
+		id = SAX_airish_interventionism
+		icon = GFX_SAX_airish_interventionism-125202
+		x = 31
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_nationalism 
+		}
+		prerequisite = { 
+			focus = SAX_defense_systems 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = {
+				has_government = fascism
+				SWE = { has_opinion = {
+					target = ROOT
+					value > 59
+				}	}
+			}
+		}
+		completion_reward = {
+			add_offsite_building = { type = arms_factory level = 4 }
+		}
+	}
+
+	#Focus for Russian Radar
+	focus = {
+		id = SAX_russian_radar
+		icon = GFX_goal_generic_radar
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_civilian_investments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				category = radar_tech
+			}
+			add_tech_bonus = {
+				uses = 1
+				bonus =1
+				category = electronics
+			}
+		} 
+	}
+
+	#Focus for Modernize the Army
+	focus = {
+		id = SAX_modernize_the_army
+		icon = GFX_goal_generic_small_arms
+		x = 41
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_army_modernization
+		}
+	}
+
+	#Focus for GMSTN Investments
+	focus = {
+		id = SAX_gmstn_investments
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 34
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_walk_the_dark_path }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_offsite_building = { type = industrial_complex level = 4 }
+		}
+	}
+
+	#Focus for Strengthen Economic Ties
+	focus = {
+		id = SAX_strengthen_economic_ties
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 34
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_gmstn_investments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1.5
+				category = industry 
+			}
+		}
+	}
+
+	#Focus for Attend Emeraldian Academia
+	focus = {
+		id = SAX_attend_emeraldian_academia
+		icon = GFX_goal_generic_scientific_exchange
+		x = 36
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_gmstn_investments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_tech_sharing_group = emeraldia_research
+		}
+	}
+
+	#Focus for Emeraldian Russia Guarantee
+	focus = {
+		id = SAX_emeraldian_russia_guarantee
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 34
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_strengthen_economic_ties 
+		}
+		prerequisite = { 
+			focus = SAX_attend_emeraldian_academia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_owned_state = {
+				every_neighbor_state = {
+					limit = { is_core_of = SOV
+							NOT = { is_core_of = ROOT } }
+					add_core_of = ROOT 
+				} 
+			}
+		}
+	}
+
+	#Focus for All-Russian Shipyards
+	focus = {
+		id = SAX_allrussian_shipyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 37
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_modernize_the_army }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_owned_state = {
+				is_coastal = yes
+			}
+		}
+		completion_reward = {
+			random_owned_state = {
+				add_extra_state_shared_building_slots = 4
+				limit = { is_core_of = ROOT 
+							is_coastal = yes }
+					add_building_construction = {
+						type = dockyard
+						level = 4
+						instant_build = yes
+					}
+			}
+		}
+	}
+
+	#Focus for Invest in Motorization
+	focus = {
+		id = SAX_invest_in_motorization
+		icon = GFX_goal_generic_army_motorized
+		x = 43
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_modernize_the_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = motorized_equipment
+			}
+		}
+	}
+
+	#Focus for Artillery
+	focus = {
+		id = SAX_artillery
+		icon = GFX_goal_generic_army_artillery2
+		x = 39
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_infantry_doctrine }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.75
+				uses = 4
+				category = artillery
+			}
+		}
+	}
+
+	#Focus for Support Companies
+	focus = {
+		id = SAX_support_companies
+		icon = GFX_goal_generic_army_artillery2
+		x = 39
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_artillery }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 3
+				category = support_tech
+			}
+		}
+	}
+
+	#Focus for Tank Investments
+	focus = {
+		id = SAX_tank_investments
+		icon = GFX_goal_generic_army_tanks
+		x = 43
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_invest_in_motorization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Land Doctrine
+	focus = {
+		id = SAX_land_doctrine
+		icon = GFX_goal_generic_cavalry
+		x = 41
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_infantry_doctrine }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = land_doctrine 
+			}
+		}
+	}
+
+	#Focus for All-Union Tula Arms
+	focus = {
+		id = SAX_allunion_tula_arms
+		icon = GFX_goal_generic_army_doctrines
+		x = 41
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_land_doctrine }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_arms
+		}
+	}
+
+	#Focus for Allied Air Research
+	focus = {
+		id = SAX_allied_air_research
+		icon = GFX_goal_generic_air_naval_bomber
+		x = 26
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_allied_shipping_firms }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				category = cat_strategic_bomber
+			}
+		}
+		
+	}
+
+	#Focus for Kemmtik Air Funds
+	focus = {
+		id = SAX_kemmtik_air_funds
+		icon = GFX_goal_poland_goal
+		x = 32
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_airish_interventionism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			air_experience = 50
+			add_tech_bonus = {
+				uses = 2
+				bonus = 1
+				category = tactical_bomber
+			}
+		}
+	}
+
+	#Focus for Airish Tank Funds
+	focus = {
+		id = SAX_airish_tank_funds
+		icon = GFX_goal_generic_army_tanks
+		x = 30
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_airish_interventionism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			army_experience = 25
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1
+				ahead_reduction = 1.5
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Join Emeraldia
+	focus = {
+		id = SAX_join_emeraldia
+		icon = GFX_goal_generic_political_pressure
+		x = 34
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_emeraldian_russia_guarantee }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			POL = { is_faction_leader = yes }
+		}
+		completion_reward= {
+			POL = { country_event = { id = generic.2
+									hours = 6 }}
+		}
+	}
+
+	#Focus for The Stalwart Blossom
+	focus = {
+		id = SAX_the_stalwart_blossom
+		icon = GFX_SAX_the_stalwart_blossom-129149
+		x = 28
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_allied_shipping_firms }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			democratic > 0.4
+		}
+		completion_reward = {
+			add_popularity = {
+				popularity = 0.1
+				ideology = democratic 
+			}
+			add_popularity = {
+				popularity = 0.1
+				ideology = parliamentary_democratic 
+			}
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+				last_election = "1936.1.1"
+				election_frequency = 48
+			}
+		}
+				
+	}
+
+	#Focus for Enemy Infiltration
+	focus = {
+		id = SAX_enemy_infiltration
+		icon = GFX_SAX_enemy_infiltration-129150
+		x = 36
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_attend_emeraldian_academia }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = RUS_infiltration
+		}
+	}
+
+	#Focus for Air Research
+	focus = {
+		id = SAX_air_research
+		icon = GFX_goal_generic_air_doctrine
+		x = 45
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_modernize_the_army }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 4
+				category = air_doctrine
+			}
+		}
+	}
+
+	#Focus for Air Mobilization
+	focus = {
+		id = SAX_air_mobilization
+		icon = GFX_goal_generic_air_fighter2
+		x = 45
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_air_research }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = light_air
+			}
+		}
+	}
+
+	#Focus for Set our Sights on Russia
+	focus = {
+		id = SAX_set_our_sights_on_russia
+		icon = GFX_focus_ger_strike_at_the_source
+		x = 37
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_airish_tank_funds 
+			focus = SAX_join_emeraldia 
+			focus = SAX_the_stalwart_blossom 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+
+	#Focus for First Steps
+	focus = {
+		id = SAX_first_steps
+		icon = GFX_goal_generic_attack_allies
+		x = 40
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_set_our_sights_on_russia }
+		ai_will_do = {
+			factor = 1
+		} 
+		completion_reward = {
+		random_neighbor_country = {
+				limit = {
+					OR = { 
+						tag = SAM 
+						tag = SAX 
+						tag = BRI
+						tag = MEK
+						tag = COR
+						tag = TAJ
+						tag = TMS
+						tag = KYR
+						tag = HAN
+					}
+				}
+				ROOT = { 
+					create_wargoal = {
+						type = annex_everything 
+						target = PREV 
+					}
+				}
+			}
+		}
+	}
+
+	#Focus for Justify Expansionism
+	focus = {
+		id = SAX_justify_expansionism
+		icon = GFX_goal_generic_dangerous_deal
+		x = 44
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_first_steps }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = expansionism
+		}
+	}
+
+	#Focus for Russian Integration
+	focus = {
+		id = SAX_russian_integration
+		icon = GFX_goal_generic_construct_military
+		x = 42
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_first_steps }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = russian_integration_tooltip
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT }
+							is_core_of = SOV }
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	#Focus for Allied Military Support
+	focus = {
+		id = SAX_allied_military_support
+		icon = GFX_goal_rhineland
+		x = 28
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_the_stalwart_blossom 
+		}
+		prerequisite = { 
+			focus = SAX_set_our_sights_on_russia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_country = {
+				limit = { OR = { tag = FRA 
+								is_in_faction_with = FRA } }
+				country_event = { id = templetonshift.123 hours = 6 }
+			}
+		}
+	}
+
+	#Focus for Axis Military Support
+	focus = {
+		id = SAX_axis_military_support
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 31
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_airish_tank_funds 
+		}
+		prerequisite = { 
+			focus = SAX_set_our_sights_on_russia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_country = {
+				limit = { OR = { tag = SWE
+								is_in_faction_with = SWE } }
+				country_event = { id = templetonshift.123 hours = 6 }
+			}
+		}
+	}
+
+	#Focus for Emeraldian Military Support
+	focus = {
+		id = SAX_emeraldian_military_support
+		icon = GFX_goal_generic_build_tank
+		x = 34
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_join_emeraldia 
+		}
+		prerequisite = { 
+			focus = SAX_set_our_sights_on_russia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_country = {
+				limit = { OR = { tag = POL
+								is_in_faction_with = POL } }
+				country_event = { id = templetonshift.123 hours = 6 }
+			}
+		}
+	}
+
+	#Focus for Join the Allies
+	focus = {
+		id = SAX_join_the_allies
+		icon = GFX_goal_support_democracy
+		x = 28
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_allied_military_support }
+		mutually_exclusive = { focus = SAX_great_russia }
+		mutually_exclusive = { focus = SAX_join_the_axis }
+		mutually_exclusive = { focus = SAX_sapphire_kingdom }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			FRA = { is_faction_leader = yes }
+			NOT = { is_in_faction = yes }
+			OR = { 
+				controls_state = 217
+				controls_state = 219 }
+		}
+		completion_reward= {
+			FRA = { country_event = { id = generic.2
+									hours = 6 }}
+		}
+	}
+
+	#Focus for Join the Axis
+	focus = {
+		id = SAX_join_the_axis
+		icon = GFX_goal_support_fascism
+		x = 31
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_axis_military_support }
+		mutually_exclusive = { focus = SAX_great_russia }
+		mutually_exclusive = { focus = SAX_join_the_allies}
+		mutually_exclusive = { focus = SAX_sapphire_kingdom }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			SWE = { is_faction_leader = yes }
+			NOT = { is_in_faction = yes }
+			OR = { 
+				controls_state = 217
+				controls_state = 219 }
+		}
+		completion_reward= {
+			SWE = { country_event = { id = generic.2
+									hours = 6 }}
+		}
+	}
+
+	#Focus for Sapphire Kingdom
+	focus = {
+		id = SAX_sapphire_kingdom
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 34
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_emeraldian_military_support }
+		mutually_exclusive = { focus = SAX_great_russia }
+		mutually_exclusive = { focus = SAX_join_the_axis }
+		mutually_exclusive = { focus = SAX_join_the_allies }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			any_country = {
+				NOT = { has_completed_focus = SAX_sapphire_kingdom }
+			}
+			is_in_faction_with = POL
+			OR = { 
+				controls_state = 217
+				controls_state = 219 }
+		}
+		completion_reward = {
+			POL = {
+				set_autonomy = {
+					target = FROM
+					autonomy_state = autonomy_satellite
+					end_wars = no
+					end_civil_wars = no
+				}
+				
+			}
+			add_ideas = RUS_gemstone_determinism
+		}
+	}
+
+	#Focus for Consolidation
+	focus = {
+		id = SAX_consolidation
+		icon = GFX_goal_generic_political_pressure
+		x = 38
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_first_steps }
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			custom_effect_tooltip = russian_integration_tooltip
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT }
+							is_core_of = SOV }
+				add_core_of = ROOT
+			}
+		}
+	}
+
+	#Focus for Wrestle the Soviet Tiger
+	focus = {
+		id = SAX_wrestle_the_soviet_tiger
+		icon = GFX_goal_generic_major_war
+		x = 36
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_consolidation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = SOV
+				type = annex_everything
+			}
+		}
+	}
+
+	#Focus for Hunt the Siberian Bear
+	focus = {
+		id = SAX_hunt_the_siberian_bear
+		icon = GFX_goal_generic_major_war
+		x = 38
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_consolidation }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = { tag = WUR }
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = WUR
+				type = annex_everything
+			}
+		}
+	}
+
+	#Focus for Pounce on the Transvolgan Lion
+	focus = {
+		id = SAX_pounce_on_the_transvolgan_lion
+		icon = GFX_goal_generic_major_war
+		x = 40
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_consolidation }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			NOT = { tag = PRE }
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = PRE
+				type = annex_everything
+			}
+		}
+	}
+
+	#Focus for All-Russian Union
+	focus = {
+		id = SAX_allrussian_union
+		icon = GFX_goal_generic_demand_territory
+		x = 38
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_wrestle_the_soviet_tiger 
+			focus = SAX_hunt_the_siberian_bear 
+			focus = SAX_pounce_on_the_transvolgan_lion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			OR = { 
+				controls_state = 219
+				controls_state = 195
+				AND = { 
+					NOT = { tag = PRE }
+					controls_state = 217
+				}
+				AND = { 
+					NOT = { tag = WUR }
+					controls_state = 408
+				}
+			}
+		}
+		completion_reward = {
+			every_state = {
+				limit = { is_core_of = SOV }
+				add_core_of = ROOT 
+			}
+		}
+	}
+
+	#Focus for Research Addendum
+	focus = {
+		id = SAX_research_addendum
+		icon = GFX_focus_research2
+		x = 24
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_selfsustainability }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Great Reconstruction
+	focus = {
+		id = SAX_great_reconstruction
+		icon = GFX_goal_generic_construct_civilian
+		x = 22
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_military_factories }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = RUS_reconstruction
+		}
+	}
+
+	#Focus for The Nuclear Option
+	focus = {
+		id = SAX_the_nuclear_option
+		icon = GFX_focus_wonderweapons
+		x = 31
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SAX_join_the_allies 
+			focus = SAX_join_the_axis 
+			focus = SAX_sapphire_kingdom 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1
+				category = nuclear
+			}
+		}
+	}
+
+	#Focus for Free Market Economics
+	focus = {
+		id = SAX_free_market_economics
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 22
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_great_reconstruction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = free_trade
+			add_ideas = RUS_free_trade_mod
+		}
+	}
+
+	#Focus for Brevpolitik
+	focus = {
+		id = SAX_brevpolitik
+		icon = GFX_focus_spr_masters_of_our_own_fate
+		x = 32
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_nationalism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism 
+				popularity = 0.1
+			}
+			add_ideas = RUS_brevpolitik
+		}
+	}
+
+	#Focus for Outer Expansionism
+	focus = {
+		id = SAX_outer_expansionism
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 44
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_justify_expansionism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = TAN
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = WLS
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = MON
+			}
+		}
+	}
+
+	#Focus for Great Russia
+	focus = {
+		id = SAX_great_russia
+		icon = GFX_goal_generic_demand_territory
+		x = 23
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_set_our_sights_on_russia }
+		mutually_exclusive = { 
+			focus = SAX_join_the_allies 
+		}
+		mutually_exclusive = { 
+			focus = SAX_join_the_axis 
+		}
+		mutually_exclusive = { 
+			focus = SAX_sapphire_kingdom 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_country = {
+				limit = { is_faction_leader = yes }
+			add_opinion_modifier = {
+					target = ROOT 
+					modifier = large_decrease
+				}
+			}
+			add_ideas = RUS_great_russia
+		}
+	}
+
+	#Focus for Western Expansion
+	focus = {
+		id = SAX_western_expansion
+		icon = GFX_goal_generic_position_armies
+		x = 22
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_great_russia }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = MUR
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = ARM
+			}
+		}
+	}
+
+	#Focus for Southern Expansion
+	focus = {
+		id = SAX_southern_expansion
+		icon = GFX_goal_generic_major_war
+		x = 24
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_great_russia }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = AFG
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = PER
+			}
+		}
+	}
+
+	#Focus for One Last Chance
+	focus = {
+		id = SAX_one_last_chance
+		icon = GFX_goal_anschluss
+		x = 41
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1 
+		}
+		available = {
+			has_idea = RUS_unquenchable_spirit
+			has_war_with = POL
+		}
+		completion_reward = {
+			swap_ideas = {
+				add_idea = RUS_fighting_spirit
+				remove_idea = RUS_unquenchable_spirit
+			}
+		}
+	}
+
+	#Focus for Russian Volunteer Army
+	focus = { 
+		id = SAX_russian_volunteer_army
+		icon = GFX_goal_generic_special_forces
+		x = 41
+		y = 5
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_one_last_chance }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_war_with = POL
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = RUS_volunteer_army
+				days = 140
+			}
+		}
+	}
+
+	#Focus for Enemy at the Gates
+	focus = {
+		id = SAX_enemy_at_the_gates
+		icon = GFX_goal_generic_fortify_city
+		x = 41
+		y = 6
+		cost = 2
+		available_if_capitulated = yes
+		prerequisite = { focus = SAX_russian_volunteer_army }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			surrender_progress > 0.25
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = RUS_enemy_at_the_gates
+				days = 100
+			}
+		}
+	}
+
+#End of focuses 
+ }

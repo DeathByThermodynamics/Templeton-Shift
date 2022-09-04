@@ -1,0 +1,1634 @@
+focus_tree = {
+	id = airabor_sweden
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = SWE
+		}
+	}
+	continuous_focus_position = { x = 1400 y = 1350 }
+	#Focus for Sea-Air Cooperation
+	focus = {
+		id = SWE_seaaircooperation
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 23
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_innovativesuperstructures 
+		}
+		prerequisite = { 
+			focus = SWE_heavyfightercommand 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = air_doctrine }
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = naval_doctrine } }
+	}
+
+	#Focus for Integrated War
+	focus = {
+		id = SWE_integratedwar
+		icon = GFX_goal_generic_demand_territory
+		x = 23
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_civilianmilitarycooperation 
+		}
+		prerequisite = { 
+			focus = SWE_seaaircooperation 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = integrated_war
+		}
+	}
+
+	#Focus for Research Board
+	focus = {
+		id = SWE_researchboard
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 18
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_electroniceffort }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Treaty with Kemmtik
+	focus = {
+		id = SWE_treatywithkemmtik
+		icon = GFX_goal_generic_scientific_exchange
+		x = 19
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_civilianmilitarycooperation 
+		}
+		prerequisite = { 
+			focus = SWE_researchboard 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = armor
+}
+ICE = {add_tech_bonus = {
+bonus = 1
+uses = 1
+category = armor
+} }
+ 
+		}
+	}
+
+	#Focus for Heavy Fighter Command
+	focus = {
+		id = SWE_heavyfightercommand
+		icon = GFX_goal_generic_air_doctrine
+		x = 24
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_innovativeengines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 0.4
+uses = 2
+category = heavy_air }
+ 
+		}
+	}
+
+	#Focus for Rule the Skies
+	focus = {
+		id = SWE_ruletheskies
+		icon = GFX_goal_generic_air_fighter2
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_heavyfightercommand
+							focus = SWE_new_age_of_war }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = cas_bomber }
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = tactical_bomber }
+ 
+		}
+	}
+
+	#Focus for Innovative Superstructures
+	focus = {
+		id = SWE_innovativesuperstructures
+		icon = GFX_goal_generic_navy_cruiser
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_osloshipyards }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = ss_tech
+}
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = dd_tech
+}
+ 
+		}
+	}
+
+	#Focus for Oslo Shipyards
+	focus = {
+		id = SWE_osloshipyards
+		icon = GFX_goal_generic_navy_battleship
+		x = 22
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_stockholmaeronautics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = bb_tech
+}
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = ca_tech
+}
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = cv_tech
+}
+ 
+		}
+	}
+
+	#Focus for Innovative Engines
+	focus = {
+		id = SWE_innovativeengines
+		icon = GFX_goal_generic_air_fighter2
+		x = 24
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_stockholmaeronautics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 0.75
+uses = 2
+category = light_air }
+add_tech_bonus = {
+bonus = 0.5
+uses = 1
+category = medium_air }
+ 
+		}
+	}
+
+	#Focus for Electronic Effort
+	focus = {
+		id = SWE_electroniceffort
+		icon = GFX_goal_generic_production2
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_outskirtarmament 
+			focus = SWE_urbanarmament 
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = electronics
+}
+ 
+		}
+	}
+
+	#Focus for Stockholm Aeronautics
+	focus = {
+		id = SWE_stockholmaeronautics
+		icon = GFX_goal_generic_navy_carrier
+		x = 23
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = naval_doctrine
+}
+ 
+		}
+	}
+	
+	focus = {
+		id = SWE_infantry_advances
+		icon = GFX_goal_generic_production2
+		x = 3
+		y = 0
+		relative_position_id = SWE_stockholmaeronautics
+		cost = 10 
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 35
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = infantry_tech
+}
+ 
+		}
+	}
+	
+	focus = {
+		id = SWE_new_age_of_war
+		icon = GFX_focus_generic_combined_arms
+		x = 3
+		y = 1
+		relative_position_id = SWE_stockholmaeronautics
+		cost = 10 
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 50
+		}
+		prerequisite = { focus = SWE_infantry_advances }
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = support_tech
+}
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = armor
+}
+ 
+		} 
+	}
+
+	#Focus for Outskirts Improvements
+	focus = {
+		id = SWE_outskirtsimprovements
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 17
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_scandinavianhighways }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			 
+random_owned_state = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes }
+}
+ 
+		}
+	}
+
+	#Focus for Urban Improvements
+	focus = {
+		id = SWE_urbanimprovements
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 19
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_scandinavianhighways }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			38 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+140 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+}
+	}
+
+	#Focus for Perpetual Warfare
+	focus = {
+		id = SWE_perpetualwarfare
+		icon = GFX_focus_ger_great_red_menace
+		x = 14
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_wanggangpolitics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = perpetual_warfare }
+	}
+
+	#Focus for Scandinavian Highways
+	focus = {
+		id = SWE_scandinavianhighways
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 18
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = industry
+}
+ 
+		}
+	}
+
+	#Focus for Establish the Wang Gang
+	focus = {
+		id = SWE_establishthewanggang
+		icon = GFX_establishthewanggang
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_greatrevolt }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = wang_gang
+		}
+	}
+
+	#Focus for New World
+	focus = {
+		id = SWE_newworld
+		icon = GFX_goal_generic_war_with_comintern
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_greatrevolt }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_ideas = new_world
+	}
+	}
+
+	#Focus for Wang Gang Politics
+	focus = {
+		id = SWE_wanggangpolitics
+		icon = GFX_goal_support_fourth_int
+		x = 14
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_establishthewanggang 
+		}
+		prerequisite = { 
+			focus = SWE_newworld 
+		}
+		mutually_exclusive = { focus = SWE_theidealsofthecomintern }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_faction_name = "Wang Gang Internationale"
+		}
+	}
+
+	#Focus for The Ideals of the Comintern
+	focus = {
+		id = SWE_theidealsofthecomintern
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_ideologicalfanaticism 
+		}
+		prerequisite = { 
+			focus = SWE_bureauofrevolution 
+		}
+		mutually_exclusive = { focus = SWE_wanggangpolitics }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOV = { country_event = generic.2 } }
+	
+	}
+
+	#Focus for Great Revolt
+	focus = {
+		id = SWE_greatrevolt
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_beginthestruggle }
+		available = { OR = { has_war = yes
+					communism > 0.3 } }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			dismantle_faction = yes
+			start_civil_war = {
+				
+				ideology = fascism
+				size = 0.5
+			}
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = yes }
+}
+	}
+
+	#Focus for Ideological Fanaticism
+	focus = {
+		id = SWE_ideologicalfanaticism
+		icon = GFX_goal_generic_demand_territory
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_activismagainstbreakspear }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+		}
+	}
+
+	#Focus for Bureau of Revolution
+	focus = {
+		id = SWE_bureauofrevolution
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_government = communism }
+		prerequisite = { focus = SWE_activismagainstbreakspear }
+		ai_will_do = {
+			factor = 1
+		}
+			completion_reward = {
+				add_ideas = bureau_of_rev
+			}
+	}
+
+	#Focus for Begin the Struggle
+	focus = {
+		id = SWE_beginthestruggle
+		icon = GFX_goal_generic_propaganda
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_anewpath }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			communism > 0.1
+		}
+		completion_reward = {
+			add_political_power = 50
+			add_popularity = {
+				ideology = fascism
+				popularity = -0.1
+			}
+		}
+	}
+
+	#Focus for Activism against Breakspear
+	focus = {
+		id = SWE_activismagainstbreakspear
+		icon = GFX_goal_generic_war_with_comintern
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_beginthestruggle }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.1
+			}
+			add_stability = -0.1
+		}
+	}
+
+	#Focus for New Airabor Empire
+	focus = {
+		id = SWE_newairaborempire
+		icon = GFX_goal_support_fascism
+		x = 5
+		y = 14
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_operationsealion 
+		}
+		prerequisite = { 
+			focus = SWE_thegreatnorthernwar 
+		}
+		prerequisite = { 
+			focus = SWE_operationindifference 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = the_beginning
+			add_ideas = triumphant_will
+		}
+	}
+
+	#Focus for Operation Sealion
+	focus = {
+		id = SWE_operationsealion
+		icon = GFX_goal_generic_navy_cruiser
+		x = 9
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_war_with = ENG }
+		prerequisite = { 
+			focus = SWE_sweepthebenelux 
+		}
+		prerequisite = { 
+			focus = SWE_operationpatchwork 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = operation_sealion
+								days = 180 } }
+	}
+
+	#Focus for Operation Indifference
+	focus = {
+		id = SWE_operationindifference
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_war_with = LAT }
+		prerequisite = { 
+			focus = SWE_knockouttheemeraldkingdom 
+		}
+		prerequisite = { 
+			focus = SWE_balticespionage 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = operation_indifference
+								days = 180 } }
+	}
+
+	#Focus for Operation Patchwork
+	focus = {
+		id = SWE_operationpatchwork
+		icon = GFX_goal_generic_major_war
+		x = 10
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_deathfromabove }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = operation_patchwork
+								days = 180 } }
+	}
+
+	#Focus for Baltic Espionage
+	focus = {
+		id = SWE_balticespionage
+		icon = GFX_goal_generic_fortify_city
+		x = 6
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_airaborbaltic }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = the_baltic_front
+				days = 120 } }
+	}
+
+	#Focus for Death from Above
+	focus = {
+		id = SWE_deathfromabove
+		icon = GFX_goal_generic_attack_allies
+		x = 9
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		will_lead_to_war_with = GER
+		available = {
+			 
+has_army_manpower = { size > 900000 }
+ 
+		}
+		prerequisite = { 
+			focus = SWE_preparefortheinevitablewar 
+			focus = SWE_spreadtherevolution 
+		}
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				date < 1939.2.1 }
+			}
+		completion_reward = {
+			 
+create_wargoal = {
+target = GER
+type = annex_everything
+}
+add_named_threat = { 
+    threat = 10 
+    name = "Attack on Arislantia"
+}
+ 
+		}
+	}
+
+	#Focus for Airabor Baltic
+	focus = {
+		id = SWE_airaborbaltic
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 5
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_preparefortheinevitablewar 
+		}
+		prerequisite = { 
+			focus = SWE_kontaktkonferens 
+		}
+		will_lead_to_war_with = LAT
+		available = { has_army_manpower = { size > 849999 } }
+		ai_will_do = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				date < 1939.2.1 }
+			}
+		completion_reward = {
+			 
+create_wargoal = {
+target = LAT
+type = annex_everything
+}
+add_named_threat = { 
+    threat = 10
+    name = "Expansionism into Canasia"
+}
+ 
+		}
+	}
+
+	#Focus for The Great Northern War
+	focus = {
+		id = SWE_thegreatnorthernwar
+		icon = GFX_goal_anti_comintern_pact
+		x = 1
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_kontaktkonferens 
+		}
+		prerequisite = { 
+			focus = SWE_integratewareconomy 
+		}
+		will_lead_to_war_with = SOV
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 100000
+				date > 1942.1.1 }
+		}
+		available = { has_army_manpower = { size > 999999 } }
+		completion_reward = {
+			create_wargoal = {
+				target = SOV
+				type = annex_everything }
+				add_named_threat = {
+threat = 10
+name = "Continuation War"
+}
+			}
+			
+	}
+
+	#Focus for Demand Murmansk Concessions
+	focus = {
+		id = SWE_demandmurmanskconcessions
+		icon = GFX_goal_generic_political_pressure
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_intellektnatt 
+		}
+		prerequisite = { 
+			focus = SWE_claimsonthebaltic 
+		}
+		will_lead_to_war_with = MUR
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 100
+				date > 1938.6.1 }
+		}
+		completion_reward = {
+			MUR = { country_event = { id = templetonshift.71
+									hours = 8 } }
+			add_named_threat = {
+threat = 5
+name = "Murmansk Demands"
+}
+	} }
+
+	#Focus for Kontaktkonferens
+	focus = {
+		id = SWE_kontaktkonferens
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 4
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_thebeginning 
+		}
+		
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			add_ideas = kontakt }
+	}
+
+	#Focus for Integrate War Economy
+	focus = {
+		id = SWE_integratewareconomy
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 1
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_breakspeardictatorship }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+		110 = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = arms_factory
+level = 3
+instant_build = yes }
+}
+143 = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = arms_factory
+level = 3
+instant_build = yes }
+}
+	} }
+
+	#Focus for Tripartite for Glory
+	focus = {
+		id = SWE_tripartiteforglory
+		icon = GFX_goal_demand_sudetenland
+		x = 3
+		y = 7
+		cost = 5
+		available_if_capitulated = yes
+		available = { every_country = { limit = { original_tag = ITA }
+						has_civil_war = no } 
+			has_global_flag = kenu_civil_war_fired }
+		prerequisite = { focus = SWE_pactofsteel }
+		ai_will_do = {
+			factor = 10
+		}
+		bypass = {
+			OR =  { is_in_faction_with = ITA 
+			ITA = { NOT = { has_government = fascism } 
+					has_global_flag = kenu_civil_war_fired 
+							has_civil_war = no  } } }
+			
+		completion_reward = {
+		every_country = {
+			limit = { original_tag = ITA }
+ country_event = generic.5 } }
+	}
+
+	#Focus for Pact of Steel
+	focus = {
+		id = SWE_pactofsteel
+		icon = GFX_goal_generic_dangerous_deal
+		x = 3
+		y = 6
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_subjugatedenmark }
+		mutually_exclusive = { focus = SWE_airaborfirst }
+		bypass = { is_in_faction_with = ICE }
+		available = { ICE = { has_government = fascism
+						is_in_faction = no } }
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+		ICE = { country_event = generic.5 } }
+	}
+
+	#Focus for Airabor First
+	focus = {
+		id = SWE_airaborfirst
+		icon = GFX_goal_generic_demand_territory
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_subjugatedenmark }
+		mutually_exclusive = { focus = SWE_pactofsteel }
+		ai_will_do = {
+			factor = 0
+		}
+		completion_reward = {
+		add_political_power = 100
+		set_faction_name = "New Airabor Empire"
+		}
+	}
+
+	#Focus for Anti-Communist Pact
+	focus = {
+		id = SWE_anticommunistpact
+		icon = GFX_goal_anti_comintern_pact
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_airaborfirst }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_political_power = 100
+give_guarantee = POL
+POL = {give_guarantee = SWE}
+ 
+		}
+	}
+
+	#Focus for Breakspear Dictatorship
+	focus = {
+		id = SWE_breakspeardictatorship
+		icon = GFX_goal_generic_demand_territory
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_greathouseofbreakspear 
+		}
+		prerequisite = { 
+			focus = SWE_aggressivefocus 
+		}
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				date < 1939.6.1 }
+				factor = 0
+			}
+		completion_reward = {
+			news_event = templetonshift.70
+			add_ideas = dictator_for_life
+		}
+	}
+
+	#Focus for Subjugate Denmark
+	focus = {
+		id = SWE_subjugatedenmark
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		will_lead_to_war_with = DEN
+		prerequisite = { 
+			focus = SWE_claimsonthebaltic 
+		}
+		prerequisite = { 
+			focus = SWE_aggressivefocus 
+		}
+		bypass = { DEN = { is_subject = yes } }
+		ai_will_do = {
+			factor = 100000
+			modifier = {
+				factor = 1
+				date < 1937.9.1 }
+		}
+		completion_reward = {
+			DEN = { country_event = { id = templetonshift.15
+						hours = 12
+						} }
+			add_named_threat = {
+				threat = 6
+				name = "Subjugation of Denmark "
+			}
+		}
+	}
+
+	#Focus for Aggressive Focus
+	focus = {
+		id = SWE_aggressivefocus
+		icon = GFX_goal_generic_small_arms
+		x = 3
+		y = 4
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_antiwesternpropaganda 
+		}
+		prerequisite = { 
+			focus = SWE_leadershippurges 
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+		add_ideas = { aggressive_focus }
+		}
+	}
+
+	#Focus for Leadership Purges
+	focus = {
+		id = SWE_leadershippurges
+		icon = GFX_focus_generic_support_the_left_right
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_pacifytheopposition }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 100
+				date > 1936.12.1 }
+		}
+		completion_reward = {
+		add_ideas = { leadership_purged }
+		}
+	}
+
+	#Focus for Great House of Breakspear
+	focus = {
+		id = SWE_greathouseofbreakspear
+		icon = GFX_focus_rom_royal_dictatorship
+		x = 1
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_pacifytheopposition }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				date < 1938.6.1
+			}
+		}
+		completion_reward = {
+		add_stability = 0.1
+		add_named_threat = {
+			threat = 3
+			name = "Most Royal House of Breakspear"
+		}
+		}
+	}
+
+	#Focus for Intellektnatt
+	focus = {
+		id = SWE_intellektnatt
+		icon = GFX_goal_generic_territory_or_war
+		x = 7
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_beginthestockholmchanges }
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			add_ideas = nordic_kristallnacht
+		}
+	}
+
+	#Focus for Press Collectivism
+	focus = {
+		id = SWE_presscollectivism
+		icon = GFX_goal_generic_propaganda
+		x = 8
+		y = 0
+		cost = 5
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 100000000
+		}
+		completion_reward = { 
+			add_popularity = {
+				ideology = democratic
+				popularity = -0.05
+			}
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.05
+			}
+		}
+	}
+
+	#Focus for The Good and Old
+	focus = {
+		id = SWE_thegoodandold
+		icon = GFX_goal_support_fascism
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_presscollectivism }
+		mutually_exclusive = { focus = SWE_anewpath }
+		ai_will_do = {
+			factor = 100000
+		}
+		completion_reward = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.1
+			}
+			add_political_power = 75
+		}
+	}
+
+	#Focus for Pacify the Opposition
+	focus = {
+		id = SWE_pacifytheopposition
+		icon = GFX_goal_generic_political_pressure
+		x = 2
+		y = 2
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_thegoodandold }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_manpower = -100000
+			38 = { add_extra_state_shared_building_slots = 2 }
+			110 = { add_extra_state_shared_building_slots = 2 }
+			}
+		
+	}
+
+	#Focus for Begin the Stockholm Changes
+	focus = {
+		id = SWE_beginthestockholmchanges
+		icon = GFX_goal_generic_secret_weapon
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_thegoodandold }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+		news_event = { id = templetonshift.74
+							hours = 6 }
+		add_timed_idea = { idea = stockholm_changes
+						days = 220 } }
+	}
+
+	#Focus for A New Path
+	focus = {
+		id = SWE_anewpath
+		icon = GFX_goal_support_communism
+		x = 12
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_presscollectivism }
+		mutually_exclusive = { focus = SWE_thegoodandold }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = internationalism
+		}
+	}
+
+	#Focus for Anti-Western Propaganda
+	focus = {
+		id = SWE_antiwesternpropaganda
+		icon = GFX_goal_generic_propaganda
+		x = 5
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_beginthestockholmchanges }
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 100
+				date > 1937.3.1
+			}
+		}
+		completion_reward = {
+		add_ideas = brainwashed }
+	}
+
+	#Focus for Claims on the Baltic
+	focus = {
+		id = SWE_claimsonthebaltic
+		icon = GFX_goal_generic_position_armies
+		x = 5
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		available = { NOT = { has_idea = stockholm_changes } }
+		prerequisite = { 
+			focus = SWE_antiwesternpropaganda 
+		}
+		prerequisite = { 
+			focus = SWE_leadershippurges 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+		add_political_power = 85
+		add_named_threat = {
+		threat = 2
+		name = "Claims on Baltic" }
+		add_ideas = reasserted_baltic
+		hidden_effect = {
+			LAT = { every_owned_state = { add_claim_by = SWE } }
+			}
+		custom_effect_tooltip = "Gain claims on the entirety of Canasia."
+		}
+	}
+
+	#Focus for The Beginning
+	focus = {
+		id = SWE_thebeginning
+		icon = GFX_goal_generic_secret_weapon
+		x = 4
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_tripartiteforglory 
+			focus = SWE_anticommunistpact 
+		}
+		ai_will_do = {
+			factor = 50
+		}
+		
+		completion_reward = {
+			add_ideas = the_beginning
+			remove_ideas = leadership_purged
+		}
+	}
+
+	#Focus for Prepare for the Inevitable War
+	focus = {
+		id = SWE_preparefortheinevitablewar
+		icon = GFX_goal_generic_alliance
+		x = 7
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_demandmurmanskconcessions 
+		}
+		prerequisite = { 
+			focus = SWE_thebeginning 
+		}
+		ai_will_do = {
+			factor = 1000
+		}
+		completion_reward = {
+			140 = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+} }
+	}
+
+	#Focus for Knock out the Emerald Kingdom
+	focus = {
+		id = SWE_knockouttheemeraldkingdom
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 4
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_airaborbaltic }
+		ai_will_do = {
+			factor = 1
+		}
+		will_lead_to_war_with = POL
+		completion_reward = {
+			 
+create_wargoal = {
+target = POL
+type = annex_everything
+}
+add_named_threat = { 
+    threat = 7 
+    name = "War on the Emerald Kingdom"
+}
+ 
+		}
+	}
+
+	#Focus for Sweep the Benelux
+	focus = {
+		id = SWE_sweepthebenelux
+		icon = GFX_goal_generic_position_armies
+		x = 8
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = LUX
+		prerequisite = { focus = SWE_deathfromabove }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			 
+has_war_with = GER
+has_war_with = FRA
+ 
+		}
+		completion_reward = {
+			 
+create_wargoal = {
+target = BEL
+type = annex_everything
+}
+create_wargoal = {
+target = HOL
+type = annex_everything
+}
+create_wargoal = {
+target = LUX
+type = annex_everything
+}
+ 
+		}
+	}
+
+	#Focus for Spread the Revolution
+	focus = {
+		id = SWE_spreadtherevolution
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_theidealsofthecomintern }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			140 = {
+add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = arms_factory
+level = 3
+instant_build = yes }
+} 
+	} }
+
+	#Focus for Outskirt Armament
+	focus = {
+		id = SWE_outskirtarmament
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_outskirtsimprovements }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+random_owned_state = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+ 
+		}
+	}
+
+	#Focus for Urban Armament
+	focus = {
+		id = SWE_urbanarmament
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_urbanimprovements }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+random_owned_state = {
+add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+random_owned_state = {
+add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes }
+}
+ 
+		}
+	}
+
+	#Focus for Labour Organizations
+	focus = {
+		id = SWE_labourorganizations
+		icon = GFX_goal_generic_construct_civilian
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_innovativesuperstructures }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_ideas = { labour_organizations }
+ 
+		}
+	}
+
+	#Focus for Civilian-Military Cooperation
+	focus = {
+		id = SWE_civilianmilitarycooperation
+		icon = GFX_goal_tripartite_pact
+		x = 20
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_labourorganizations 
+		}
+		prerequisite = { 
+			focus = SWE_electroniceffort 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_stability = 0.05
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = land_doctrine
+}
+ 
+		}
+	}
+
+	#Focus for University of Stockholm
+	focus = {
+		id = SWE_universityofstockholm
+		icon = GFX_focus_research2
+		x = 21
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = SWE_integratedwar 
+		}
+		prerequisite = { 
+			focus = SWE_treatywithkemmtik 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = electronics
+}
+	} }
+
+	#Focus for Sarasov's Nightmare
+	focus = {
+		id = SWE_sarasovsnightmare
+		icon = GFX_focus_wonderweapons
+		x = 21
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = SWE_universityofstockholm }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			 
+add_tech_bonus = {
+bonus = 1
+uses = 2
+category = nuclear
+}
+	} }
+
+	#Focus for Invite the Kenu
+	focus = {
+		id = SWE_invitethekenu
+		icon = GFX_goal_generic_dangerous_deal
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		available = {
+			ITA = { is_in_faction = no
+					has_war = no
+					has_government = communism } }
+		prerequisite = { focus = SWE_wanggangpolitics }
+		ai_will_do = {
+			factor = 50
+		}
+		completion_reward = {
+			ITA = { country_event = { id = generic.5  
+										hours = 8 } }
+		}
+	}
+
+#End of focuses 
+ }

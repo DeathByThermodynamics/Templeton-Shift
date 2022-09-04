@@ -1,0 +1,1303 @@
+focus_tree = {
+	id = slabvia_turkey
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUR
+		}
+	}
+	#Focus for The Ekremla Works
+	focus = {
+		id = TUR_theekremlaworks
+		icon = GFX_goal_generic_construction2
+		x = 7
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_reapthebenefits 
+		}
+		prerequisite = { 
+			focus = TUR_concordancia 
+		}
+		prerequisite = { 
+			focus = TUR_industrialexpansion 
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = ekremlaworks
+
+		}
+	}
+
+	#Focus for Salvage Broken Armenian Relations
+	focus = {
+		id = TUR_salvagebrokenarmenianrelations
+		icon = GFX_goal_generic_improve_relations
+		x = 28
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_bordersecurity }
+		mutually_exclusive = { focus = TUR_neverweakenedagain }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_opinion_modifier = { target = ARM
+modifier = medium_increase }
+reverse_add_opinion_modifier = { target = ARM 
+modifier= medium_increase }
+ARM = { country_event = { id = templetonshift.47 
+hours = 2 } }
+
+		}
+	}
+
+	#Focus for Challenge the West
+	focus = {
+		id = TUR_challengethewest
+		icon = GFX_goal_generic_dangerous_deal
+		x = 11
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = TUR_accepturddominance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_political_power = 200
+add_ideas = challenge_the_west
+custom_effect_tooltip = "The West may antagonize you with higher world tension!"
+		}
+	}
+
+	#Focus for Dardanelles Trade Company
+	focus = {
+		id = TUR_dardanellestradecompany
+		icon = GFX_goal_generic_construct_civilian
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_qualityequipment 
+		}
+		prerequisite = { 
+			focus = TUR_reignitethetraderush 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+swap_ideas = {
+    remove_idea = economic_stranglehold
+    add_idea = dardanelles_trade_comp
+}
+
+		}
+	}
+
+	#Focus for Raise the Bar
+	focus = {
+		id = TUR_raisethebar
+		icon = GFX_goal_generic_army_artillery2
+		x = 21
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = infantry_weapons
+}
+
+		}
+	}
+
+	#Focus for Quality Equipment
+	focus = {
+		id = TUR_qualityequipment
+		icon = GFX_goal_generic_army_artillery2
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_raisethebar }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = artillery
+}
+
+		}
+	}
+
+	#Focus for The Battlefield Solution
+	focus = {
+		id = TUR_thebattlefieldsolution
+		icon = GFX_goal_generic_air_doctrine
+		x = 24
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_raisethebar }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = land_doctrine } 
+		}
+	}
+
+	#Focus for Civilian Industry
+	focus = {
+		id = TUR_civilianindustry
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 3
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_accepturddominance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+49 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+}}
+348 = {add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = industrial_complex
+level = 1
+instant_build = yes
+}}
+
+		}
+	}
+
+	#Focus for Motts Demonstration
+	focus = {
+		id = TUR_mottsdemonstration
+		icon = GFX_goal_generic_propaganda
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_nationalization 
+		}
+		prerequisite = { 
+			focus = TUR_anatoliatradeflow 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = motts_demonstration
+								days = 365 }
+			news_event = templetonshift.50
+		}
+	}
+
+	#Focus for Prepare for the Emeraldian Advance
+	focus = {
+		id = TUR_preparefortheemeraldianadvance
+		icon = GFX_goal_generic_defence
+		x = 26
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_bordersecurity }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			341 = { add_building_construction = {
+type = coastal_bunker
+level = 2
+instant_build = yes
+province = 9833 } }
+			347 = { add_building_construction = {
+type = coastal_bunker
+level = 2
+instant_build = yes
+province = 904 } }
+356 = { add_building_construction = {
+type = coastal_bunker
+level = 2
+instant_build = yes
+province = 6995 } }
+355 = { add_building_construction = {
+type = coastal_bunker
+level = 2
+instant_build = yes
+province = 11881 } }
+}
+	}
+
+	#Focus for Reap the Benefits
+	focus = {
+		id = TUR_reapthebenefits
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_militaryindustry }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+344 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}
+
+}
+349 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes
+}
+
+}
+
+		}
+	}
+
+	#Focus for Coretan Project
+	focus = {
+		id = TUR_coretanproject
+		icon = GFX_goal_generic_production
+		x = 1
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_civilianindustry }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+    bonus = 1
+    uses = 2
+    category = industry
+}
+
+		}
+	}
+
+	#Focus for Nationalization
+	focus = {
+		id = TUR_nationalization
+		icon = GFX_goal_generic_demand_territory
+		x = 11
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_politicalinitiation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = electronics
+}
+
+		}
+	}
+
+	#Focus for Military Industry
+	focus = {
+		id = TUR_militaryindustry
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 5
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_expandtheekremlasanayi 
+			focus = TUR_limittheekremlasanayi 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+347 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}}
+343 = {add_extra_state_shared_building_slots = 1
+add_building_construction = {
+type = arms_factory
+level = 1
+instant_build = yes
+}}
+
+		}
+	}
+
+	#Focus for Anatolia Trade Flow
+	focus = {
+		id = TUR_anatoliatradeflow
+		icon = GFX_goal_generic_improve_relations
+		x = 13
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_reignitethetraderush 
+		}
+		prerequisite = { 
+			focus = TUR_principlesofpower 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = anatolia_trade_flow
+
+		}
+	}
+
+	#Focus for Liberalization
+	focus = {
+		id = TUR_liberalization
+		icon = GFX_goal_support_democracy
+		x = 3
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_civilianindustry }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 75
+add_popularity = {
+ideology = democratic
+popularity = 0.1 }
+		}
+	}
+
+	#Focus for Reignite the Trade Rush
+	focus = {
+		id = TUR_reignitethetraderush
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 16
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = reignited_trade_flow
+
+		}
+	}
+
+	#Focus for Scroytje
+	focus = {
+		id = TUR_scroytje
+		icon = GFX_goal_generic_position_armies
+		x = 1
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_coretanproject }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = scroytje
+		}
+	}
+
+	#Focus for Alliance of Opportunity
+	focus = {
+		id = TUR_allianceofopportunity
+		icon = GFX_goal_generic_small_arms
+		x = 28
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_idea = treatyoffriends }
+		bypass = { ARM = { is_in_faction = yes } }
+		prerequisite = { focus = TUR_salvagebrokenarmenianrelations }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction = "Slabvian Entente"
+			ARM = { country_event = generic.5 }
+		}
+	}
+
+	#Focus for Never Weakened Again
+	focus = {
+		id = TUR_neverweakenedagain
+		icon = GFX_goal_generic_demand_territory
+		x = 32
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_bordersecurity }
+		mutually_exclusive = { focus = TUR_salvagebrokenarmenianrelations }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = never_weakened_again 
+		}
+	}
+
+	#Focus for Raraha
+	focus = {
+		id = TUR_raraha
+		icon = GFX_focus_generic_industry_3
+		x = 3
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_liberalization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = raraha
+
+		}
+	}
+
+	#Focus for Border Security
+	focus = {
+		id = TUR_bordersecurity
+		icon = GFX_goal_generic_position_armies
+		x = 30
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+355 = { 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 975 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 3965 } 
+}
+349 = { 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 6929 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 9868 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 11797 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 9860 } 
+}
+350 = { 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 11759 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 11739 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 4512 } 
+add_building_construction = {
+type = bunker
+level = 1
+instant_build = yes
+province = 12387 } 
+}
+
+		}
+	}
+
+	#Focus for Eastern Thrace Bastion
+	focus = {
+		id = TUR_easternthracebastion
+		icon = GFX_goal_generic_fortify_city
+		x = 18
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_qualityequipment }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+341 = { 
+add_building_construction = {
+type = bunker
+level = 2
+instant_build = yes
+province = 922 } 
+add_building_construction = {
+type = bunker
+level = 2
+instant_build = yes
+province = 11842 } 
+add_building_construction = {
+type = bunker
+level = 2
+instant_build = yes
+province = 3893 } 
+add_building_construction = {
+type = bunker
+level = 2
+instant_build = yes
+province = 849 } 
+add_building_construction = {
+type = bunker
+level = 3
+instant_build = yes
+province = 9833 }
+add_building_construction = {
+type = coastal_bunker
+level = 2
+instant_build = yes
+province = 9833 }
+}
+
+		}
+	}
+
+	#Focus for Principles of Power
+	focus = {
+		id = TUR_principlesofpower
+		icon = GFX_goal_generic_political_pressure
+		x = 13
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_challengethewest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_political_power = 75
+add_popularity = {
+    ideology = fascism
+    popularity = 0.10
+} 
+		}
+	}
+
+	#Focus for Limit the Ekremla Sanayi
+	focus = {
+		id = TUR_limittheekremlasanayi
+		icon = GFX_focus_generic_tank_production
+		x = 9
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_accepturddominance 
+			focus = TUR_challengethewest 
+		}
+		mutually_exclusive = { focus = TUR_expandtheekremlasanayi }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = limit_ekrem 
+		}
+	}
+
+	#Focus for Expand the Ekremla Sanayi
+	focus = {
+		id = TUR_expandtheekremlasanayi
+		icon = GFX_goal_generic_construct_civilian
+		x = 5
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_accepturddominance 
+			focus = TUR_challengethewest 
+		}
+		mutually_exclusive = { focus = TUR_limittheekremlasanayi }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = expand_ekrem
+
+		}
+	}
+
+	#Focus for Political Initiation
+	focus = {
+		id = TUR_politicalinitiation
+		icon = GFX_goal_generic_dangerous_deal
+		x = 11
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_challengethewest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_political_power = 75
+add_ideas = nationalism 
+		}
+	}
+
+	#Focus for Anti-Risk Committee
+	focus = {
+		id = TUR_antiriskcommittee
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 9
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_expandtheekremlasanayi 
+			focus = TUR_limittheekremlasanayi 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = antiriskcommit
+
+		}
+	}
+
+	#Focus for Develop the Armour Core
+	focus = {
+		id = TUR_developthearmourcore
+		icon = GFX_goal_generic_army_tanks
+		x = 21
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_raisethebar }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 0.75
+uses = 2
+category = armor
+}
+
+		}
+	} 
+
+	#Focus for Accept URD Dominance
+	focus = { 
+		id = TUR_accepturddominance
+		icon = GFX_goal_generic_alliance
+		x = 3
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = TUR_challengethewest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_ideas = accept_urd_dominance
+ENG = {
+add_opinion_modifier = { target = TUR 
+modifier = large_increase }
+}
+
+		}
+	}
+
+	#Focus for Industrial Expansion
+	focus = {
+		id = TUR_industrialexpansion
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 7
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_militaryindustry 
+		}
+		prerequisite = { 
+			focus = TUR_antiriskcommittee 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = industry
+} 
+		}
+	}
+
+	#Focus for Concordancia
+	focus = {
+		id = TUR_concordancia
+		icon = GFX_focus_research2
+		x = 9
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_antiriskcommittee }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_research_slot = 1
+
+		}
+	}
+
+	#Focus for Deal with Armenia
+	focus = {
+		id = TUR_dealwitharmenia
+		icon = GFX_goal_generic_political_pressure
+		x = 32
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_expansionism
+		}
+		prerequisite = { 
+			focus = TUR_allianceofsuperiority 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+			target = ARM 
+			type = puppet_wargoal_focus
+		}
+		}
+	}
+
+	#Focus for Down goes Emeraldia
+	focus = {
+		id = TUR_downgoesemeraldia
+		icon = GFX_goal_generic_attack_allies
+		x = 31
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_dealwithbulgaria 
+			focus = TUR_dealwitharmenia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		create_wargoal = {
+			target = POL
+			type = puppet_wargoal_focus
+		}
+		}
+	}
+
+	#Focus for Joint Defense
+	focus = {
+		id = TUR_jointdefense
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 30
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { NOT = { has_war_with = ARM } }
+		prerequisite = { focus = TUR_allianceofopportunity }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_tech_sharing_group = slabvia_research
+			ARM = { add_to_tech_sharing_group = slabvia_research }
+		}
+	}
+
+	#Focus for Industrial Focus
+	focus = {
+		id = TUR_industrialfocus
+		icon = GFX_goal_generic_production
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_easternthracebastion }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = industry } }
+	}
+
+	#Focus for Doctrinal Innovations
+	focus = {
+		id = TUR_doctrinalinnovations
+		icon = GFX_goal_generic_air_doctrine
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_defensivedoctrine }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = land_doctrine } 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = naval_doctrine } 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = air_doctrine } 
+		}
+	}
+
+	#Focus for Research Surge
+	focus = {
+		id = TUR_researchsurge
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 21
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_industrialfocus 
+		}
+		prerequisite = { 
+			focus = TUR_airproductionii 
+		}
+		prerequisite = { 
+			focus = TUR_navalproductionii 
+		}
+		prerequisite = { 
+			focus = TUR_doctrinalinnovations 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_research_slot = 1
+		}
+	}
+
+	#Focus for Ekremla Military
+	focus = {
+		id = TUR_ekremlamilitary
+		icon = GFX_focus_generic_industry_3
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_fascistbastion 
+			focus = TUR_democraticbastion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+				remove_idea = ekremlaworks
+				add_idea = ekremlaworks2
+			}
+		}
+	}
+
+	#Focus for Expansionism
+	focus = {
+		id = TUR_expansionism
+		icon = GFX_goal_generic_position_armies
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_neverweakenedagain }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = expansionism
+		}
+	}
+
+	#Focus for Air Production
+	focus = {
+		id = TUR_airproduction
+		icon = GFX_goal_generic_air_fighter2
+		x = 20
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_developthearmourcore }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_air } }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = heavy_air } }
+	}
+
+	#Focus for Air Production II
+	focus = {
+		id = TUR_airproductionii
+		icon = GFX_goal_generic_build_airforce
+		x = 20
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_airproduction }
+		ai_will_do = {
+			factor = 1
+		}
+		
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = air_doctrine } }
+		
+	}
+
+	#Focus for Naval Production II
+	focus = {
+		id = TUR_navalproductionii
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 22
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_navalproduction }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+			bonus = 1
+			uses = 2
+			category = naval_doctrine
+		} }
+	}
+
+	#Focus for Defensive Doctrine
+	focus = {
+		id = TUR_defensivedoctrine
+		icon = GFX_goal_generic_military_sphere
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_thebattlefieldsolution 
+		}
+		prerequisite = { 
+			focus = TUR_preparefortheemeraldianadvance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+add_tech_bonus = {
+bonus = 0.6
+uses = 2
+category = land_doctrine } 
+		}
+	}
+
+	#Focus for Entente Research Cooperation
+	focus = {
+		id = TUR_ententeresearchcooperation
+		icon = GFX_goal_generic_national_unity
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_raraha 
+		}
+		prerequisite = { 
+			focus = TUR_scroytje 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_tech_sharing_group = entente_joint_research
+		}
+	}
+
+	#Focus for Fascist Bastion
+	focus = {
+		id = TUR_fascistbastion
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_theekremlaworks 
+		}
+		prerequisite = { 
+			focus = TUR_fascistexpansion 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SWE = { country_event = { id = generic.2
+									hours = 6 } }
+		}
+	}
+
+	#Focus for Alliance of Superiority
+	focus = {
+		id = TUR_allianceofsuperiority
+		icon = GFX_goal_tripartite_pact
+		x = 33
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_neverweakenedagain }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ENG = { country_event = { id = templetonshift.51 
+										hours = 6
+			} }
+		}
+	}
+
+	#Focus for Naval Production
+	focus = {
+		id = TUR_navalproduction
+		icon = GFX_goal_generic_navy_battleship
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_developthearmourcore }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech }
+			349 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = dockyard
+level = 2
+instant_build = yes
+}
+
+}
+				}
+	}
+
+	#Focus for Fascist Expansion
+	focus = {
+		id = TUR_fascistexpansion
+		icon = GFX_goal_support_fascism
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_mottsdemonstration }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		344 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}
+
+}
+343 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 3
+instant_build = yes
+}
+
+}
+		}
+	}
+
+	#Focus for Democratic Bastion
+	focus = {
+		id = TUR_democraticbastion
+		icon = GFX_goal_support_democracy
+		x = 4
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_ententeresearchcooperation 
+		}
+		prerequisite = { 
+			focus = TUR_theekremlaworks 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			FRA = { country_event = { id = generic.2
+									hours = 6 } }
+		}
+	}
+
+	#Focus for Council of Asia Minor
+	focus = {
+		id = TUR_councilofasiaminor
+		icon = GFX_goal_generic_national_unity
+		x = 28
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUR_allianceofopportunity }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+
+	#Focus for Deal with Bulgaria
+	focus = {
+		id = TUR_dealwithbulgaria
+		icon = GFX_goal_generic_attack_allies
+		x = 29
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUR_councilofasiaminor 
+		}
+		prerequisite = { 
+			focus = TUR_jointdefense 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+			target = BUL
+			type = puppet_wargoal_focus
+		}
+		}
+	}
+
+#End of focuses 
+ }

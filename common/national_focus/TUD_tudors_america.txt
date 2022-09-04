@@ -1,0 +1,1590 @@
+focus_tree = {
+	id = tudors_america
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = TUD
+		}
+	}
+continuous_focus_position = { x = 50 y = 1400 }
+	#Focus for New Society
+	focus = {
+		id = TUD_newsociety
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_crushthewesternalliance 
+		}
+		prerequisite = { 
+			focus = TUD_acrosstheocean 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 150
+			create_wargoal = {
+				target = USA
+				type = annex_everything }
+		}
+	}
+
+	#Focus for Look Around The World
+	focus = {
+		id = TUD_lookaroundtheworld
+		icon = GFX_goal_generic_position_armies
+		x = 18
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 200
+		}
+	}
+	# The Stardew Valley Project
+	focus = {
+		id = TUD_develop_stardew_valley
+		icon = GFX_goal_generic_construct_civilian
+		x = 26
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			820 = {
+add_building_construction = {
+type = infrastructure
+level = 1
+instant_build = yes
+}
+add_building_construction = {
+type = infrastructure
+level = 1
+instant_build = yes
+}}
+
+}
+	}
+	
+	# Resource Developments
+	focus = {
+		id = TUD_stardewresources
+		icon = GFX_focus_generic_steel
+		x = 25
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_develop_stardew_valley }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			820 = { 
+				add_resource = {
+					type = oil
+					amount = 10
+				}
+				add_resource = {
+					type = tungsten
+					amount = 8
+				}
+			}
+}
+			
+
+
+
+}
+# Resource Developments 2
+	focus = {
+		id = TUD_stardewresources2
+		icon = GFX_focus_generic_tungsten
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_stardewresources }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			820 = { 
+				add_resource = {
+					type = oil
+					amount = 5
+				}
+				add_resource = {
+					type = aluminium
+					amount = 12
+				}
+			}
+}
+			
+
+
+
+}
+# Establish the Commune of Stardew Valley 
+focus = {
+		id = TUD_communiststardew
+		icon = GFX_focus_generic_join_comintern
+		x = 27
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_develop_stardew_valley }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			add_popularity = {
+    ideology = communism
+    popularity = 0.1
+}
+			820 = {add_extra_state_shared_building_slots = 5
+add_building_construction = {
+type = industrial_complex
+level = 5
+instant_build = yes
+}}
+
+}
+
+
+}
+# Behind on Research
+focus = {
+		id = TUD_catchuponresearch
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 27
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_war = yes }
+		prerequisite = { focus = TUD_communiststardew }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			add_timed_idea = { idea = i_hate_this_mod_research
+									days = 70 } }
+
+
+}
+
+	#Focus for Boost Japan
+	focus = {
+		id = TUD_boostjapan
+		icon = GFX_focus_jap_pacific_guardian
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_infiltrateforeignsystems }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			JAP = { add_timed_idea = { idea = boost_japan	
+									days = 300 } }
+		}
+	}
+
+	#Focus for Boost Japan II
+	focus = {
+		id = TUD_boostjapanii
+		icon = GFX_focus_jap_manchurian_project
+		x = 16
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { JAP = { NOT = { has_idea = boost_japan } } }
+		prerequisite = { focus = TUD_boostjapan }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			JAP = { add_timed_idea = { idea = boost_japan1 
+						days = 1080
+			} }
+		}
+	}
+
+	#Focus for Foreign War Office
+	focus = {
+		id = TUD_foreignwaroffice
+		icon = GFX_focus_generic_treaty
+		x = 21
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_lookaroundtheworld }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = foreign_war_office
+		}
+	}
+
+	#Focus for Infiltrate the Soviet Union
+	focus = {
+		id = TUD_infiltratethesovietunion
+		icon = GFX_goal_generic_propaganda
+		x = 14
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_infiltrateforeignsystems }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOV = { add_timed_idea = { idea = infiltrated_command 
+						days = 720 } }
+	} }
+
+	#Focus for Leave Isolation
+	focus = {
+		id = TUD_leaveisolation
+		icon = GFX_goal_generic_alliance
+		x = 10
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		available = { OR = { AND = { has_war = yes
+									threat > 0.5 }
+							threat > 0.85 } }
+		prerequisite = { focus = TUD_economicmobilization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = civilian_economy 
+			remove_ideas = struck_by_black_monday
+			}
+		
+	}
+
+	#Focus for Civilian Expansion II
+	focus = {
+		id = TUD_civilianexpansionii
+		icon = GFX_goal_generic_construction2
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { threat > 0.3 }
+		prerequisite = { focus = TUD_civilianexpansioni }
+		ai_will_do = {
+			factor = 1
+		}
+		continue_if_invalid = yes
+		completion_reward = {
+			834 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+809 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+}
+	}
+
+	#Focus for Anti-Neutrality Act 
+	focus = {
+		id = TUD_antineutralityact
+		icon = GFX_goal_generic_neutrality_focus
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_leaveisolation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = anti_neutrality }
+	}
+
+	#Focus for Update Neighbour Strategy 
+	focus = {
+		id = TUD_updateneighbourstrategy
+		icon = GFX_goal_generic_position_armies
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_trytospiketension }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			CAN = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			MEX = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			DOM = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			ARG = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			BRA = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			VEN = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+			COL = { add_timed_idea = { idea = monroe_expanded
+										days = 1080 } }
+	} }
+
+	#Focus for Support and Artillery
+	focus = {
+		id = TUD_supportandartillery
+		icon = GFX_goal_generic_army_artillery2
+		x = 0
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_thearmsrace }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = artillery
+			}
+		}
+	}
+
+	#Focus for Ultimatum to Cuba
+	focus = {
+		id = TUD_ultimatumtocuba
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_updateneighbourstrategy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			CUB = { country_event = { id = templetonshift.55
+										hours = 6 }
+									}
+		}
+	}
+
+	#Focus for Boost Soviet
+	focus = {
+		id = TUD_boostsoviet
+		icon = GFX_goal_anti_comintern_pact
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_infiltratethesovietunion }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOV = { add_ideas = boost_soviet } } 
+	}
+
+	#Focus for Armour Core
+	focus = {
+		id = TUD_armourcore
+		icon = GFX_goal_generic_army_tanks
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_infantryandsupport }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 0.8
+				uses = 2
+				category = armor
+			}
+		}
+	}
+
+	#Focus for Radicalization of Monroe
+	focus = {
+		id = TUD_radicalizationofmonroe
+		icon = GFX_goal_generic_military_sphere
+		x = 4
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_coupsinsouthamerica }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = radical_monroe
+						days = 720 }
+			news_event = templetonshift.54
+		}
+	}
+
+	#Focus for Western Infiltration
+	focus = {
+		id = TUD_westerninfiltration
+		icon = GFX_focus_usa_focus_on_europe
+		x = 12
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_infiltrateforeignsystems }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ENG = { add_opinion_modifier = { target = TUD
+modifier = large_decrease }
+				add_timed_idea = { idea = infiltrated_command
+										days = 360 } }
+			FRA = { add_opinion_modifier = { target = TUD
+modifier = large_decrease }
+			add_timed_idea = { idea = infiltrated_command
+										days = 360 } }
+			GER = { add_opinion_modifier = { target = TUD
+modifier = large_decrease }
+			add_timed_idea = { idea = infiltrated_command
+										days = 360 } }
+	} }
+
+	#Focus for Bastion of Democracy
+	focus = {
+		id = TUD_bastionofdemocracy
+		icon = GFX_goal_support_democracy
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		available = { OR = { has_war = yes
+							threat > 0.3 } }
+		prerequisite = { 
+			focus = TUD_boostjapanii 
+		}
+		prerequisite = { 
+			focus = TUD_boostsoviet 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			834 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+833 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+}
+	}
+
+	#Focus for Move Closer to the US
+	focus = {
+		id = TUD_moveclosertotheus
+		icon = GFX_goal_generic_alliance
+		x = 19
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_fridaysareclosed 
+		}
+		prerequisite = { 
+			focus = TUD_sayhitotherooseveltadministration 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_to_tech_sharing_group = us_research
+			USA = { add_to_tech_sharing_group = us_research }
+		}
+	}
+
+	#Focus for Expansionism
+	focus = {
+		id = TUD_expansionism
+		icon = GFX_goal_generic_position_armies
+		x = 11
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_westerninfiltration }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = expansionism
+		}
+	
+	}
+
+	#Focus for Relations with Emeraldia
+	focus = {
+		id = TUD_relationswithemeraldia
+		icon = GFX_goal_generic_dangerous_deal
+		x = 13
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_westerninfiltration }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = relations_with_emeraldia
+							days = 720 }
+		}
+	}
+
+	#Focus for Research Board
+	focus = {
+		id = TUD_researchboard
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_civilianexpansionii }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Naval Doctrine Developments
+	focus = {
+		id = TUD_navaldoctrinedevelopments
+		icon = GFX_goal_generic_navy_battleship
+		x = 21
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_expandthedockyards }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = naval_doctrine
+			}
+		}
+	}
+
+	#Focus for Manifest Destiny 
+	focus = {
+		id = TUD_manifestdestiny
+		icon = GFX_goal_generic_military_deal
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_speakoutagaincolonization 
+		}
+		prerequisite = { 
+			focus = TUD_radicalizationofmonroe 
+		}
+		mutually_exclusive = { 
+			focus = TUD_afreeeurope 
+		}
+		mutually_exclusive = { 
+			focus = TUD_emeraldianalliance 
+		}
+		mutually_exclusive = { 
+			focus = TUD_theamericanalliance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			fascism > 0.45 }
+		completion_reward = {
+			news_event = templetonshift.58
+			add_ideas = manifest_destiny
+			set_politics = {
+	ruling_party = fascism
+}
+}
+	}
+
+	#Focus for Large Scale Testing
+	focus = {
+		id = TUD_largescaletesting
+		icon = GFX_focus_wonderweapons
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_moveclosertotheus }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+			bonus = 1.25
+			uses = 2
+			category = nuclear }
+		}
+	}
+
+	#Focus for The American Alliance
+	focus = {
+		id = TUD_theamericanalliance
+		icon = GFX_goal_generic_major_alliance
+		x = 19
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_jointplanningboard 
+		}
+		prerequisite = { 
+			focus = TUD_largescaletesting 
+		}
+		mutually_exclusive = { focus = TUD_manifestdestiny }
+		mutually_exclusive = { focus = TUD_emeraldianalliance }
+		mutually_exclusive = { focus = TUD_afreeeurope }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			USA = { country_event = { id = templetonshift.62
+									hours = 12 } } }
+	}
+
+	#Focus for Screw Over Japan
+	focus = {
+		id = TUD_screwoverjapan
+		icon = GFX_focus_generic_anti_fascist_diplomacy
+		x = 15
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_theamericanalliance 
+			focus = TUD_afreeeurope 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_war_with = JAP }
+		completion_reward = {
+			transfer_state = 650
+			add_timed_idea = { idea = meme_japan
+							days = 300 } }
+	}
+	
+	#Focus for the Scottish Americans 
+	focus = {
+		id = TUD_thescottishamericans
+		icon = GFX_goal_generic_navy_battleship
+		x = 15
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_tensionineurope
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { is_in_faction_with = ENG }
+		completion_reward = { 
+			add_timed_idea = { idea = scottish
+					days = 100 }
+			120 = {
+				add_building_construction = {
+type = radar_station
+level = 5
+instant_build = yes
+}
+				}
+				
+		}
+			
+	}
+
+	#Focus for Air Doctrine
+	focus = {
+		id = TUD_airdoctrine
+		icon = GFX_goal_generic_air_fighter2
+		x = 25
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_airrearmament }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 3
+				uses = 1
+				category = air_doctrine }
+			}
+	}
+
+	#Focus for Anti-Submarine Warfare
+	focus = {
+		id = TUD_antisubmarinewarfare
+		icon = GFX_goal_generic_navy_anti_submarine
+		x = 22
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_navaldoctrinedevelopments 
+		}
+		prerequisite = { 
+			focus = TUD_carriercraft 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = marine_corps_unrest
+		}
+	}
+	
+	# ULTRAMARINES  
+	
+	focus = {
+		id = TUD_ultramarine
+		icon = GFX_goal_generic_navy_battleship
+		x = 22
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_antisubmarinewarfare
+			}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+			army_experience = 100
+			hidden_effect = {
+				load_oob = "space_marines_tudor" }
+			custom_effect_tooltip = "Gives a free Space Marines template."
+		}
+	}
+	
+	#Focus for Doom Stack of Doom
+	focus = {
+		id = TUD_DOOM
+		icon = GFX_focus_wonderweapons
+		x = 23
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_antisubmarinewarfare
+		}
+		prerequisite = { 
+			focus = TUD_groundsupport
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 4
+				uses = 3
+				category = naval_doctrine }
+		}
+	}
+
+	#Focus for Ground Support
+	focus = {
+		id = TUD_groundsupport
+		icon = GFX_focus_usa_escort_fighters
+		x = 24
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_carriercraft 
+		}
+		prerequisite = { 
+			focus = TUD_airdoctrine 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cas_bomber }
+			}
+	}
+
+	#Focus for Across the Ocean
+	focus = {
+		id = TUD_acrosstheocean
+		icon = GFX_goal_generic_political_pressure
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_emeraldianalliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = extend_to_the_old_world2 }
+	}
+
+	#Focus for Topple Monarchies
+	focus = {
+		id = TUD_topplemonarchies
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 3
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_manifestdestiny }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ENG
+}
+create_wargoal = {
+    type = puppet_wargoal_focus
+    target = POL
+}
+}
+	}
+
+	#Focus for Extend to the Old World
+	focus = {
+		id = TUD_extendtotheoldworld
+		icon = GFX_goal_generic_position_armies
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_manifestdestiny }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = extend_to_the_old_world
+			}
+	}
+
+	#Focus for American Empire
+	focus = {
+		id = TUD_americanempire
+		icon = GFX_goal_support_fascism
+		x = 5
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		
+		prerequisite = { 
+			focus = TUD_topplemonarchies 
+		}
+		prerequisite = { 
+			focus = TUD_extendtotheoldworld 
+		}
+		ai_will_do = {
+			factor = 1
+		}	
+		completion_reward = {
+			create_wargoal = {
+				target = USA
+				type = annex_everything }
+			swap_ideas = { remove_idea = manifest_destiny
+							add_idea = manifest_destiny2 } }
+	}
+
+	#Focus for East Asian Expansion
+	focus = {
+		id = TUD_eastasianexpansion
+		icon = GFX_goal_generic_position_armies
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_extendtotheoldworld 
+			focus = TUD_crushthewesternalliance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+    type = puppet_wargoal_focus
+    target = JAP
+}
+create_wargoal = {
+    type = puppet_wargoal_focus
+    target = CHI
+}
+}
+	}
+
+	#Focus for Victory Gardens
+	focus = {
+		id = TUD_victorygardens
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 19
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_noninterventionismineurope }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = victory_gardens } 
+	}
+
+	#Focus for Economic Mobilization
+	focus = {
+		id = TUD_economicmobilization
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		available = { threat > 0.15 }
+		continue_if_invalid = yes
+		prerequisite = { focus = TUD_toastereconomy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			808 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}}
+809 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}}
+		
+	} }
+
+	#Focus for The Arms Race
+	focus = {
+		id = TUD_thearmsrace
+		icon = GFX_goal_generic_small_arms
+		x = 2
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_trytospiketension }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_strategic_bomber
+		}
+	} }
+
+	#Focus for Try to Spike Tension
+	focus = {
+		id = TUD_trytospiketension
+		icon = GFX_goal_generic_dangerous_deal
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_toastereconomy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = tension_office
+		}
+	}
+
+	#Focus for Infiltrate Foreign Systems
+	focus = {
+		id = TUD_infiltrateforeignsystems
+		icon = GFX_focus_usa_escort_fighters
+		x = 14
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_lookaroundtheworld }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = infiltration_office
+		}
+	}
+
+	#Focus for Toaster Economy
+	focus = {
+		id = TUD_toastereconomy
+		icon = GFX_goal_generic_consumer_goods
+		x = 6
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = toaster_economy
+		}
+	}
+
+	#Focus for Relations Office
+	focus = {
+		id = TUD_relationsoffice
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_foreignwaroffice }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = relations_office
+		}
+	}
+
+	#Focus for Fridays are Closed
+	focus = {
+		id = TUD_fridaysareclosed
+		icon = GFX_focus_rom_parties_end
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_idea = tension_office }
+		prerequisite = { focus = TUD_relationsoffice }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = friday_guests
+							add_idea = fridays_closed } }
+	}
+	
+	#Focus for Senator Healthcare 
+	focus = {
+		id = TUD_senatorhealthcare
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_fridaysareclosed }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = senator_healthcare } 
+	}
+
+	#Focus for Long Island Strategy
+	focus = {
+		id = TUD_longislandstrategy
+		icon = GFX_goal_generic_small_arms
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_foreignwaroffice }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = land_doctrine
+			}
+		}
+	}
+
+	#Focus for Say Hi to the Roosevelt Administration
+	focus = {
+		id = TUD_sayhitotherooseveltadministration
+		icon = GFX_goal_support_democracy
+		x = 20
+		y = 3
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_relationsoffice }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			USA = { add_opinion_modifier = { target = TUD
+modifier = large_increase } }
+add_opinion_modifier = { target = USA
+modifier = large_increase }
+	 } }
+
+	#Focus for Civilian Expansion I
+	focus = {
+		id = TUD_civilianexpansioni
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 8
+		y = 2
+		cost = 10
+		available = { threat > 0.25 }
+		available_if_capitulated = yes
+		continue_if_invalid = yes
+		prerequisite = { focus = TUD_economicmobilization }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			360 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+807 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = industrial_complex
+level = 3
+instant_build = yes
+}}
+}
+	}
+
+	#Focus for Coups in South America
+	focus = {
+		id = TUD_coupsinsouthamerica
+		icon = GFX_goal_generic_major_war
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_updateneighbourstrategy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ARG = { start_civil_war = {
+    ideology = democratic
+	}
+	} 
+	VEN = { start_civil_war = {
+    ideology = democratic
+	}
+	} } }
+
+	#Focus for Infantry and Support
+	focus = {
+		id = TUD_infantryandsupport
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_thearmsrace }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = infantry_weapons
+			}
+		}
+	}
+
+	#Focus for Air Rearmament
+	focus = {
+		id = TUD_airrearmament
+		icon = GFX_goal_generic_air_fighter2
+		x = 24
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_longislandstrategy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = air_doctrine }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_air }
+	} }
+
+	#Focus for Expand the Dockyards
+	focus = {
+		id = TUD_expandthedockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 22
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_longislandstrategy }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			833 = {add_extra_state_shared_building_slots = 3
+add_building_construction = {
+type = dockyard
+level = 3
+instant_build = yes
+}}
+809 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = dockyard
+level = 2
+instant_build = yes
+}}
+}
+	}
+
+	#Focus for Joint Planning Board
+	focus = {
+		id = TUD_jointplanningboard
+		icon = GFX_goal_generic_production2
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_moveclosertotheus }
+		prerequisite = { focus = TUD_senatorhealthcare }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = fridays_closed
+							add_idea = fridays_closed1 } }
+	}
+
+	#Focus for Carrier Craft
+	focus = {
+		id = TUD_carriercraft
+		icon = GFX_goal_generic_navy_carrier
+		x = 23
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_expandthedockyards 
+			focus = TUD_airrearmament 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cv_tech
+			}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = naval_air
+			}
+		}
+	}
+
+	#Focus for Speak Out Again Colonization
+	focus = {
+		id = TUD_speakoutagaincolonization
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_ultimatumtocuba }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ENG = {
+add_opinion_modifier = { target = TUD
+modifier = large_decrease }
+}
+FRA = {
+add_opinion_modifier = { target = TUD 
+modifier = large_decrease }
+}
+}
+	}
+
+	#Focus for Break Relations with the West
+	focus = {
+		id = TUD_breakrelationswiththewest
+		icon = GFX_goal_generic_position_armies
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_expansionism 
+		}
+		prerequisite = { 
+			focus = TUD_relationswithemeraldia 
+		}
+		mutually_exclusive = { focus = TUD_thegiantwakes }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ENG = { add_opinion_modifier = { target = TUD
+modifier = large_decrease } }
+FRA = { add_opinion_modifier = { target = TUD
+modifier = large_decrease } }
+GER = { add_opinion_modifier = { target = TUD
+modifier = large_decrease } } }
+	}
+
+	#Focus for The Giant Wakes
+	focus = {
+		id = TUD_thegiantwakes
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 15
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		available = { threat > 0.5 }
+		prerequisite = { focus = TUD_bastionofdemocracy }
+		mutually_exclusive = { focus = TUD_breakrelationswiththewest }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			809 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}}
+808 = {add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes
+}}
+807 = {add_extra_state_shared_building_slots = 7
+add_building_construction = {
+type = industrial_complex
+level = 7
+instant_build = yes
+}}
+	} }
+
+	#Focus for A Free Europe
+	focus = {
+		id = TUD_afreeeurope
+		icon = GFX_goal_support_democracy
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_thegiantwakes }
+		mutually_exclusive = { focus = TUD_manifestdestiny }
+		mutually_exclusive = { 
+			focus = TUD_emeraldianalliance 
+		}
+		mutually_exclusive = { 
+			focus = TUD_theamericanalliance
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			FRA = { country_event = { id = templetonshift.59
+									hours = 8 } } }
+	}
+
+	#Focus for Emeraldian Alliance
+	focus = {
+		id = TUD_emeraldianalliance
+		icon = GFX_goal_generic_attack_allies
+		x = 12
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_breakrelationswiththewest }
+		mutually_exclusive = { focus = TUD_manifestdestiny }
+		mutually_exclusive = { focus = TUD_afreeeurope }
+		mutually_exclusive = { focus = TUD_theamericanalliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			POL = { add_to_faction = TUD } }
+	}
+
+	#Focus for Tension in Europe
+	focus = {
+		id = TUD_tensionineurope
+		icon = GFX_goal_generic_defence
+		x = 17
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = TUD_afreeeurope 
+			focus = TUD_theamericanalliance 
+		}
+		mutually_exclusive = { focus = TUD_noninterventionismineurope }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+		}
+	}
+
+	#Focus for Non-Interventionism in Europe
+	focus = {
+		id = TUD_noninterventionismineurope
+		icon = GFX_goal_generic_neutrality_focus
+		x = 19
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_theamericanalliance }
+		mutually_exclusive = { focus = TUD_tensionineurope }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			diplomatic_relation = {
+    country = GER
+    relation = non_aggression_pact
+    active = yes
+}
+diplomatic_relation = {
+    country = POL
+    relation = non_aggression_pact
+    active = yes
+}
+diplomatic_relation = {
+    country = ICE
+    relation = non_aggression_pact
+    active = yes
+}
+diplomatic_relation = {
+    country = SWE
+    relation = non_aggression_pact
+    active = yes
+}
+diplomatic_relation = {
+    country = FRA
+    relation = non_aggression_pact
+    active = yes
+}
+	} }
+
+	#Focus for Crush the Western Alliance
+	focus = {
+		id = TUD_crushthewesternalliance
+		icon = GFX_goal_demand_sudetenland
+		x = 11
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_emeraldianalliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+    type = puppet_wargoal_focus
+    target = ENG
+}
+create_wargoal = {
+    type = puppet_wargoal_focus
+    target = FRA
+}
+}
+	}
+
+	#Focus for Landing Craft
+	focus = {
+		id = TUD_landingcraft
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 17
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = TUD_tensionineurope }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = naval_equipment }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = marine_tech } }
+	}
+
+#End of focuses 
+ }

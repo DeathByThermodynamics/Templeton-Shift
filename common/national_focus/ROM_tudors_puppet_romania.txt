@@ -1,0 +1,2572 @@
+focus_tree = {
+	id = tudors_puppet_romania
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ROM
+		}
+	}
+	continuous_focus_position = { x = 1000 y = 1650 }
+	#Focus for The Uwunion
+	focus = {
+		id = ROM_the_uwunion
+		icon = GFX_ROM_the_uwunion-23737
+		x = 15
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_uwuistcommunism 
+		}
+		prerequisite = { 
+			focus = ROM_raudistcommunism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_cosmetic_tag = ROM_uwunion
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Expand the Union
+	focus = {
+		id = ROM_expand_the_union
+		icon = GFX_goal_generic_position_armies
+		x = 18
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_the_union_fixed 
+		}
+		prerequisite = { 
+			focus = ROM_influence_the_soviets 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = perpetual_warfare }
+	}
+
+	#Focus for UWU Supremacy
+	focus = {
+		id = ROM_uwu_supremacy
+		icon = GFX_goal_generic_political_pressure
+		x = 15
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_the_uwunion }
+		ai_will_do = {
+			factor = 1
+		}
+			completion_reward = {
+				every_country = {
+					limit = { has_country_flag = no_uwu } 
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = puppet_wargoal_focus
+						}
+					}
+				}
+			}
+
+}
+
+	#Focus for Sootist SimpCity
+	focus = {
+		id = ROM_sootist_simpcity
+		icon = GFX_focus_generic_industry_3
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_simp_divisions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		hidden_effect = {
+			add_victory_points = {
+	province = 11639
+	value = 10
+}
+set_province_name = {
+    id = 11639
+    name = "Simpcity"
+}
+} 
+custom_effect_tooltip = simpcityfounded
+84 = {
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+add_building_construction = {
+    type = infrastructure
+    level = 5
+    instant_build = yes
+}
+}
+
+}
+		
+	}
+
+	#Focus for Ally the Scapa Flow Empire
+	focus = {
+		id = ROM_ally_the_scapa_flow_empire
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 26
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudor_divisions }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			country_exists = SPF
+			is_faction_leader = yes }
+		completion_reward = {
+			SPF = { country_event = generic.5 }
+		}
+	}
+
+	#Focus for Invite the Uva-Xavani
+	focus = {
+		id = ROM_invite_the_uvaxavani
+		icon = GFX_goal_generic_territory_or_war
+		x = 24
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudor_divisions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = { load_oob = "ROM_uva_xavani" }
+			custom_effect_tooltip = uva_divisions_tooltip
+		}
+	}
+
+	#Focus for Air Advances
+	focus = {
+		id = ROM_air_advances
+		icon = GFX_goal_generic_army_doctrines
+		x = 30
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_fighter_superiority 
+		}
+		prerequisite = { 
+			focus = ROM_thembolan_air_research 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = air_doctrine
+				bonus = 2
+				uses = 3
+			}
+		}
+	}
+
+	#Focus for Thembolan Air Research
+	focus = {
+		id = ROM_thembolan_air_research
+		icon = GFX_goal_generic_air_production
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorian_strategic_bombers }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {	
+			add_ideas = thembolon_research
+		}
+	}
+
+	#Focus for Fighter Superiority
+	focus = {
+		id = ROM_fighter_superiority
+		icon = GFX_goal_generic_air_fighter2
+		x = 29
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorian_strategic_bombers }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = light_fighter
+				bonus = 2
+				uses = 1
+			}
+		}
+	}
+
+	#Focus for Demand Concessions to the State
+	focus = {
+		id = ROM_demand_concessions_to_the_state
+		icon = GFX_goal_support_fascism
+		x = 22
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudor_divisions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 300
+		}
+		
+	}
+
+	#Focus for Tudor Divisions
+	focus = {
+		id = ROM_tudor_divisions
+		icon = GFX_goal_generic_political_pressure
+		x = 24
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_fight_with_more_than_sticks }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = { load_oob = "ROM_tudor_divisions" }
+			custom_effect_tooltip = tudor_divisions_tooltip
+		}
+	}
+
+	#Focus for Naval Advances
+	focus = {
+		id = ROM_naval_advances
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 26
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_fund_the_radumarines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = naval_doctrine
+				bonus = 2
+				uses = 3
+			}
+		}
+	}
+
+	#Focus for Submarines
+	focus = {
+		id = ROM_submarines
+		icon = GFX_goal_generic_navy_submarine
+		x = 27
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_fund_the_radumarines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = ss_tech
+				uses = 2
+				bonus = 1
+			}
+		}
+	}
+
+	#Focus for Join the Allies
+	focus = {
+		id = ROM_join_the_allies
+		icon = GFX_goal_support_democracy
+		x = 26
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_seek_a_balkan_alliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			FRA = { give_guarantee = ROM } }
+	}
+
+	#Focus for Revive Spaceteam
+	focus = {
+		id = ROM_revive_spaceteam
+		icon = GFX_focus_rocketry
+		x = 9
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorreich_empire }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Desporeich
+	focus = {
+		id = ROM_desporeich
+		icon = GFX_focus_usa_voter_registration_act
+		x = 6
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_campaign_for_the_senate 
+			focus = ROM_wilbur_and_the_world 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_core_of = ROM } }
+	}
+
+	#Focus for Bureau of AntiStal
+	focus = {
+		id = ROM_bureau_of_antistal
+		icon = GFX_goal_generic_wolf_pack
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_stability_council }
+		mutually_exclusive = { focus = ROM_stal }
+		available = { has_global_flag = empower_the_party_done }
+		ai_will_do = {
+			factor = 100
+			modifier = {
+				factor = 0
+				has_completed_focus = ROM_await_radus_return 
+			}
+		}
+		completion_reward = {
+			add_stability = 0.1
+			add_war_support = 0.1
+			remove_ideas = ROM_radu_faction }
+	}
+
+	#Focus for Campaign for the Senate
+	focus = {
+		id = ROM_campaign_for_the_senate
+		icon = GFX_goal_generic_propaganda
+		x = 10
+		y = 11
+		cost = 15
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_revive_spaceteam 
+		}
+		prerequisite = { 
+			focus = ROM_war_on_the_major_players 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = preparing_for_desporeich
+							days = 150 } 
+						}
+	}
+
+	#Focus for Global Defense
+	focus = {
+		id = ROM_global_defense
+		icon = GFX_goal_generic_occupy_states_coastal
+		x = 31
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_scottish_american_division 
+		}
+		prerequisite = { 
+			focus = ROM_intervene_against_kenu 
+		}
+		prerequisite = { 
+			focus = ROM_intervene_against_the_emerald_kingdom 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_rule = { can_only_justify_war_on_threat_country = no 
+						can_declare_war_without_wargoal_when_in_war = yes }
+		}
+	}
+
+	#Focus for Scottish American Division
+	focus = {
+		id = ROM_scottish_american_division
+		icon = GFX_goal_generic_radar
+		x = 29
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_seek_a_balkan_alliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_technology = {
+				basic_medium_tank = 1
+			}
+			custom_effect_tooltip = scottish_american_division
+			hidden_effect = { load_oob = "ROM_scottish_americans" }
+		}
+	}
+
+	#Focus for Intervene Against Kenu
+	focus = {
+		id = ROM_intervene_against_kenu
+		icon = GFX_goal_generic_major_war
+		x = 30
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_prepare_for_interventionism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = ITA
+				type = puppet_wargoal_focus 
+			}
+		}
+	}
+
+	#Focus for Intervene Against the Emerald Kingdom
+	focus = {
+		id = ROM_intervene_against_the_emerald_kingdom
+		icon = GFX_goal_generic_major_war
+		x = 32
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_prepare_for_interventionism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = POL 
+				type = puppet_wargoal_focus 
+			}
+		}
+	}
+
+	#Focus for Prepare for Interventionism
+	focus = {
+		id = ROM_prepare_for_interventionism
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 31
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_seek_a_balkan_alliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    type = arms_factory 
+    level = 4
+    instant_build = yes
+}
+}
+random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = arms_factory 
+    level = 3
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Legislative Assembly
+	focus = {
+		id = ROM_legislative_assembly
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 28
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_seek_a_balkan_alliance }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_legislative_assembly }
+	}
+
+	#Focus for Broken Funding
+	focus = {
+		id = ROM_broken_funding
+		icon = GFX_focus_renounce_the_treaty_of_trianon
+		x = 13
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorreich_empire }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    type = arms_factory 
+    level = 5
+    instant_build = yes
+}
+}
+random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = arms_factory 
+    level = 3
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Independence for Wilbur
+	focus = {
+		id = ROM_independence_for_wilbur
+		icon = GFX_focus_spr_torchbearers_of_tomorrow
+		x = 2
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_ideological_fanaticism }
+		mutually_exclusive = { focus = ROM_seek_defense_with_the_tudor_states }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+				
+retire_ideology_leader = neutrality
+custom_effect_tooltip = wilbur_is_leader
+		}
+	}
+
+	#Focus for The Union Fixed
+	focus = {
+		id = ROM_the_union_fixed
+		icon = GFX_focus_prc_agrarian_socialism
+		x = 22
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_funding_for_the_orchestra 
+		}
+		prerequisite = { 
+			focus = ROM_coastland_for_the_swim_team 
+		}
+		prerequisite = { 
+			focus = ROM_no_more_mining_disasters 
+		}
+		prerequisite = { 
+			focus = ROM_encourage_good_anakinism 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_owned_state = {
+				add_core_of = ROM } }
+	}
+
+	#Focus for Go After Slabvia
+	focus = {
+		id = ROM_go_after_slabvia
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 8
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_all_hail_romania 
+		}
+		prerequisite = { 
+			focus = ROM_space_slug_conscription 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_named_threat = { 
+				threat = 3 
+				name = "Go After Slabvia"
+			}
+			create_wargoal = {
+				target = TUR 
+				type = puppet_wargoal_focus 
+			}
+		}
+				
+	}
+
+	#Focus for Wilbur and the World
+	focus = {
+		id = ROM_wilbur_and_the_world
+		icon = GFX_focus_wonderweapons
+		x = 2
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_fate_of_yugoslavia 
+		}
+		prerequisite = { 
+			focus = ROM_balkan_dominance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			
+			add_ideas = ROM_wilbur_and_world
+		}
+	}
+
+	#Focus for Embrace the UWU
+	focus = {
+		id = ROM_embrace_the_uwu
+		icon = GFX_ROM_embrace_the_uwu-23737
+		x = 14
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_internalized_state_politics }
+		mutually_exclusive = { focus = ROM_ban_uwu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_UWU_embraced }
+	}
+
+	#Focus for Internalized State Politics
+	focus = {
+		id = ROM_internalized_state_politics
+		icon = GFX_goal_tripartite_pact
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_go_with_tudor 
+			focus = ROM_await_radus_return 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_stability = 0.05
+		}
+	}
+
+	#Focus for Invite Javra Ta
+	focus = {
+		id = ROM_invite_javra_ta
+		icon = GFX_ROM_invite_javra_ta-23758
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_await_radus_return }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_civil_war = no 
+		}
+		completion_reward = {
+			add_ideas = ROM_javrata
+		}
+	}
+
+	#Focus for Raudist-Communism
+	focus = {
+		id = ROM_raudistcommunism
+		icon = GFX_focus_YUG_pan_slavic_congress
+		x = 20
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_establish_the_commune_of_romania 
+		}
+		prerequisite = { 
+			focus = ROM_sootist_simpcity 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_raudist_communism
+		}
+	}
+
+	#Focus for The Hunt for Netherite
+	focus = {
+		id = ROM_the_hunt_for_netherite
+		icon = GFX_ROM_the_hunt_for_netherite-23778
+		x = 17
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_end_the_hiatus_on_historicals }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = hunt_for_netherite
+		}
+	}
+
+	#Focus for Establish the Commune of Romania
+	focus = {
+		id = ROM_establish_the_commune_of_romania
+		icon = GFX_focus_rom_preserve_romania
+		x = 18
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_senor_raud 
+			focus = ROM_javra_ta_at_the_helm 
+		}
+		mutually_exclusive = { 
+			focus = ROM_a_war_for_wilbur 
+		}
+		mutually_exclusive = { 
+			focus = ROM_cabinet_restoration 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = immense_unrest
+			add_war_support = 0.1
+		}
+	}
+
+	#Focus for Establish the Reichswehrmacht
+	focus = {
+		id = ROM_establish_the_reichswehrmacht
+		icon = GFX_goal_generic_small_arms
+		x = 26
+		y = 0
+		cost = 7
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = land_doctrine
+				uses = 3
+				bonus = 1
+			}
+		}
+	}
+
+	#Focus for Ideological Fanaticism
+	focus = {
+		id = ROM_ideological_fanaticism
+		icon = GFX_goal_generic_demand_territory
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_empower_the_church_of_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ideological_fanaticism_focus }
+	}
+
+	#Focus for End the Hiatus on Historicals
+	focus = {
+		id = ROM_end_the_hiatus_on_historicals
+		icon = GFX_goal_generic_propaganda
+		x = 16
+		y = 3
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_take_advantage_of_political_turmoil }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_manpower = -50000
+			add_popularity = {
+				ideology = communism 
+				popularity = 0.075
+			}
+		}
+	} 
+
+	#Focus for COURA
+	focus = {
+		id = ROM_coura
+		icon = GFX_focus_generic_license_production
+		x = 15
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_end_the_hiatus_on_historicals }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = coura
+		}
+	}
+
+	#Focus for Tudorian Truth
+	focus = {
+		id = ROM_tudorian_truth
+		icon = GFX_goal_generic_propaganda
+		x = 4
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_arrest_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = tudorian_truth
+		}
+	}
+
+	#Focus for Lift the Simp Ban
+	focus = {
+		id = ROM_lift_the_simp_ban
+		icon = GFX_focus_generic_concessions
+		x = 19
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_invite_javra_ta }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_popularity = {
+			ideology = communism
+			popularity = 0.15
+				}
+			remove_ideas = ROM_simpban 
+			
+			set_rule = {
+				can_generate_female_aces = yes
+			}
+			}
+	}
+
+	#Focus for Local Tudor Party Officials
+	focus = {
+		id = ROM_local_tudor_party_officials
+		icon = GFX_goal_generic_consumer_goods
+		x = 2
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_tud_officials
+		}
+	}
+
+	#Focus for TudorWaffe
+	focus = {
+		id = ROM_tudorwaffe
+		icon = GFX_goal_generic_occupy_start_war
+		x = 8
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_go_with_tudor }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 4
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	#Focus for Senor Raud
+	focus = {
+		id = ROM_senor_raud
+		icon = GFX_ROM_senor_raud
+		x = 17
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_stal }
+		mutually_exclusive = { 
+			focus = ROM_javra_ta_at_the_helm 
+		}
+		mutually_exclusive = { 
+			focus = ROM_take_advantage_of_the_stal_crisis 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_civil_war = no 
+			has_global_flag = albert_radu_missing
+		}
+		completion_reward = {
+			retire_ideology_leader = communism 
+			news_event = templetonshift.139
+		}
+	}
+
+	#Focus for Javra Ta at the Helm
+	focus = {
+		id = ROM_javra_ta_at_the_helm
+		icon = GFX_goal_generic_national_unity
+		x = 19
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_stal }
+		mutually_exclusive = { 
+			focus = ROM_senor_raud 
+		}
+		available = {
+			has_civil_war = no 
+		}
+		mutually_exclusive = { 
+			focus = ROM_take_advantage_of_the_stal_crisis 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_country_leader = {
+    name = "Miruna"
+    ruling_only = yes
+} }
+completion_reward = {
+	add_country_leader_trait = leader_of_rev
+	} }
+
+	#Focus for The Tootanian Threat
+	focus = {
+		id = ROM_the_tootanian_threat
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 13
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_stability_council 
+			focus = ROM_coura 
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = BUL
+			}
+			add_state_claim = 211
+			add_state_claim = 48
+			add_state_claim = 212
+			add_state_claim = 801
+			add_state_claim = 813
+		}
+	}
+
+	#Focus for Reclaim Moldavia
+	focus = {
+		id = ROM_reclaim_moldavia
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 11
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_stability_council 
+			focus = ROM_uwu_screening
+		}
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MOL 
+			}
+		}
+	}
+
+	#Focus for Rearm the TudorMacht
+	focus = {
+		id = ROM_rearm_the_tudormacht
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 22
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_establish_the_reichswehrmacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 5000
+    producer = ROM
+}}
+	}
+
+	#Focus for UWU Screening
+	focus = {
+		id = ROM_uwu_screening
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 10
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_ban_uwu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = ROM_uwu_screening 
+								days = 180 }
+		}
+	}
+
+	#Focus for Take Advantage of the STAL Crisis
+	focus = {
+		id = ROM_take_advantage_of_the_stal_crisis
+		icon = GFX_goal_support_democracy
+		x = 28
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_stal }
+		mutually_exclusive = { 
+			focus = ROM_senor_raud 
+		}
+		mutually_exclusive = { 
+			focus = ROM_javra_ta_at_the_helm 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_civil_war = no 
+		}
+		completion_reward = {
+			custom_effect_tooltip = democratic_stal
+			hidden_effect = { start_civil_war = {
+				
+				ideology = communism
+				size = 0.5
+			} }
+			set_politics = {
+				ruling_party = democratic
+				elections_allowed = yes
+			}
+		}
+	}
+
+	#Focus for STAL
+	focus = {
+		id = ROM_stal
+		icon = GFX_ROM_stal-23734
+		x = 18
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_the_hunt_for_netherite }
+		mutually_exclusive = { focus = ROM_bureau_of_antistal }
+		ai_will_do = {
+			factor = 20
+		}
+		available = { has_idea = netherite_tools
+						communism > 0.4 }
+		completion_reward = {
+			news_event = templetonshift.138
+			custom_effect_tooltip = stal_war
+			hidden_effect = { 
+				add_ideas = immense_unrest
+				start_civil_war = {
+				
+				ideology = neutrality
+				size = 0.5
+			} }
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+		}
+	}
+
+	#Focus for Empower the Church of Wilbur
+	focus = {
+		id = ROM_empower_the_church_of_wilbur
+		icon = GFX_ROM_empower_the_church_of_wilbur-23735
+		x = 2
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_ministry_of_wilbur_affairs }
+		mutually_exclusive = { focus = ROM_arrest_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = ROM_church_of_wilbur
+								days = 1080 } }
+	}
+
+	#Focus for Ministry of Vibing
+	focus = {
+		id = ROM_ministry_of_vibing
+		icon = GFX_goal_generic_production2
+		x = 0
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_ministry_of_vibing 
+		}
+	}
+
+	#Focus for Ministry of Wilbur Affairs
+	focus = {
+		id = ROM_ministry_of_wilbur_affairs
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 1
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = available_political_advisor
+			show_ideas_tooltip = idea_wilbur_soot
+		}
+	}
+
+	#Focus for Seek Defense with the Tudor States
+	focus = {
+		id = ROM_seek_defense_with_the_tudor_states
+		icon = GFX_ROM_seek_defense_with_the_tudor_states-23761
+		x = 6
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_empower_the_party }
+		mutually_exclusive = { focus = ROM_the_new_tudor_reich }
+		mutually_exclusive = { focus = ROM_independence_for_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			TUD = { give_guarantee = ROM }
+			TUD = { add_opinion_modifier = {
+				target = ROM
+				modifier = huge_increase
+			} }
+				
+		}
+	}
+
+	#Focus for Go with Tudor
+	focus = {
+		id = ROM_go_with_tudor
+		icon = GFX_ROM_go_with_tudor-23761
+		x = 8
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_draft_new_legislation }
+		mutually_exclusive = { focus = ROM_await_radus_return }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_opinion_modifier = {
+				target = TUD
+				modifier = huge_increase
+			}
+			TUD = { add_opinion_modifier = {
+				target = ROM 
+				modifier = huge_increase } }
+			add_popularity = {
+				ideology = communism
+				popularity = -0.2
+			}
+		}
+	}
+
+	#Focus for Await Radu's Return
+	focus = {
+		id = ROM_await_radus_return
+		icon = GFX_ROM_await_radu
+		x = 16
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_draft_new_legislation }
+		mutually_exclusive = { focus = ROM_go_with_tudor }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_timed_idea = {
+				idea = ROM_await_radu
+				days = 1080
+			}
+		}
+	}
+
+	#Focus for Arrest Wilbur
+	focus = {
+		id = ROM_arrest_wilbur
+		icon = GFX_ROM_arrest_wilbur-23732
+		x = 4
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_reichstis }
+		mutually_exclusive = { focus = ROM_empower_the_church_of_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_political_power = 100
+			add_timed_idea = { idea = ROM_sootist_protests
+								days = 80 }
+		}
+	}
+
+	#Focus for Civilian Industries
+	focus = {
+		id = ROM_civilian_industries
+		icon = GFX_goal_generic_production
+		x = 1
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for The New Tudor Reich
+	focus = {
+		id = ROM_the_new_tudor_reich
+		icon = GFX_focus_rom_preserve_romania
+		x = 8
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_strengthen_the_emeraldian_border }
+		mutually_exclusive = { focus = ROM_seek_defense_with_the_tudor_states }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_rule = {
+    can_create_factions = yes
+}
+create_faction = "New Tudor Reich"
+}
+	}
+
+	#Focus for Simp Divisions
+	focus = {
+		id = ROM_simp_divisions
+		icon = GFX_focus_generic_military_mission
+		x = 20
+		y = 4   
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_lift_the_simp_ban 
+		}
+		prerequisite = { 
+			focus = ROM_fight_with_more_than_sticks 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			hidden_effect = { load_oob = "ROM_simp_divisions" }
+			custom_effect_tooltip = simp_divisions_tooltip
+		}
+	}
+	
+
+	#Focus for Draft New Legislation
+	focus = {
+		id = ROM_draft_new_legislation
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 12
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {	
+			add_political_power = 200
+		}
+	}
+
+
+	#Focus for Waffen-TIS Corps
+	focus = {
+		id = ROM_waffentis_corps
+		icon = GFX_goal_generic_army_tanks
+		x = 23
+		y = 3
+		cost = 12
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_rearm_the_tudormacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = cat_medium_armor
+				uses = 2
+				bonus = 0.85
+			}
+		}
+	}
+
+	#Focus for Fight with More than Sticks
+	focus = {
+		id = ROM_fight_with_more_than_sticks
+		icon = GFX_goal_generic_army_artillery2
+		x = 21
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_rearm_the_tudormacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 2
+				bonus = 0.75
+				category = infantry_tech
+			}
+		}
+				
+	}
+
+	#Focus for Motorization
+	focus = {
+		id = ROM_motorization
+		icon = GFX_goal_generic_army_motorized
+		x = 22
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_rearm_the_tudormacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1
+				category = motorized_equipment
+			}
+		}
+	}
+
+	#Focus for Fund the Radumarines
+	focus = {
+		id = ROM_fund_the_radumarines
+		icon = GFX_goal_generic_navy_battleship
+		x = 26
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_establish_the_reichswehrmacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM 
+							is_coastal= yes }
+				add_extra_state_shared_building_slots = 4
+				add_building_construction = {
+    type = dockyard
+    level = 4
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Reichs-TIS
+	focus = {
+		id = ROM_reichstis
+		icon = GFX_goal_generic_secret_weapon
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_go_with_tudor }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_TIS }
+	}
+
+	#Focus for Ban UWU
+	focus = {
+		id = ROM_ban_uwu
+		icon = GFX_ROM_ban_uwu-23736
+		x = 10
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_internalized_state_politics }
+		mutually_exclusive = { focus = ROM_embrace_the_uwu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_UWU_banned }
+	}
+
+	#Focus for Stabilize Subspace Ruptures
+	focus = {
+		id = ROM_stabilize_subspace_ruptures
+		icon = GFX_goal_unknown ##Unfortunately, the tool could not find your icon in the game's files
+		x = 12
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_reclaim_moldavia 
+			focus = ROM_the_tootanian_threat 
+		}
+		ai_will_do = {
+			factor = 20
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = SLO
+				type = annex_everything 
+			}
+		}
+	}
+
+	#Focus for Join the Tudor States
+	focus = {
+		id = ROM_join_the_tudor_states
+		icon = GFX_goal_generic_major_alliance
+		x = 6
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_equipment_from_stardew_valley }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction = "Tudor States"
+			TUD = { country_event = generic.5 }
+		}
+	}
+
+	#Focus for UWUist-Communism
+	focus = {
+		id = ROM_uwuistcommunism
+		icon = GFX_focus_usa_voter_registration_act
+		x = 16
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_a_cabinet_of_uwus 
+		}
+		prerequisite = { 
+			focus = ROM_establish_the_commune_of_romania 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_uwuist_communism }
+	}
+
+	#Focus for No More Mining Disasters
+	focus = {
+		id = ROM_no_more_mining_disasters
+		icon = GFX_goal_generic_oil_refinery
+		x = 23
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_raudistcommunism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			81 = {
+				add_resource = {
+    type = oil
+    amount = 25
+} }
+76 = {
+add_resource = {
+    type = oil
+    amount = 26
+} }
+	} }
+
+	#Focus for Tudorreich Empire
+	focus = {
+		id = ROM_tudorreich_empire
+		icon = GFX_goal_support_fascism
+		x = 10
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_stabilize_subspace_ruptures 
+		}
+		prerequisite = { 
+			focus = ROM_go_after_slabvia 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { is_faction_leader = yes }
+		completion_reward = {
+			GRE = { country_event = generic.5 }
+			YUG = { country_event = generic.5 }
+			ALB = { country_event = generic.5 }
+			BOS = { country_event = generic.5 }
+			ARM = { country_event = generic.5 }
+		}
+	}
+
+	#Focus for All Hail Romania
+	focus = {
+		id = ROM_all_hail_romania
+		icon = GFX_goal_anschluss
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_seek_defense_with_the_tudor_states 
+			focus = ROM_the_new_tudor_reich 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = all_hail_romania }
+	}
+
+	#Focus for Cabinet Restoration
+	focus = {
+		id = ROM_cabinet_restoration
+		icon = GFX_ROM_cabinet_restoration-50761
+		x = 28
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_take_advantage_of_the_stal_crisis }
+		mutually_exclusive = { focus = ROM_establish_the_commune_of_romania }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			has_civil_war = no 
+		}
+		completion_reward = {
+			remove_ideas = immense_unrest 
+		}
+	}
+
+	#Focus for Wilbur Churches
+	focus = {
+		id = ROM_wilbur_churches
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 1
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_independence_for_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+add_extra_state_shared_building_slots = 2 }
+random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+add_extra_state_shared_building_slots = 2 }
+}
+	}
+
+	#Focus for Equipment from Stardew Valley
+	focus = {
+		id = ROM_equipment_from_stardew_valley
+		icon = GFX_goal_tripartite_pact
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_seek_defense_with_the_tudor_states }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			TUD = { country_event = { id = templetonshift.123
+										hours = 5
+									}
+			}
+		}
+	}
+
+	#Focus for Invite the Missionaries of Wilbur
+	focus = {
+		id = ROM_invite_the_missionaries_of_wilbur
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 3
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_independence_for_wilbur }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_wilbur_missionaries }
+	}
+
+	#Focus for Take Advantage of Political Turmoil
+	focus = {
+		id = ROM_take_advantage_of_political_turmoil
+		icon = GFX_goal_generic_political_pressure
+		x = 16
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_await_radus_return }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_popularity = {
+				popularity = 0.1
+				ideology = communism
+			}
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Stability Council
+	focus = {
+		id = ROM_stability_council
+		icon = GFX_goal_generic_national_unity
+		x = 12
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_embrace_the_uwu 
+			focus = ROM_ban_uwu 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Balkan Intelligence
+	focus = {
+		id = ROM_balkan_intelligence
+		icon = GFX_goal_anschluss
+		x = 6
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_reichstis }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = tudor_intel 
+		}
+	}
+
+	#Focus for Empower the Reichsfuhrer
+	focus = {
+		id = ROM_empower_the_reichsfuhrer
+		icon = GFX_goal_generic_demand_territory
+		x = 8
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorwaffe }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_country_leader_trait = reichsfuhrer
+		}
+	}
+
+	#Focus for Empower the Party
+	focus = {
+		id = ROM_empower_the_party
+		icon = GFX_goal_generic_propaganda
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_balkan_intelligence 
+		}
+		prerequisite = { 
+			focus = ROM_empower_the_reichsfuhrer 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			unlock_decision_category_tooltip = ROM_empower_the_party_decisions
+			hidden_effect = {
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_capital }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_capital }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_capital }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_capital }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_capital }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_civ }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_civ }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_civ }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_civ }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_civ }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_mil }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_mil }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_mil }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_mil }
+				random_owned_state = {
+					limit = { is_core_of = ROM }
+					set_state_flag = empower_party_build_mil }
+					
+			}
+		}
+	}
+
+	#Focus for Tudorian Strategic Bombers
+	focus = {
+		id = ROM_tudorian_strategic_bombers
+		icon = GFX_goal_generic_air_bomber
+		x = 30
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_establish_the_reichswehrmacht }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 4
+				uses = 1
+				category = cat_strategic_bomber
+			}
+		}
+	}
+
+	#Focus for Strengthen the Emeraldian Border
+	focus = {
+		id = ROM_strengthen_the_emeraldian_border
+		icon = GFX_goal_generic_fortify_city
+		x = 8
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_balkan_intelligence 
+			focus = ROM_empower_the_reichsfuhrer 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			custom_effect_tooltip = secure_emeraldian_border
+			hidden_effect = {
+				if = { limit = { controls_state = 83 }
+					83 = { add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = {
+        all_provinces = yes
+        limit_to_border = yes
+    }
+} } }
+if = { limit = { controls_state = 76 }
+					76 = { add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = {
+        all_provinces = yes
+        limit_to_border = yes
+    }
+}} }
+if = { limit = { controls_state = 80 }
+					80 = { add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = {
+        all_provinces = yes
+        limit_to_border = yes
+    }
+}} }
+if = { limit = { controls_state = 766 }
+					766 = { add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = {
+        all_provinces = yes
+        limit_to_border = yes
+    }
+}} }
+if = { limit = { controls_state = 78 }
+					78 = { add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = {
+        all_provinces = yes
+        limit_to_border = yes
+    }
+}} }
+		} }
+	}
+
+	#Focus for Steal GMSTN Funds
+	focus = {
+		id = ROM_steal_gmstn_funds
+		icon = GFX_focus_usa_reestablish_the_gold_standard
+		x = 0
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_ministry_of_wilbur_affairs }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {	
+			add_offsite_building = { type = arms_factory level = 3 }
+		}
+	}
+
+	#Focus for Contain the Emerald Kingdom
+	focus = {
+		id = ROM_contain_the_emerald_kingdom
+		icon = GFX_goal_generic_military_sphere
+		x = 0
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_steal_gmstn_funds }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = topple_government
+				target = POL 
+			}
+		}
+	}
+
+	#Focus for A War for Wilbur
+	focus = {
+		id = ROM_a_war_for_wilbur
+		icon = GFX_ROM_a_war_for_wilbur-50762
+		x = 2
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_invite_the_missionaries_of_wilbur 
+		}
+		prerequisite = { 
+			focus = ROM_wilbur_churches 
+		}
+		mutually_exclusive = { focus = ROM_establish_the_commune_of_romania }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			declare_war_on = {
+    target = BUL
+    type = annex_everything
+}
+declare_war_on = {
+    target = GRE
+    type = annex_everything
+}
+every_state = {
+	limit = { is_core_of = BUL }
+	add_core_of = ROM 
+}
+			news_event = templetonshift.136
+		}
+	}
+
+	#Focus for A Cabinet of UWUs
+	focus = {
+		id = ROM_a_cabinet_of_uwus
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 14
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_embrace_the_uwu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			every_country = {
+				limit = { NOT = { tag = ROM } }
+				news_event = { id = templetonshift.133
+								hours = 4
+							}
+			}
+		}
+	}
+
+	#Focus for Encourage Good Anakinism
+	focus = {
+		id = ROM_encourage_good_anakinism
+		icon = GFX_ROM_encourage_good_anakinism-24035
+		x = 25
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_raudistcommunism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_good_anakin
+		}
+	}
+
+	#Focus for Space Slug Conscription
+	focus = {
+		id = ROM_space_slug_conscription
+		icon = GFX_goal_unknown
+		x = 9
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_the_new_tudor_reich }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ROM_space_slug_conscription }
+	}
+
+	#Focus for The Union
+	focus = {
+		id = ROM_the_union
+		icon = GFX_goal_support_communism
+		x = 20
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_raudistcommunism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_manpower = 100000
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Funding for the Orchestra
+	focus = {
+		id = ROM_funding_for_the_orchestra
+		icon = GFX_ROM_funding_for_the_orchestra-24033
+		x = 19
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_the_union }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory 
+    level = 2
+    instant_build = yes
+}
+}
+random_owned_state = {
+				limit = { is_core_of = ROM }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = arms_factory 
+    level = 3
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Coastland for the Swim Team
+	focus = {
+		id = ROM_coastland_for_the_swim_team
+		icon = GFX_ROM_coastland_for_the_swim_team-24034
+		x = 21
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_the_union }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = BUL
+				type = annex_everything }
+			create_wargoal = {
+				target = ARM
+				type = annex_everything }
+			create_wargoal = {
+				target = TUR
+				type = annex_everything }
+			every_state = {
+				limit = { is_coastal = yes
+							OR = { is_owned_by = TUR 
+									is_owned_by = BUL 
+									is_owned_by = ARM }
+								}
+				add_claim_by = ROM 
+			}
+	} }
+
+	#Focus for Tackle the Stock Market Crash I
+	focus = {
+		id = ROM_tackle_the_stock_market_crash_i
+		icon = GFX_focus_generic_self_management
+		x = 4
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_civilian_industries }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = {
+    remove_idea = struck_by_black_monday
+    add_idea = struck_by_black_monday1
+}
+}
+	}
+
+	#Focus for Tackle the Stock Market Crash II
+	focus = {
+		id = ROM_tackle_the_stock_market_crash_ii
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 4
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tackle_the_stock_market_crash_i }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			remove_ideas = struck_by_black_monday1 }
+	}
+
+	#Focus for Balkan Dominance
+	focus = {
+		id = ROM_balkan_dominance
+		icon = GFX_goal_generic_occupy_states_ongoing_war
+		x = 3
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_lead_the_tudorreich_struggle 
+			focus = ROM_a_war_for_wilbur 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {	
+				target = YUG 
+				type = puppet_wargoal_focus 
+			}
+			create_wargoal = {	
+				target = ALB
+				type = puppet_wargoal_focus 
+			}
+			every_state = {
+				limit = { OR = { is_owned_by = YUG 
+									is_owned_by = ALB } }
+				add_claim_by = ROM 
+			}
+		}
+	}
+
+	#Focus for Join Emeraldia
+	focus = {
+		id = ROM_join_emeraldia
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 2
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_a_war_for_wilbur }
+		mutually_exclusive = { focus = ROM_sootist_independence }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			POL = { country_event = generic.2 } }
+	}
+
+	#Focus for Fate of Yugoslavia
+	focus = {
+		id = ROM_fate_of_yugoslavia
+		icon = GFX_goal_generic_attack_allies
+		x = 1
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_join_emeraldia 
+			focus = ROM_sootist_independence 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = YUG 
+				type = annex_everything 
+			}
+			every_state = {
+				limit = { is_owned_by = YUG }
+				add_claim_by = ROM 
+			}
+			
+		}
+	}
+
+	#Focus for Lead the Tudorreich Struggle
+	focus = {
+		id = ROM_lead_the_tudorreich_struggle
+		icon = GFX_goal_generic_political_pressure
+		x = 5
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ROM_join_the_tudor_states 
+		}
+		prerequisite = { 
+			focus = ROM_tudorian_truth 
+		}
+		available = { is_in_faction_with = TUD }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			if = { limit = { TUD = { is_ai = yes } }
+				puppet = TUD }
+			if = { limit = { TUD = { is_ai = no } }
+				TUD = { country_event = generic.20 }
+			}
+		}
+	}
+
+	#Focus for Sootist Independence
+	focus = {
+		id = ROM_sootist_independence
+		icon = GFX_goal_generic_political_pressure
+		x = 0
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_a_war_for_wilbur }
+		mutually_exclusive = { focus = ROM_join_emeraldia }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			create_faction = "Sootist International"
+			TUR = { country_event = generic.5 }
+			ALB = { country_event = generic.5 }
+		}
+	}
+
+	#Focus for Influence the Soviets
+	focus = {
+		id = ROM_influence_the_soviets
+		icon = GFX_goal_generic_war_with_comintern
+		x = 18
+		y = 9
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_raudistcommunism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			SOV = { country_event = generic.2 }
+		}
+	}
+
+	#Focus for KILL HIM NOW
+	focus = {
+		id = ROM_kill_him_now
+		icon = GFX_goal_generic_political_pressure
+		x = 26
+		y = 11
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_encourage_good_anakinism }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_core = 192
+			add_state_core = 822
+			add_state_core = 73
+			add_state_core = 89
+			add_state_core = 91
+			add_state_core = 198
+			add_state_core = 199
+		}
+	}
+
+	#Focus for DO IT
+	focus = {
+		id = ROM_do_it
+		icon = GFX_goal_poland_goal
+		x = 26
+		y = 12
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_kill_him_now }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				target = POL 
+				type = puppet_wargoal_focus 
+			}
+			create_wargoal = {
+				target = UKR 
+				type = annex_everything 
+			}
+		}
+	}
+
+	#Focus for War on the Major Players
+	focus = {
+		id = ROM_war_on_the_major_players
+		icon = GFX_goal_generic_secret_weapon
+		x = 11
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_tudorreich_empire }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		ROM = {
+		every_country = {
+					limit = { is_major = yes } 
+					hidden_effect = {
+					ROOT = {
+						create_wargoal = {
+							target = PREV
+							type = puppet_wargoal_focus
+						}
+					} }
+					custom_effect_tooltip = "Romania receives a wargoal on the previous countries."
+				}
+		} }
+	}
+
+	#Focus for Seek a Balkan Alliance
+	focus = {
+		id = ROM_seek_a_balkan_alliance
+		icon = GFX_goal_tripartite_pact
+		x = 28
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_cabinet_restoration }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_faction = "Balkan League"
+			YUG = { country_event = generic.5}
+			TUR = { country_event = generic.5}
+			ARM = { country_event = generic.5}
+			GRE = { country_event = generic.5}
+			ALB = { country_event = generic.5}
+			BOS = { country_event = generic.5}
+		}
+	}
+
+	#Focus for Sea Superiority
+	focus = {
+		id = ROM_sea_superiority
+		icon = GFX_goal_generic_navy_cruiser
+		x = 25
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_fund_the_radumarines }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				category = cl_tech
+				uses = 2
+				bonus = 1
+			}
+			add_tech_bonus = {
+				category = bb_tech
+				uses = 1
+				bonus = 1
+			}
+			add_tech_bonus = {
+				category = dd_tech
+				uses = 2
+				bonus = 1
+			}
+		}
+	}
+
+	#Focus for Atomic Weapons
+	focus = {
+		id = ROM_atomic_weapons
+		icon = GFX_focus_wonderweapons
+		x = 12
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_stabilize_subspace_ruptures }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 1
+				category = nuclear } }
+	}
+
+	#Focus for Logistics Ministry
+	focus = {
+		id = ROM_logistics_ministry
+		icon = GFX_goal_generic_production2
+		x = 33
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_establish_the_reichswehrmacht }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for SONEA
+	focus = {
+		id = ROM_sonea
+		icon = GFX_goal_generic_trade
+		x = 33
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_logistics_ministry }
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	#Focus for I GROW STRONGER
+	focus = {
+		id = ROM_i_grow_stronger
+		icon = GFX_goal_generic_demand_territory
+		x = 7
+		y = 10
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ROM_go_after_slabvia }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { num_of_factories > 50 }
+		completion_reward = {
+			add_ideas = ROM_cloning_facilities
+		}
+	}
+
+#End of focuses 
+ }

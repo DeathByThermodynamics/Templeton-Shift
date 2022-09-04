@@ -1,0 +1,1133 @@
+focus_tree = { 
+id = iceland_kemmtik_old
+country = { 
+factor = 0 
+ 
+} 
+#Focus for Advanced Infantry Technology
+focus = { 
+id = ICE_advancedinfantrytechnology
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 31
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_armedforcesadvances } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+category = infantry_tech
+uses = 2
+bonus = 1
+}
+ } 
+
+ } 
+
+#Focus for Anschluss of Greenland
+focus = { 
+id = ICE_anschlussofgreenland
+icon = GFX_focus_CZE_military_aeronautical_institute
+x = 12
+y = 3
+cost = 10
+available_if_capitulated = yes 
+bypass = { owns_state = 101 }
+prerequisite = { focus = ICE_claimsonfaroe } 
+ai_will_do = { 
+ factor = 10
+ } 
+available = { 
+has_army_manpower = { size > 500000 }
+ } 
+completion_reward = { 
+101 = { owner =  { country_event = { 
+id = templetonshift.2
+days = 1
+} } }
+add_named_threat = {
+threat = 3
+name = "Demanded Greenland"
+}
+ }
+
+ }  
+
+#Focus for Youth of the Nation
+focus = { 
+id = ICE_youthofthenation
+icon = GFX_focus_generic_military_mission
+x = 4
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_koenigtrials } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_manpower = 65000
+add_popularity = {
+ideology = fascism
+popularity = 0.1
+}
+ } 
+
+ } 
+
+#Focus for Uptown Restructures
+focus = { 
+id = ICE_uptownrestructures
+icon = GFX_focus_generic_support_the_left_right
+x = 4
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_youthofthenation } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_political_power = 350
+ } 
+
+ } 
+
+#Focus for Dismantle the Democracy
+focus = { 
+id = ICE_dismantlethedemocracy
+icon = GFX_focus_rom_parties_end
+x = 15
+y = 2
+cost = 10
+available_if_capitulated = yes 
+available = { owns_state = 184 }
+bypass = {
+has_war_with = GRE
+}
+prerequisite = { focus = ICE_calaisredemption } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+annex_country = { target = GRE }
+news_event = { id = templetonshift.37
+days = 1 }
+ } 
+
+ } 
+
+#Focus for Blockade the Empire
+focus = { 
+id = ICE_blockadetheempire
+icon = GFX_goal_tfv_sever_ties_with_uk
+x = 13
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_calaisredemption } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_navy_size = { size > 224 }
+ } 
+completion_reward = { 
+navy_experience = 100
+add_ideas = destroy_urd
+add_ideas = destroy_isotope
+ } 
+
+ } 
+
+#Focus for Strike at Western Europe
+focus = { 
+id = ICE_strikeatwesterneurope
+icon = GFX_focus_ger_break_anglo_french_colonial_hegemony
+x = 14
+y = 3
+cost = 10
+available_if_capitulated = yes 
+
+bypass = { 
+has_war_with = ENG
+has_war_with = FRA
+has_army_manpower = { size > 850000 }
+ } 
+prerequisite = { focus = ICE_dismantlethedemocracy } 
+prerequisite = { focus = ICE_blockadetheempire } 
+ai_will_do = { 
+ factor = 1
+}
+available = { 
+has_army_manpower = { size > 850000 }
+ } 
+completion_reward = { 
+
+create_wargoal = { 
+type = annex_everything
+target = FRA
+}
+create_wargoal = {
+type = annex_everything
+target = ENG
+}
+ } 
+
+ } 
+ 
+# Focus for Fate of Ireland
+focus = { 
+id = ICE_fateofireland
+icon = GFX_goal_generic_attack_allies
+x = 15
+y = 4
+cost = 6
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_dismantlethedemocracy } 
+prerequisite = { focus = ICE_strikeatwesterneurope} 
+ai_will_do = { 
+ factor = 1
+ } 
+bypass = { 
+has_war_with = IRE
+ } 
+available = { 
+has_army_manpower = { size > 875000 }
+has_war_with = ENG
+ } 
+completion_reward = { 
+
+create_wargoal = { 
+type = annex_everything
+target = IRE
+}
+
+ } 
+
+ } 
+
+#Focus for Rise of the Kemmtik
+focus = { 
+id = ICE_riseofthekemmtik
+icon = GFX_goal_support_fascism
+x = 10
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 100
+ } 
+completion_reward = { 
+add_political_power = 400
+ } 
+
+ } 
+
+#Focus for Claims on Greenland
+focus = { 
+id = ICE_claimsongreenland
+icon = GFX_goal_generic_position_armies
+x = 10
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_riseofthekemmtik } 
+ai_will_do = { 
+ factor = 99
+ } 
+available = { 
+
+date > 1936.06.01
+ } 
+completion_reward = { 
+add_state_claim = 101
+news_event = templetonshift.18
+add_political_power = 150
+add_named_threat = {
+name = "Claims on Greenland"
+threat = 2
+}
+ } 
+
+ } 
+
+#Focus for Claims on Faroe
+focus = { 
+id = ICE_claimsonfaroe
+icon = GFX_goal_generic_position_armies
+x = 10
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_claimsongreenland } 
+ai_will_do = { 
+ factor = 100
+ } 
+available = { 
+
+date > 1937.03.01
+ } 
+completion_reward = { 
+add_state_claim = 337
+news_event = templetonshift.19
+add_named_threat = {
+name = "Claims on Faroe"
+threat = 3
+}
+ } 
+
+ } 
+
+#Focus for Calais Redemption
+focus = { 
+id = ICE_calaisredemption
+icon = GFX_focus_generic_support_the_left_right
+x = 14
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_riseofthekemmtik } 
+ai_will_do = { 
+ factor = 100
+
+ } 
+available = { 
+has_army_manpower = { size > 650000 }
+ } 
+completion_reward = { 
+add_named_threat = {
+name = "Calais Redemption"
+threat = 5
+}
+FRA = { country_event = {
+		id = templetonshift.28
+		days = 1 }
+
+
+
+ } 
+
+ } } 
+
+#Focus for Koenig Trials
+focus = { 
+id = ICE_koenigtrials
+icon = GFX_goal_generic_secret_weapon
+x = 2
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_riseofthekemmtik } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_manpower = -10000
+add_ideas = koenig_trials
+ } 
+
+ } 
+
+#Focus for Icelandic Infrastructure
+focus = { 
+id = ICE_icelandicinfrastructure
+icon = GFX_goal_generic_construct_infrastructure
+x = 21
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {
+        add_building_construction = {
+            type = infrastructure
+            level = 10
+            instant_build = yes
+        }
+ 
+}
+random_owned_state = {
+        add_building_construction = {
+            type = infrastructure
+            level = 10
+            instant_build = yes
+        }
+ 
+}
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = industry }
+ } 
+
+ } 
+
+#Focus for Selfoss Reconstruction
+focus = { 
+id = ICE_selfossreconstruction
+icon = GFX_goal_generic_construct_civ_factory
+x = 18
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_icelandicinfrastructure } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Invite Kenu
+focus = { 
+id = ICE_invitekenu
+icon = GFX_goal_generic_dangerous_deal
+x = 8
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_claimsonfaroe } 
+ai_will_do = { 
+ factor = 80
+ } 
+available = { 
+ITA = {
+has_civil_war = no
+has_government = fascism
+}
+ } 
+completion_reward = { 
+give_guarantee = ITA
+ITA = { give_guarantee = ICE }
+ } 
+
+ } 
+
+#Focus for Military Construction
+focus = { 
+id = ICE_militaryconstruction
+icon = GFX_goal_generic_construct_mil_factory
+x = 20
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_icelandicinfrastructure } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Hayes Work
+focus = { 
+id = ICE_hayeswork
+icon = GFX_goal_generic_consumer_goods
+x = 18
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_selfossreconstruction } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+add_ideas = labour_organizations
+ } 
+
+ } 
+
+#Focus for Military Expansions
+focus = { 
+id = ICE_militaryexpansions
+icon = GFX_goal_rhineland
+x = 20
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_militaryconstruction } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = arms_factory
+level = 2
+instant_build = yes }
+}
+random_owned_state = {               add_extra_state_shared_building_slots = 2
+add_building_construction = {
+type = industrial_complex
+level = 2
+instant_build = yes }
+}
+ } 
+
+ } 
+
+#Focus for Kairabenu Alliance
+focus = { 
+id = ICE_kairabenualliance
+icon = GFX_goal_tfv_saf_anti_colonialist_crusade
+x = 9
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_invitekenu } 
+mutually_exclusive = { focus = ICE_scandinavianclaims } 
+ai_will_do = { 
+ factor = 5
+ } 
+bypass = { 
+is_in_faction_with = SWE
+is_in_faction_with = ITA
+ } 
+completion_reward = { 
+SWE = {
+country_event = {
+id = templetonshift.20
+days = 1
+}
+ } 
+
+ }
+} 
+
+# FOcus for Puppeting Venezuela
+focus = { 
+id = ICE_puppetvenezuela
+icon = GFX_goal_generic_attack_allies
+x = 6
+y = 3
+cost = 10
+available_if_capitulated = yes 
+available = {
+	has_army_manpower = { size > 650000 }
+}
+prerequisite = { focus = ICE_claimsonfaroe } 
+ai_will_do = { 
+ factor = 1
+ modifier = {
+				date > 1938.2.1
+				factor = 100
+			}
+ } 
+completion_reward = { 
+puppet = VEN
+add_named_threat = {
+threat = 3
+name = "Kemmtik Expansion into South America"
+}
+ } 
+
+ } 
+ 
+ 
+#Focus for Strike the Latin Resources
+focus = { 
+id = ICE_strikethelatinresources
+icon = GFX_goal_generic_attack_allies
+x = 7
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_invitekenu } 
+prerequisite = { focus = ICE_puppetvenezuela } 
+ai_will_do = { 
+ factor = 1
+ modifier = {
+				date > 1938.6.1
+				factor = 100
+			}
+ } 
+completion_reward = { 
+
+create_wargoal = { 
+type = puppet_wargoal_focus
+target = COL
+}
+puppet = ARG
+news_event = { id = templetonshift.43
+				days = 1 }
+add_named_threat = {
+threat = 6
+name = "Kemmtik Expansion into South America"
+}
+ } 
+
+ } 
+
+#Focus for Down goes the North
+focus = { 
+id = ICE_downgoesthenorth
+icon = GFX_goal_generic_attack_allies
+x = 11
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_scandinavianclaims } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_wargoal = {
+type = annex_everything
+target = SWE }
+ } 
+
+ } 
+
+#Focus for Scandinavian Claims
+focus = { 
+id = ICE_scandinavianclaims
+icon = GFX_goal_generic_position_armies
+x = 11
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_anschlussofgreenland } 
+mutually_exclusive = { focus = ICE_kairabenualliance } 
+ai_will_do = { 
+ factor = 0
+ } 
+completion_reward = { 
+add_state_claim = 110
+add_state_claim = 141
+add_state_claim = 138
+ } 
+
+ } 
+
+#Focus for memetarky1
+focus = { 
+id = ICE_memetarky1
+icon = GFX_goal_generic_construct_infrastructure
+x = 23
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_icelandicinfrastructure } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = memetarky
+ } 
+
+ } 
+
+#Focus for Armed Forces Advances
+focus = { 
+id = ICE_armedforcesadvances
+icon = GFX_goal_rhineland
+x = 29
+y = 0
+cost = 10
+available_if_capitulated = yes 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+category = armor
+uses = 2
+bonus = 0.5
+}
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = light_air }
+ } 
+
+ }
+
+focus = { 
+id = ICE_armedforcesadvances_2
+icon = GFX_focus_CZE_military_aeronautical_institute
+x = 29
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_armedforcesadvances } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+category = support_tech
+uses = 1
+bonus = 1
+}
+add_tech_bonus = {
+uses = 1
+bonus = 1
+category = synth_resources }
+ } 
+
+ }  
+focus = { 
+id = ICE_armedforcesadvances_3
+icon = GFX_goal_generic_navy_doctrines_tactics
+x = 29
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_armedforcesadvances_2 } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+category = marine_tech
+uses = 1
+bonus = 2
+}
+
+ } 
+
+ }  
+#Focus for Hardened Conscription
+focus = { 
+id = ICE_hardenedconscription
+icon = GFX_goal_rhineland
+x = 0
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_koenigtrials } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = {
+add_tech_bonus = {
+category = land_doctrine
+uses = 5
+bonus = 0.2
+}
+}
+ } 
+
+#Focus for Ally Spain
+focus = { 
+id = ICE_allyspain
+icon = GFX_goal_tripartite_pact
+x = 5
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_strikethelatinresources } 
+prerequisite = { focus = ICE_allytootan } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+SPR = { add_ideas = kemmtik_coerce }
+ } 
+
+ } 
+
+#Focus for War with Slabvia
+focus = { 
+id = ICE_warwithslabvia
+icon = GFX_goal_generic_attack_allies
+x = 9
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_kairabenualliance } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_army_manpower = { size > 650000 }
+ } 
+completion_reward = { 
+create_wargoal = {
+target = TUR
+type = puppet_wargoal_focus
+}
+add_named_threat = {
+threat = 5
+name = "War on Slabvia"
+}
+ } 
+
+ } 
+
+#Focus for Carve up Emeraldia
+focus = { 
+id = ICE_carveupemeraldia
+icon = GFX_goal_generic_national_unity
+x = 10
+y = 6
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_downgoesthenorth focus = ICE_warwithslabvia } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+create_wargoal = {
+target = POL
+type = annex_everything 
+}
+ } 
+
+ } 
+
+#Focus for Army Reform
+focus = { 
+id = ICE_armyreform
+icon = GFX_goal_generic_major_alliance
+x = 0
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_hardenedconscription } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 2
+bonus = 1
+category = land_doctrine }
+ } 
+
+ } 
+
+#Focus for Islandsveldian Empire
+focus = { 
+id = ICE_islandsveldianempire
+icon = GFX_focus_ger_reichskommisariats
+x = 13
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_atlanticdominance } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+
+ENG = { OR = {
+	has_capitulated = yes
+	exists = no
+	}}
+	
+has_government = fascism
+ } 
+completion_reward = { 
+set_cosmetic_tag = GREATERKEMMTIK
+add_ideas = triumphant_will
+ } 
+
+ } 
+
+#Focus for Atlantic Dominance
+focus = { 
+id = ICE_atlanticdominance
+icon = GFX_goal_generic_wolf_pack
+x = 13
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_strikeatwesterneurope } 
+prerequisite = { focus = ICE_anschlussofgreenland } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+has_war_with = ENG
+has_war_with = FRA
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 2
+bonus = 1
+category = ss_tech }
+ } 
+
+ } 
+
+#Focus for Research Treaties
+focus = { 
+id = ICE_researchtreaties
+icon = GFX_goal_generic_scientific_exchange
+x = 27
+y = 1
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_armedforcesadvances } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_research_slot = 1
+ } 
+
+ } 
+
+#Focus for Reichsprotectorate South
+focus = { 
+id = ICE_reichsprotectoratesouth
+icon = GFX_goal_generic_cavalry
+x = 7
+y = 5
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_strikethelatinresources } 
+ai_will_do = { 
+ factor = 1
+ } 
+available = { 
+ARG = { is_puppet_of = ICE }
+VEN = { is_puppet_of = ICE }
+COL = { is_puppet_of = ICE }
+ } 
+completion_reward = { 
+ARG = { add_timed_idea = {
+idea = islandsveldi_indoctrination
+days = 365 } }
+VEN = { add_timed_idea = {
+idea = islandsveldi_indoctrination
+days = 365 } }
+COL = { add_timed_idea = {
+idea = islandsveldi_indoctrination
+days = 365 } }
+ } 
+
+ } 
+
+#Focus for Integrated Economy
+focus = { 
+id = ICE_BouVSAEd
+icon = GFX_goal_generic_production
+x = 25
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_memetarky1 focus = ICE_researchtreaties } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = integrated_economy
+ } 
+
+ } 
+
+#Focus for Icelandic Route 1
+focus = { 
+id = ICE_icelandicroute1
+icon = GFX_goal_generic_construct_civilian
+x = 23
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_militaryexpansions } 
+prerequisite = { focus = ICE_BouVSAEd } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 0.75
+uses = 2
+category = industry }
+ } 
+
+ } 
+
+#Focus for Purge the Democrats
+focus = { 
+id = ICE_purgethedemocrats
+icon = GFX_focus_generic_strike_at_democracy3
+x = 2
+y = 2
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_koenigtrials } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = democrats_purged
+ } 
+
+ } 
+
+#Focus for Great Icelandic Navy
+focus = { 
+id = ICE_greaticelandicnavy
+icon = GFX_goal_generic_navy_battleship
+x = 2
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_purgethedemocrats } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = bb_tech }
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = ss_tech }
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = ca_tech }
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = cv_tech }
+add_tech_bonus = {
+bonus = 1
+uses = 1
+category = dd_tech }
+ } 
+
+ } 
+
+#Focus for Breaking the Waves
+focus = { 
+id = ICE_breakingthewaves
+icon = GFX_goal_generic_navy_submarine
+x = 2
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_greaticelandicnavy } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_tech_bonus = {
+uses = 2
+bonus = 1
+category = naval_doctrine }
+ } 
+
+ } 
+
+#Focus for Ally Tootan
+focus = { 
+id = ICE_allytootan
+icon = GFX_goal_generic_dangerous_deal
+x = 5
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_uptownrestructures focus = ICE_puppetvenezuela } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+BUL = { add_ideas = kemmtik_coerce }
+ } 
+
+ } 
+
+#Focus for Interim Preparation
+focus = { 
+id = ICE_interimpreparation
+icon = GFX_goal_generic_small_arms
+x = 0
+y = 4
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_armyreform } 
+ai_will_do = { 
+ factor = 1
+ } 
+completion_reward = { 
+add_ideas = organized_production_lines
+ } 
+
+ } 
+
+#Focus for Secure Fascism in Kenu
+focus = { 
+id = ICE_securefascisminkenu
+icon = GFX_goal_support_fascism
+x = 10
+y = 3
+cost = 10
+available_if_capitulated = yes 
+prerequisite = { focus = ICE_claimsonfaroe } 
+ai_will_do = { 
+ factor = 1
+ modifier = {
+				date > 1937.8.1
+				factor = 90
+			}
+ } 
+available = { 
+any_country = {
+original_tag = ITA
+has_government = fascism
+has_war = yes }
+ } 
+completion_reward = { 
+add_ideas = volunteer_op
+ } 
+
+ } 
+
+#End of focuses 
+ }

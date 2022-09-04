@@ -1,0 +1,2322 @@
+focus_tree = {
+	id = ITA_kenu_both_sides
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = ITA
+		}
+		modifier = {
+			add = 10
+			original_tag = ITA
+		}
+	}
+	default = no
+	
+	continuous_focus_position = { x = 1000 y = 1650 }
+	#Focus for Turino Research Corporations
+	focus = {
+		id = ITA_turino_research_corporations
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 7
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_autobahn }
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = {
+			add_research_slot = 1
+		}
+	}
+
+	#Focus for Here's To Freedom
+	focus = {
+		id = ITA_heres_to_freedom
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 1
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_freedom_of_press }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = new_interventionism
+		}
+	}
+
+	#Focus for Economic Assistance
+	focus = {
+		id = ITA_economic_assistance
+		icon = GFX_ITA_economic_assistance-85362
+		x = 3
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_protect_the_balkans }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { OR = { 
+				country_exists = BOS 
+				country_exists = CRO
+				country_exists = YUG
+				country_exists = ALB } }
+		completion_reward = {
+			BOS = { 
+				random_owned_state = {
+					limit = { is_core_of = BOS }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+}
+			ALB = { 
+				random_owned_state = {
+					limit = { is_core_of = ALB }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+}
+CRO = { 
+				random_owned_state = {
+					limit = { is_core_of = CRO }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+}
+YUG = { 
+				random_owned_state = {
+					limit = { is_core_of = YUG }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+}
+	} }
+
+	#Focus for New Kenu Empire
+	focus = {
+		id = ITA_new_kenu_empire
+		icon = GFX_goal_generic_territory_or_war
+		x = 16
+		y = 4
+		cost = 4
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_buried_in_venice }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_political_power = 150
+		}
+	}
+
+	#Focus for New Autobahn
+	focus = {
+		id = ITA_new_autobahn
+		icon = GFX_ITA_new_autobahn-85363
+		x = 9
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_rebuild_the_country }
+		ai_will_do = {
+			factor = 5
+		}
+		completion_reward = {
+			every_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA }
+				add_building_construction = {
+    type = infrastructure
+    level = 2
+    instant_build = yes
+}
+}
+	} }
+
+	#Focus for Claims on Yugoslavia
+	focus = {
+		id = ITA_claims_on_yugoslavia
+		icon = GFX_goal_generic_position_armies
+		x = 12
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_kenu_empire }
+		ai_will_do = {
+			factor = 12
+		}
+		completion_reward = {
+			add_state_claim = 105
+			add_state_claim = 107
+			
+			add_named_threat = { 
+				threat = 3
+				name = "Balkan Ambitions"
+					}
+	} }
+
+	#Focus for New Kenu Republic
+	focus = {
+		id = ITA_new_kenu_republic
+		icon = GFX_ITA_new_kenu_republic-85151
+		x = 1
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_diplomatic_corps }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = ITA_rebuild_the_republic
+			
+								days = 360
+							}
+			
+		}
+	}
+
+	#Focus for The Police
+	focus = {
+		id = ITA_the_police
+		icon = GFX_goal_generic_secret_weapon
+		x = 17
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_consolidation_of_kenu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			swap_ideas = { remove_idea = ITA_blackshirts1
+							add_idea = ITA_blackshirts2 } }
+	}
+
+	#Focus for War on Arislantia
+	focus = {
+		id = ITA_war_on_arislantia
+		icon = GFX_goal_generic_attack_allies
+		x = 21
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_militaristic_cooperation 
+			focus = ITA_economic_cooperation 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = GER
+			}
+			add_named_threat = { 
+				threat = 10
+				name = "War on Arislantia"
+					}
+		}
+	}
+
+	#Focus for Burning with a Passion
+	focus = {
+		id = ITA_burning_with_a_passion
+		icon = GFX_ITA_burning_with_a_passion-87548
+		x = 19
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_war_on_isotope }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_war_with = FRA 
+						FRA = { has_capitulated = yes } }
+		completion_reward = {
+			add_state_core = 735
+			add_state_core = 21
+			add_state_core = 32
+			add_political_power = 150
+		}
+	}
+
+	#Focus for Behind the Red Curtain
+	focus = {
+		id = ITA_behind_the_red_curtain
+		icon = GFX_ITA_behind_the_red_curtain-87549
+		x = 15
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_consolidation_of_kenu }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = { 
+			add_ideas = ITA_corruption }
+	}
+
+	#Focus for War on I.S.O.T.O.P.E.
+	focus = {
+		id = ITA_war_on_isotope
+		icon = GFX_goal_generic_major_war
+		x = 19
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_militaristic_cooperation 
+			focus = ITA_economic_cooperation 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_state_claim = 735
+			add_state_claim = 21
+			add_state_claim = 32
+			add_state_claim = 16
+			create_wargoal = {
+				type = annex_everything 
+				target = FRA
+			}
+			add_named_threat = { 
+				threat = 10
+				name = "War on I.S.O.T.O.P.E."
+					}
+		}
+	}
+
+	#Focus for Militaristic Cooperation
+	focus = {
+		id = ITA_militaristic_cooperation
+		icon = GFX_goal_generic_small_arms
+		x = 19
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_join_the_axis }
+		mutually_exclusive = { focus = ITA_economic_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { is_in_faction = yes }
+		completion_reward = {
+			every_country = { limit = { is_in_faction_with = ITA }
+							add_ideas = ITA_mil_coop
+							}
+			add_ideas = ITA_mil_coop
+		}
+	}
+
+	#Focus for Economic Cooperation
+	focus = {
+		id = ITA_economic_cooperation
+		icon = GFX_goal_generic_production
+		x = 21
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_join_the_axis }
+		mutually_exclusive = { focus = ITA_militaristic_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { is_in_faction = yes }
+		completion_reward = {
+			every_country = { limit = { is_in_faction_with = ITA }
+							add_ideas = ITA_civ_coop
+							}
+			add_ideas = ITA_civ_coop
+		}
+	}
+
+	#Focus for Consolidation of Kenu
+	focus = {
+		id = ITA_consolidation_of_kenu
+		icon = GFX_goal_generic_alliance
+		x = 16
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_kenu_empire }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_blackshirts1
+		}
+	}
+
+	#Focus for The Resistance Fighters
+	focus = {
+		id = ITA_the_resistance_fighters
+		icon = GFX_ITA_the_resistance_fighters-85145
+		x = 5
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_containment_policy }
+		mutually_exclusive = { focus = ITA_amends_with_the_west }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			set_politics = {
+	ruling_party = communism
+        elections_allowed = no
+        last_election = "1935.12.17"
+        election_frequency = 48
+}}
+	}
+
+	#Focus for Amends with the West
+	focus = {
+		id = ITA_amends_with_the_west
+		icon = GFX_goal_support_democracy
+		x = 7
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_containment_policy }
+		mutually_exclusive = { focus = ITA_the_resistance_fighters }
+		ai_will_do = {
+			factor = 1
+		}
+		bypass = { 
+			FRA = { NOT = { has_government = democratic } }
+			GER = { NOT = { has_government = democratic } }
+			}
+		completion_reward = {
+			if = { limit = { FRA = { has_government = democratic } } 
+					FRA = { country_event = generic.2 } }
+			if = { limit { FRA = { NOT = { has_government = democratic } } 
+							GER = { is_faction_leader = yes } }
+					GER = { country_event = generic.2 } } }
+	}
+
+	#Focus for Aggressive Balkan Initiative
+	focus = {
+		id = ITA_aggressive_balkan_initiative
+		icon = GFX_ITA_aggressive_balkan_initiative-85147
+		x = 5
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_resistance_fighters }
+		mutually_exclusive = { focus = ITA_protect_the_balkans }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			BOS = { add_timed_idea = { idea = ITA_aggressive_balkan_initiative
+										days = 400 } }
+			CRO = { add_timed_idea = { idea = ITA_aggressive_balkan_initiative
+										days = 400 } }
+			YUG = { add_timed_idea = { idea = ITA_aggressive_balkan_initiative
+										days = 400 } }
+		}
+		
+	}
+
+	#Focus for There Once Was a Place
+	focus = {
+		id = ITA_there_once_was_a_place
+		icon = GFX_ITA_there_once_was_a_place-85116
+		x = 7
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_war_is_won }
+		mutually_exclusive = { focus = ITA_buried_in_venice }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { OR = { has_government = democratic
+							has_government = communism } }
+		completion_reward = {
+			add_political_power = 150
+			set_politics = {
+	ruling_party = democratic
+        elections_allowed = yes
+        last_election = "1935.12.17"
+        election_frequency = 48
+}
+		}
+	}
+
+	#Focus for Buried in Venice
+	focus = {
+		id = ITA_buried_in_venice
+		icon = GFX_ITA_buried_in_venice-85144
+		x = 11
+		y = 3
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_war_is_won }
+		mutually_exclusive = { focus = ITA_there_once_was_a_place }
+		ai_will_do = {
+			factor = 100
+		}
+		available = { has_government = fascism }
+		completion_reward = {
+			set_province_name = { id = 9904 name = "Roma" }
+			set_province_name = { id = 11833 name = "Kenoire" }
+			set_province_name = { id = 6780 name = "Turino" }
+			add_stability = 0.1
+		}
+	}
+
+	#Focus for Rebuild the Country
+	focus = {
+		id = ITA_rebuild_the_country
+		icon = GFX_goal_generic_production
+		x = 9
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_there_once_was_a_place 
+			focus = ITA_buried_in_venice 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = { has_war = no }
+		completion_reward = {
+			random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 3
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = arms_factory
+    level = 3
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  is_core_of = FROM 
+							is_on_continent = europe
+							is_owned_by = FROM
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = arms_factory
+    level = 3
+    instant_build = yes
+}
+}
+		}
+	}
+
+
+	#Focus for Diplomatic Corps
+	focus = {
+		id = ITA_diplomatic_corps
+		icon = GFX_goal_generic_major_alliance
+		x = 2
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_there_once_was_a_place }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_diplomats }
+	}
+
+	#Focus for Containment Policy
+	focus = {
+		id = ITA_containment_policy
+		icon = GFX_goal_generic_defence
+		x = 6
+		y = 4
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_there_once_was_a_place }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee = FRA
+			give_guarantee = GER 
+			give_guarantee = SWI
+			give_guarantee = AUS
+		}
+	}
+
+	#Focus for Venetian Referendum
+	focus = {
+		id = ITA_venetian_referendum
+		icon = GFX_goal_generic_national_unity
+		x = 3
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_diplomatic_corps }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			819 = { is_owned_by = GER }
+		}
+		bypass = {
+			819 = { is_owned_by = FROM }
+		}
+		completion_reward = {
+			GER = { country_event = templetonshift.127 }
+		}
+	}
+
+	#Focus for Protect the Balkans
+	focus = {
+		id = ITA_protect_the_balkans
+		icon = GFX_goal_generic_position_armies
+		x = 3
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_venetian_referendum }
+		mutually_exclusive = { focus = ITA_aggressive_balkan_initiative }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			give_guarantee = BOS 
+			give_guarantee = CRO
+			give_guarantee = YUG 
+		}
+	}
+
+	#Focus for The War is Won
+	focus = {
+		id = ITA_the_war_is_won
+		icon = GFX_ITA_the_war_is_won-85074
+		x = 9
+		y = 2
+		cost = 3
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_assault_divisions 
+			focus = ITA_the_extremities 
+		}
+		ai_will_do = {
+			factor = 100
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+			news_event = templetonshift.126
+		}
+	}
+
+	#Focus for Assault Divisions
+	focus = {
+		id = ITA_assault_divisions
+		icon = GFX_focus_usa_honor_the_confederacy
+		x = 10
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_greatness_of_kenu }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = ITA_assault_divs
+		}
+	}
+
+	#Focus for KFAGO
+	focus = { 
+		id = ITA_kfago
+		icon = GFX_ITA_kfago-50762
+		x = 12
+		y = 1
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_greatness_of_kenu }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = ITA_win_the_war
+		}
+	}
+
+	#Focus for The Extremities
+	focus = {
+		id = ITA_the_extremities
+		icon = GFX_goal_generic_national_unity
+		x = 8
+		y = 1
+		cost = 5
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_posterior_legacy }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			add_ideas = ITA_hands
+		}
+	}
+
+	#Focus for Defense of the Capital
+	focus = {
+		id = ITA_defense_of_the_capital
+		icon = GFX_focus_spa_the_spanish_miracle
+		x = 6
+		y = 1
+		cost = 6
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_posterior_legacy }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			2 = {
+			add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = 11751
+}
+add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = 9794
+}
+add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = 11882
+}
+add_building_construction = {
+    type = bunker
+    level = 2
+    instant_build = yes
+    province = 11846
+}
+			
+			}
+		}
+	}
+
+	#Focus for Seek Nordic Intervention
+	focus = {
+		id = ITA_seek_nordic_intervention
+		icon = GFX_goal_molotov_ribbentrop_pact
+		x = 12
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_kfago }
+		available = { has_civil_war = yes }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			SWE = { if = { limit = { has_government = fascism } country_event = { id = templetonshift.123
+										hours = 6 } } }
+			ICE = { if = { limit = { has_government = fascism } country_event = { id = templetonshift.123
+										hours = 6 } } }
+			TUD = { if = { limit = { has_government = fascism } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+			ENG = { if = { limit = { has_government = fascism } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+		}
+	}
+
+	#Focus for Posterior Legacy
+	focus = {
+		id = ITA_posterior_legacy
+		icon = GFX_focus_TUR_ratify_the_six_arrows
+		x = 8
+		y = 0
+		cost = 4
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = ITA_the_greatness_of_kenu }
+		ai_will_do = {
+			factor = 100
+		}
+		available = { has_global_flag = kenu_civil_war_fired 
+					has_government = communism}
+		completion_reward = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.1
+			}
+			add_political_power = 200
+		}
+	}
+
+	#Focus for The Greatness of Kenu
+	focus = {
+		id = ITA_the_greatness_of_kenu
+		icon = GFX_goal_tfv_saf_support_ossebrandwag
+		x = 10
+		y = 0
+		cost = 4
+		available_if_capitulated = yes
+		mutually_exclusive = { focus = ITA_posterior_legacy }
+		ai_will_do = {
+			factor = 100
+		}
+		available = { has_global_flag = kenu_civil_war_fired 
+					has_government = fascism}
+		completion_reward = {
+			add_war_support = 0.1
+			add_political_power = 175
+		}
+		
+	}
+
+	#Focus for Seek Democratic Intervention
+	focus = {
+		id = ITA_seek_democratic_intervention
+		icon = GFX_goal_generic_construction2 ##Unfortunately, the tool could not find your icon in the game's files
+		x = 6
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_defense_of_the_capital }
+		available = { has_civil_war = yes }
+		ai_will_do = {
+			factor = 100
+		}
+		completion_reward = {
+			FRA = { if = { limit = { has_government = democratic } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+			GER = { if = { limit = { has_government = democratic } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+			ENG = { if = { limit = { has_government = democratic } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+			TUD = { if = { limit = { has_government = democratic } country_event = { id = templetonshift.123
+										hours = 6 } } } 
+	} }
+
+	#Focus for Solve the Istria Question
+	focus = {
+		id = ITA_solve_the_istria_question
+		icon = GFX_goal_generic_major_alliance
+		x = 7
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_amends_with_the_west }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			GER = { country_event = { id = templetonshift.130
+											hours = 6 } }
+								}
+	}
+
+	#Focus for Freedom of Press
+	focus = {
+		id = ITA_freedom_of_press
+		icon = GFX_ITA_freedom_of_press-85227
+		x = 1
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_kenu_republic }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_timed_idea = { idea = ITA_freedom_of_press 
+								days = 400 } }
+	}
+
+	#Focus for Demand Albania 
+	focus = {
+		id = ITA_demand_albania
+		icon = GFX_goal_generic_demand_territory
+		x = 5
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_aggressive_balkan_initiative }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			ALB = { country_event = italy.3 } }
+	}
+
+	#Focus for Develop the North
+	focus = {
+		id = ITA_develop_the_north
+		icon = GFX_goal_generic_construction2 ##Unfortunately, the tool could not find your icon in the game's files
+		x = 18
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_dragan_corp_developments }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = ITA_army_innovations }
+			}
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+		random_state = {
+				limit = {  
+							OR = { state = 158
+									state = 159
+									state = 161
+									state = 162 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+	random_state = {
+				limit = {  
+							OR = { state = 158
+									state = 159
+									state = 161
+									state = 162 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}
+}
+	} } 
+	#Focus for Albanian Occupation 
+	focus = {
+		id = ITA_albanian_occupation
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 11
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_claims_on_yugoslavia }
+		ai_will_do = {
+			factor = 15
+		}
+		completion_reward = {
+			add_named_threat = { 
+				threat = 3
+				name = "Albanian Occupation"
+					}
+			if = {
+				limit = {
+					ALB = { has_war = no }
+				}
+				ALB = { country_event = { id = italy.3 } }
+			}
+			else = {
+				create_wargoal = {
+					type = take_state_focus
+					target = ALB
+					generator = { 44 }
+				}
+			}
+		}
+	}
+	#Focus for Join the Axis
+	focus = {
+		id = ITA_join_the_axis
+		icon = GFX_goal_generic_political_pressure
+		x = 20
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_kenu_empire }
+		bypass = { is_in_faction_with = SWE }
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 3
+				NOT = { has_completed_focus = ITA_turino_research_corporations }
+			}
+		}
+		completion_reward = {
+			SWE = { country_event = generic.2 }
+		}
+		
+	}
+
+	
+
+	#Focus for Fate of Yugoslavia
+	focus = {
+		id = ITA_fate_of_yugoslavia
+		icon = GFX_ITA_fate_of_yugoslavia-86207
+		x = 13
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_claims_on_yugoslavia }
+		ai_will_do = {
+			factor = 15
+		}
+		available = { any_neighbor_country = { tag = YUG } }
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = YUG 
+			}
+			create_wargoal = {
+				type = annex_everything 
+				target = CRO 
+			}
+			add_named_threat = { 
+				threat = 5
+				name = "Fate of Yugoslavia"
+					}
+		}
+	}
+
+	#Focus for Reintegrate the Irredenta
+	focus = {
+		id = ITA_reintegrate_the_irredenta
+		icon = GFX_ITA_reintegrate_the_irredenta-86209
+		x = 13
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_fate_of_yugoslavia }
+		ai_will_do = {
+			factor = 10
+		}
+		available = { controls_state = 736
+						controls_state = 103
+						controls_state = 44 
+						controls_state = 163 }
+		completion_reward = {
+			add_state_core = 736
+			add_state_core = 103
+			add_state_core = 44
+			add_state_core = 805
+			add_state_core = 163
+						}
+	}
+
+	#Focus for War with Greece
+	focus = {
+		id = ITA_war_with_greece
+		icon = GFX_goal_generic_major_war
+		x = 11
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_albanian_occupation }
+		ai_will_do = {
+			factor = 1
+		}
+		available = {
+			country_exists = GRE 
+		}
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything 
+				target = GRE 
+			}
+			add_named_threat = { 
+				threat = 3
+				name = "War with Greece"
+					}
+		}
+	}
+
+	#Focus for Marines
+	focus = {
+		id = ITA_marines
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 33
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_army_innovations 
+		}
+		prerequisite = { 
+			focus = ITA_mare_nostrum1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = marine_tech }
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = tp_tech}}
+	}
+
+	#Focus for Develop the South
+	focus = {
+		id = ITA_develop_the_south
+		icon = GFX_goal_generic_production2
+		x = 22
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_civil_war = no }
+		prerequisite = { focus = ITA_dragan_corp_developments }
+		ai_will_do = {
+			factor = 2
+			modifier = {
+				factor = 0
+				NOT = { has_global_flag = kenu_civil_war_fired }
+			}
+		}
+		completion_reward = { 
+		random_state = {
+				limit = {  
+							OR = { state = 115
+									state = 830
+									state = 156
+									state = 117 } }
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+} }
+	}
+
+	#Focus for Dragan Corp Developments
+	focus = {
+		id = ITA_dragan_corp_developments
+		icon = GFX_ITA_dragan_corp_developments-88682
+		x = 20
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = industry }
+random_state = {
+				limit = {  
+							is_owned_by = ITA
+							is_core_of = ITA 
+							NOT = { state = 819 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Continental Bloc
+	focus = {
+		id = ITA_continental_bloc
+		icon = GFX_goal_generic_improve_relations
+		x = 2
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_heres_to_freedom 
+		}
+		prerequisite = { 
+			focus = ITA_economic_assistance 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { is_in_faction = no }
+		completion_reward = {
+			create_faction = "Kenu Alliance"
+			CRO = { country_event = generic.5}
+			YUG = { country_event = generic.5}
+			ALB = { country_event = generic.5}
+			BOS = { country_event = generic.5}
+		}
+	}
+
+	#Focus for Western Policy
+	focus = {
+		id = ITA_western_policy
+		icon = GFX_goal_tfv_burn_the_royal_portraits
+		x = 7
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_aggressive_balkan_initiative }
+		ai_will_do = {
+			factor = 1
+		}
+		will_lead_to_war_with = FRA
+		will_lead_to_war_with = GER
+		will_lead_to_war_with = ENG
+		completion_reward = {
+			create_wargoal = {
+				target = FRA 
+				type = puppet_wargoal_focus 
+			}
+			create_wargoal = {
+				target = ENG
+				type = puppet_wargoal_focus 
+			}
+			create_wargoal = {
+				target = GER 
+				type = puppet_wargoal_focus 
+			}
+		}
+	}
+
+	#Focus for L'Africana
+	focus = {
+		id = ITA_lafricana
+		icon = GFX_goal_generic_position_armies
+		x = 13
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_reintegrate_the_irredenta }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			create_wargoal = {
+    type = annex_everything
+    target = ETH
+}
+add_state_claim = 446
+add_state_claim = 452
+add_state_claim = 453
+add_state_claim = 447
+	} }
+
+	#Focus for The Last Best Land
+	focus = {
+		id = ITA_the_last_best_land
+		icon = GFX_goal_generic_consumer_goods
+		x = 21
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_develop_the_south }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+			random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162 
+									state = 831} }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+			random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162 
+									state = 831} }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+			random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162
+state = 831									} }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+			random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162
+state = 831									} }
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+
+
+	} }
+
+	#Focus for Spread the Wings
+	focus = {
+		id = ITA_spread_the_wings
+		icon = GFX_goal_generic_construction2
+		x = 23
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_develop_the_south }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+			random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162
+									state = 819
+									state = 114} }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+random_state = {
+				limit = {  
+				is_core_of = ITA 
+				is_owned_by = ITA
+							NOT = { state = 158
+									state = 159
+									state = 161
+									state = 162
+									state = 819
+									state = 114} }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Modernized Fleet
+	focus = {
+		id = ITA_modernized_fleet
+		icon = GFX_goal_generic_navy_carrier
+		x = 35
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_mare_nostrum1 }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = bb_tech }
+				add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = ss_tech }
+				}
+	}
+
+	#Focus for Naval Theory
+	focus = {
+		id = ITA_naval_theory
+		icon = GFX_goal_generic_navy_battleship
+		x = 35
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_modernized_fleet }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 3
+				uses = 3
+				category = naval_doctrine }
+			}
+	}
+
+	#Focus for New Armoury
+	focus = {
+		id = ITA_new_armoury
+		icon = GFX_focus_generic_combined_arms
+		x = 31
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_army_innovations }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = support_tech }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_tech }
+	} }
+
+	#Focus for Army Innovations
+	focus = {
+		id = ITA_army_innovations
+		icon = GFX_goal_rhineland
+		x = 30
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				factor = 0
+				NOT = { has_completed_focus = ITA_dragan_corp_developments }
+			}
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = infantry_weapons }
+			army_experience = 15 }
+	}
+
+	#Focus for New Traditions
+	focus = {
+		id = ITA_new_traditions
+		icon = GFX_goal_generic_production2
+		x = 29
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_army_innovations }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 3
+				category = land_doctrine}
+			army_experience = 5 }
+	}
+
+	#Focus for The Turino-Genoa Strip
+	focus = {
+		id = ITA_the_turinogenoa_strip
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 17
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_develop_the_north }
+		ai_will_do = {
+			factor = 4
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+		random_state = {
+				limit = {  
+							OR = { state = 158
+									state = 159
+									state = 161
+									state = 162 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 2
+    instant_build = yes
+}
+}
+	random_state = {
+				limit = {  
+							OR = { state = 158
+									state = 159
+									state = 161
+									state = 162 } }
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+    type = arms_factory
+    level = 1
+    instant_build = yes
+}
+}
+	}
+	}
+
+	#Focus for Development Committee 
+	focus = {
+		id = ITA_development_committee
+		icon = GFX_goal_generic_intelligence_exchange
+		x = 25
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_dragan_corp_developments }
+		ai_will_do = {
+			factor = 5
+		}
+		available = { has_civil_war = no }
+		completion_reward = {
+			add_ideas = ITA_development_committee_idea
+		}
+	}
+
+	#Focus for Papal Subsidies
+	focus = {
+		id = ITA_papal_subsidies
+		icon = GFX_focus_spa_save_the_alcazar
+		x = 19
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_develop_the_north }
+		ai_will_do = {
+			factor = 2
+		}
+		available = { has_civil_war = no }
+		completion_reward = {	
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.1
+			}
+			add_ideas = ITA_papal_subsidies
+		}
+	}
+
+	#Focus for Favour the North
+	focus = {
+		id = ITA_favour_the_north
+		icon = GFX_goal_generic_demand_territory
+		x = 18
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_civil_war = no }
+		prerequisite = { 
+			focus = ITA_papal_subsidies 
+		}
+		prerequisite = { 
+			focus = ITA_the_turinogenoa_strip 
+		}
+		mutually_exclusive = { 
+			focus = ITA_equal_opportunity 
+		}
+		mutually_exclusive = { 
+			focus = ITA_favour_the_south 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_favour_north }
+	}
+
+	#Focus for Favour the South
+	focus = {
+		id = ITA_favour_the_south
+		icon = GFX_goal_generic_political_pressure
+		x = 22
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_civil_war = no }
+		prerequisite = { 
+			focus = ITA_the_last_best_land 
+		}
+		prerequisite = { 
+			focus = ITA_spread_the_wings 
+		}
+		mutually_exclusive = { 
+			focus = ITA_equal_opportunity 
+		}
+		mutually_exclusive = { 
+			focus = ITA_favour_the_north 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_favour_south }
+	}
+
+	#Focus for Equal Opportunity
+	focus = {
+		id = ITA_equal_opportunity
+		icon = GFX_ITA_equal_opportunity-89274
+		x = 25
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		available = { has_civil_war = no }
+		prerequisite = { focus = ITA_development_committee }
+		mutually_exclusive = { 
+			focus = ITA_favour_the_north 
+		}
+		mutually_exclusive = { 
+			focus = ITA_favour_the_south 
+		}
+		ai_will_do = {
+			factor = 10
+		}
+		completion_reward = { 
+			add_ideas = ITA_equal_opportunity }
+	}
+
+	#Focus for Triumph of the Kenu
+	focus = {
+		id = ITA_triumph_of_the_kenu
+		icon = GFX_focus_generic_italy_first
+		x = 21
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_war_on_arislantia }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = triumphant_will }
+	}
+
+	#Focus for Air Developments
+	focus = {
+		id = ITA_air_developments
+		icon = GFX_goal_generic_air_fighter2
+		x = 40
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = light_air }
+			}
+	}
+
+	#Focus for Mare Nostrum
+	focus = {
+		id = ITA_mare_nostrum1
+		icon = GFX_focus_generic_navy_battleship2
+		x = 35
+		y = 0
+		cost = 10
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = dd_tech }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cl_tech }
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = bb_tech }
+		}
+	}
+
+	#Focus for Kenu Tanks
+	focus = {
+		id = ITA_kenu_tanks
+		icon = GFX_goal_generic_army_tanks
+		x = 31
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_armoury }
+		ai_will_do = {
+			factor = 3
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = armor }
+		add_tech_bonus = {
+				ahead_reduction = 1
+				uses = 1
+				category = armor }
+		}
+	}
+
+	#Focus for Artillery Advancements
+	focus = {
+		id = ITA_artillery_advancements
+		icon = GFX_goal_generic_army_artillery2
+		x = 33
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_armoury }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = artillery } }
+	}
+
+	#Focus for On The Move
+	focus = {
+		id = ITA_on_the_move
+		icon = GFX_goal_generic_army_motorized
+		x = 31
+		y = 3
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_kenu_tanks }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = motorized_equipment } }
+	}
+
+	#Focus for Improvisation
+	focus = {
+		id = ITA_improvisation
+		icon = GFX_goal_generic_cavalry
+		x = 29
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_traditions }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_improvisation_techniques }
+	}
+
+	#Focus for Air-Sea Cooperation
+	focus = {
+		id = ITA_airsea_cooperation
+		icon = GFX_goal_generic_navy_doctrines_tactics
+		x = 38
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_mare_nostrum1
+		}
+		prerequisite = { 
+			focus = ITA_air_developments 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cv_tech}
+			add_tech_bonus = {
+				bonus = 1
+				uses = 2
+				category = naval_air }
+		}
+	}
+
+	#Focus for New Propaganda
+	focus = {
+		id = ITA_new_propaganda
+		icon = GFX_focus_generic_support_the_left_right
+		x = 17
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_police }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		swap_ideas = { remove_idea = ITA_blackshirts2
+							add_idea = ITA_blackshirts3 } } 
+	}
+
+	#Focus for Develop the Siciliana
+	focus = {
+		id = ITA_develop_the_siciliana
+		icon = GFX_goal_generic_production2
+		x = 40
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		available = { controls_state = 115 }
+		prerequisite = { focus = ITA_airsea_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			115 = {
+				
+				add_extra_state_shared_building_slots = 5
+				add_building_construction = {
+    type = infrastructure
+    level = 6
+    instant_build = yes
+}
+add_building_construction = {
+    type = arms_factory
+    level = 5
+    instant_build = yes
+}
+	} } }
+
+	#Focus for Palermo Research Facility
+	focus = {
+		id = ITA_palermo_research_facility
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 38
+		y = 2
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_airsea_cooperation }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = ITA_palermo_research 
+		}
+	}
+
+	#Focus for Bomber Command
+	focus = {
+		id = ITA_bomber_command
+		icon = GFX_goal_generic_air_bomber
+		x = 40
+		y = 1
+		cost = 10
+		available_if_capitulated = yes
+		
+		prerequisite = { focus = ITA_air_developments }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cas_bomber }
+		add_tech_bonus = {
+				bonus = 1
+				uses = 1
+				category = cat_strategic_bomber }
+				}
+	}
+
+	#Focus for The Libyan Project
+	focus = {
+		id = ITA_the_libyan_project
+		icon = GFX_goal_generic_construction ##Unfortunately, the tool could not find your icon in the game's files
+		x = 29
+		y = 5
+		cost = 10
+		available = { AND = { controls_state = 450
+						controls_state = 451
+						controls_state = 449
+						controls_state = 448
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663} }
+		available_if_capitulated = yes
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+		450 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+663 = {
+	add_extra_state_shared_building_slots = 2
+add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}	}
+451 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+449 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+448 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+}
+		} }
+ 
+	#Focus for The Third Eye
+	focus = {
+		id = ITA_the_third_eye
+		icon = GFX_ITA_the_third_eye-92988
+		x = 23
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_join_the_axis }
+		ai_will_do = {
+			factor = 1
+		}
+		available = { has_war = yes 
+						is_in_faction_with = ICE 
+						is_in_faction_with = SWE }
+		completion_reward = {
+			add_ideas = ITA_third_eye
+		}
+	}
+
+	#Focus for The Eritrean Project
+	focus = {
+		id = ITA_the_eritrean_project
+		icon = GFX_goal_generic_construction2
+		x = 33
+		y = 5
+		cost = 10
+		available_if_capitulated = yes
+		available = { AND = { controls_state = 550 } }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			550 = {
+				
+				add_extra_state_shared_building_slots = 3
+				add_building_construction = {
+    type = infrastructure
+    level = 4
+    instant_build = yes
+}
+add_building_construction = {
+    type = industrial_complex
+    level = 3
+    instant_build = yes
+}
+}
+}
+	}
+
+	#Focus for Develop Oil Reservoirs
+	focus = {
+		id = ITA_develop_oil_reservoirs
+		icon = GFX_goal_generic_oil_refinery
+		x = 29
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		available = { AND = { controls_state = 450
+						controls_state = 451
+						controls_state = 449
+						controls_state = 448
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663} }
+		prerequisite = { focus = ITA_the_libyan_project }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_resource = {
+    type = oil
+    amount = 12
+    state = 661
+}
+add_resource = {
+    type = oil
+    amount = 8
+    state = 662
+}
+add_resource = {
+    type = oil
+    amount = 12
+    state = 663
+}
+}
+	}
+
+	#Focus for Consumer Industries
+	focus = {
+		id = ITA_consumer_industries
+		icon = GFX_goal_generic_consumer_goods
+		x = 31
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_the_libyan_project 
+		}
+		prerequisite = { 
+			focus = ITA_the_eritrean_project 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { AND = { controls_state = 450
+						controls_state = 451
+						controls_state = 449
+						controls_state = 448
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663
+						controls_state= 550} }
+		completion_reward = {
+		450 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+550 = {
+	add_extra_state_shared_building_slots = 2
+add_building_construction = {
+    type = industrial_complex
+    level = 2
+    instant_build = yes
+}	}
+451 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+449 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+448 = {
+				
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+    type = industrial_complex
+    level = 1
+    instant_build = yes
+}
+}
+		}
+	}
+
+	#Focus for Develop East African Hubs
+	focus = {
+		id = ITA_develop_east_african_hubs
+		icon = GFX_goal_generic_air_production
+		x = 33
+		y = 6
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_the_eritrean_project }
+		available = { controls_state = 550 }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			550 = { add_building_construction = {
+    type = air_base
+    level = 3
+    instant_build = yes
+}
+add_building_construction = {
+    type = naval_base
+    level = 3
+    instant_build = yes
+}
+add_building_construction = {
+    type = infrastructure
+    level = 3
+    instant_build = yes
+}
+} }
+	}
+
+	#Focus for Integration of Africa
+	focus = {
+		id = ITA_integration_of_africa
+		icon = GFX_focus_hol_the_foundations_of_defense
+		x = 31
+		y = 7
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { 
+			focus = ITA_develop_oil_reservoirs 
+		}
+		prerequisite = { 
+			focus = ITA_consumer_industries 
+		}
+		prerequisite = { 
+			focus = ITA_develop_east_african_hubs 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		available = { AND = { controls_state = 450
+						controls_state = 451
+						controls_state = 449
+						controls_state = 448
+						controls_state = 661
+						controls_state = 662
+						controls_state = 663
+						controls_state= 550} }
+		completion_reward = {
+			add_state_core = 448
+			add_state_core = 449
+			add_state_core = 450
+			add_state_core = 451
+			add_state_core = 661
+			add_state_core = 662
+			add_state_core = 663
+			add_state_core = 550
+			add_political_power = 100
+	} }
+
+	#Focus for Lessons of War
+	focus = {
+		id = ITA_lessons_of_war
+		icon = GFX_goal_generic_occupy_start_war
+		x = 9
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_autobahn }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				uses = 1
+				bonus = 2
+				category = armor }
+			add_tech_bonus = {
+				uses = 2
+				bonus = 4
+				category = land_doctrine }
+	} }
+
+	#Focus for The Legions of the Sky
+	focus = { 
+		id = ITA_the_legions_of_the_sky
+		icon = GFX_goal_generic_air_doctrine
+		x = 11
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_new_autobahn }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_tech_bonus = {
+				bonus = 4
+				uses = 3
+				category = air_doctrine } }
+	}
+
+	#Focus for Eternal Revolution
+	focus = {
+		id = ITA_eternal_revolution
+		icon = GFX_goal_support_fourth_int
+		x = 5
+		y = 8
+		cost = 10
+		available_if_capitulated = yes
+		prerequisite = { focus = ITA_demand_albania }
+		ai_will_do = {
+			factor = 1
+		}
+		completion_reward = {
+			add_ideas = perpetual_warfare }
+	}
+
+#End of focuses 
+ }
