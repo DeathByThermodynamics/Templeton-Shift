@@ -1,0 +1,870 @@
+add_namespace = straits 
+
+#Supreme is here to fix things
+country_event = {
+	id = straits.1
+	title = straits.1.t
+	desc = straits.1.d
+	
+	is_triggered_only = yes 
+	
+	
+	
+	option = {
+		name = templetonshift.26.a
+		add_ideas = checkers_1
+	} }
+
+news_event = {
+	id = straits.2
+	title = straits.2.t
+	desc = straits.2.d
+	picture = GFX_news_event_ast_navy
+	major = yes
+	trigger = {
+		NOT = { SUP = { has_idea = checkers_1 } }
+		date > 1937.3.14
+	}
+	
+	immediate = {
+		hidden_effect = {
+		SUP = { add_ideas = checkers_1 }
+		add_to_variable = {
+			var = global.entente_cohesion
+			value = -1
+		}
+		}
+	}
+	
+	
+	option = {
+		name = straits.2.a
+		
+		trigger = { 
+		NOT = {
+		TAG = GER
+		TAG = FRA
+		TAG = ENG
+		TAG = SUP
+		}
+	} }
+	option = { 
+		name = straits.2.b
+		trigger = { TAG = FRA 
+			
+		}
+		
+		
+	}
+	option = {
+		name = straits.2.c
+		trigger = { 
+		OR = { TAG = GER
+				TAG = ENG } } 
+		add_ideas = straits_crisis
+		818 = { add_claim_by = ENG }
+		118 = { add_claim_by = GER }
+	}
+	option = {
+		name = straits.2.g
+		trigger = {
+			TAG = SUP
+		}
+		add_ideas = checkers_1
+		
+	}
+}
+
+news_event = {
+	id = straits.3
+	title = straits.3.t
+	desc = straits.3.d
+	picture = GFX_news_event_generic_rally_3
+	
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = straits.3.a
+		trigger = { NOT = {
+		TAG = GER
+		TAG = ENG
+		} }
+	}
+	option = { 
+		name = straits.3.b
+		trigger = { OR = { TAG = ENG 	
+							TAG = FRA
+		
+		} }
+	}
+	option = {
+		name = straits.3.c
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = straits.4
+	title = straits.4.t
+	desc = straits.4.d
+	picture = GFX_news_event_generic_rally_3
+	
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = straits.4.a
+		trigger = { NOT = {
+		TAG = GER
+		TAG = ENG
+		} }
+	}
+	option = { 
+		name = straits.4.b
+		trigger = { OR = { TAG = ENG 	
+							TAG = FRA
+		
+		} }
+						
+	}
+	option = {
+		name = straits.4.c
+		trigger = { TAG = GER }
+	}
+}
+
+country_event = {
+	id = straits.5
+	title = straits.5.t
+	desc = straits.5.d 
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.5.a
+		add_timed_idea = { idea = espionager
+						days = 100
+					}
+		ENG = { add_timed_idea = { idea = espionaged
+						days = 100
+					} }
+	}
+}
+
+news_event = {
+	id = straits.6
+	title = straits.6.t
+	desc = straits.6.d 
+	picture = GFX_news_event_generic_rally_2
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.6.a
+		trigger = { NOT = { TAG = ENG
+							TAG = GER } }
+	}
+	option = {
+		name = straits.6.b
+		trigger = { TAG = ENG }
+		add_political_power = 50
+	}
+	option = {
+		name = straits.6.c
+		trigger = { TAG = GER }
+		add_political_power = -50
+	}
+}
+
+country_event = {
+	id = straits.7
+	title = straits.7.t
+	desc = straits.7.d 
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.7.a
+		add_timed_idea = { idea = espionager
+						days = 100
+					}
+		GER = { add_timed_idea = { idea = espionaged
+						days = 100
+					} }
+	}
+}
+
+news_event = {
+	id = straits.8
+	title = straits.8.t
+	desc = straits.8.d 
+	picture = GFX_news_event_generic_rally_2
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.8.a
+		trigger = { NOT = { TAG = ENG
+							TAG = GER } }
+	}
+	option = {
+		name = straits.8.b
+		trigger = { TAG = ENG }
+		add_political_power = -50
+	}
+	option = {
+		name = straits.8.c
+		trigger = { TAG = GER }
+		add_political_power = 50
+	}
+}
+
+# Invite ISOTOPE as mediator
+country_event = {
+	id = straits.9
+	title = straits.9.t
+	desc = straits.9.d 
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.9.a
+		ai_chance = { factor = 15 }
+		GER = { country_event = straits.10 }
+	}
+	option = {
+		name = straits.9.b
+		ai_chance = { factor = 1 }
+		GER = { country_event = straits.11 }
+	}
+}
+
+country_event = {
+	id = straits.10
+	title = straits.10.t
+	desc = straits.10.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.10.a
+		news_event = { id = straits.12
+						hours = 6 }
+	}
+}
+
+country_event = {
+	id = straits.11
+	title = straits.11.t
+	desc = straits.11.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.11.a
+		news_event = { id = straits.13
+						hours = 6 }
+		add_ideas = end_to_straits
+	}
+	option = {
+		name = straits.11.b
+	}
+}
+
+news_event = {
+	id = straits.12
+	title = straits.12.t
+	desc = straits.12.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { 
+		name = straits.12.a
+		trigger = { NOT = { TAG = ENG
+							TAG = FRA
+							TAG = GER } }
+		}
+	option = {
+		name = straits.12.b
+		trigger = { TAG = ENG }
+		}
+	option = {
+		name = straits.12.c
+		trigger = { TAG = GER }
+		}
+	option = {
+		name = straits.12.e
+		trigger = { TAG = FRA }
+		}
+	}
+
+news_event = {
+	id = straits.13
+	title = straits.13.t
+	desc = straits.13.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = { 
+		name = straits.13.a
+		trigger = { NOT = { TAG = ENG
+							TAG = FRA
+							TAG = GER } }
+		}
+	option = {
+		name = straits.13.b
+		trigger = { TAG = ENG }
+		}
+	option = {
+		name = straits.13.c
+		trigger = { TAG = GER }
+		}
+	option = {
+		name = straits.13.e
+		trigger = { TAG = FRA }
+		}
+	}
+
+#Congress at Neutrona
+# Isotope gets a say
+country_event = {
+	id = straits.14
+	title = straits.14.t
+	desc = straits.14.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.14.a 
+		ENG = { news_event = { id = straits.15
+								hours = 6 } }
+		GER = { news_event = { id = straits.15
+								hours = 6 } }
+		add_ideas = congress_at_neutrona
+		news_event = { id = straits.18
+						days = 20 }
+		
+	}
+	option = {
+		name = straits.14.b
+		ENG = { news_event = { id = straits.16
+								hours = 6 } }
+		GER = { news_event = { id = straits.16
+								hours = 6 } }
+		add_ideas = congress_at_neutrona2
+		news_event = { id = straits.18
+						days = 20 }
+	}
+	option = {
+		name = straits.14.c 
+		ENG = { news_event = { id = straits.17
+								hours = 6 } }
+		GER = { news_event = { id = straits.17
+								hours = 6 } }
+		add_ideas = congress_at_neutrona3
+		news_event = { id = straits.18
+						days = 20 }
+	}
+}
+
+# URD and Aris gets results
+country_event = {
+	id = straits.15
+	title = straits.15.t
+	desc = straits.15.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.15.a 
+		trigger = { TAG = GER }
+		ai_chance = { factor = 150 }
+	}
+	option = {
+		name = straits.15.b
+		trigger = { TAG = GER }
+		ai_chance = { factor = 1 }
+		add_ideas = aris_bad
+		custom_effect_tooltip = "This will lead to war!"
+	}
+	option = {
+		name = straits.15.c 
+		trigger = { TAG = ENG }
+		ai_chance = { factor = 150 }
+	}
+	option = {
+		name = straits.15.e
+		trigger = { TAG = ENG }
+		add_ideas = urd_bad
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This will lead to war!"
+	} 
+}
+
+country_event = {
+	id = straits.16
+	title = straits.16.t
+	desc = straits.16.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.16.a 
+		trigger = { TAG = GER }
+		ai_chance = { factor = 150 }
+	}
+	option = {
+		name = straits.16.b
+		trigger = { TAG = GER }
+		add_ideas = aris_bad
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This will lead to war!"
+	}
+	option = {
+		name = straits.16.c 
+		trigger = { TAG = ENG }
+		ai_chance = { factor = 150 }
+	}
+	option = {
+		name = straits.16.e
+		trigger = { TAG = ENG }
+		add_ideas = urd_bad
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This will lead to war!"
+	}
+}
+
+country_event = {
+	id = straits.17
+	title = straits.17.t
+	desc = straits.17.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.17.a 
+		trigger = { TAG = GER }
+		ai_chance = { factor = 150 }
+	}
+	option = {
+		name = straits.17.b
+		trigger = { TAG = GER }
+		add_ideas = aris_bad
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This will lead to war!"
+	}
+	option = {
+		name = straits.17.c 
+		ai_chance = { factor = 150 }
+		trigger = { TAG = ENG }
+	}
+	option = {
+		name = straits.17.e
+		trigger = { TAG = ENG }
+		add_ideas = urd_bad
+		ai_chance = { factor = 1 }
+		custom_effect_tooltip = "This will lead to war!"
+	} 
+}
+
+# Hidden Trigger for conflict
+news_event = {
+	id = straits.18
+	hidden = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.26.a
+		if = {
+			limit = { AND = { GER = { has_idea = aris_bad }
+							ENG = { has_idea = urd_bad } } }
+			news_event = straits.19 }
+		else_if = {
+			limit = { GER = { has_idea = aris_bad } }
+			news_event = straits.20 }
+		else_if = {
+			limit = { ENG = { has_idea = urd_bad } }
+			news_event = straits.21 }
+		else = {
+			news_event = straits.22 }
+	}
+}
+
+news_event = {
+	id = straits.19
+	title = straits.19.t
+	desc = straits.19.d 
+	picture = GFX_news_event_generic_rally_3
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.19.a 
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = straits.19.b
+		trigger = { NOT = { TAG = GER 
+							TAG = ENG 
+							TAG = FRA } }
+	}
+	option = {
+		name = straits.19.c 
+		trigger = { TAG = ENG }
+	}
+	option = {
+		name = straits.19.e
+		trigger = { TAG = FRA }
+		GER = { 
+		add_war_support = 0.4
+		
+		declare_war_on = {
+    target = ENG
+    type = take_claimed_state
+} }
+
+	}
+}
+
+news_event = {
+	id = straits.20
+	title = straits.20.t
+	desc = straits.20.d 
+	picture = GFX_news_event_generic_rally_3
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.20.a 
+		trigger = { TAG = GER }
+		add_political_power = 100
+		if = { limit = { NOT = { is_in_faction_with = ENG } } 
+		GER = { declare_war_on = {
+    target = ENG
+    type = take_claimed_state
+} }
+	} }
+	option = {
+		name = straits.20.b
+		trigger = { NOT = { TAG = GER 
+							TAG = ENG 
+							TAG = FRA } }
+	}
+	option = {
+		name = straits.20.c 
+		trigger = { TAG = ENG }
+		add_political_power = -50
+	}
+	option = {
+		name = straits.20.e
+		trigger = { TAG = FRA }
+		
+	}
+}
+
+news_event = {
+	id = straits.21
+	title = straits.21.t
+	desc = straits.21.d 
+	picture = GFX_news_event_generic_rally_3
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.21.a 
+		trigger = { TAG = GER }
+		add_political_power = -50
+	}
+	option = {
+		name = straits.21.b
+		trigger = { NOT = { TAG = GER 
+							TAG = ENG 
+							TAG = FRA } }
+	}
+	option = {
+		name = straits.21.c 
+		trigger = { TAG = ENG }
+		add_political_power = 100
+		if = { limit = { NOT = { is_in_faction_with = GER } } 
+		ENG = { declare_war_on = {
+    target = GER
+    type = take_claimed_state
+} }
+	}
+	}
+	option = {
+		name = straits.21.e
+		trigger = { TAG = FRA }
+		
+		 }
+}
+
+news_event = {
+	id = straits.22
+	title = straits.22.t
+	desc = straits.22.d 
+	picture = GFX_news_event_generic_rally_3
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.22.a 
+		trigger = { TAG = GER }
+		remove_ideas = straits_crisis
+	}
+	option = {
+		name = straits.22.b
+		trigger = { NOT = { TAG = GER 
+							TAG = ENG 
+							TAG = FRA } }
+	}
+	option = {
+		name = straits.22.c 
+		trigger = { TAG = ENG }
+		remove_ideas = straits_crisis
+	}
+	option = {
+		name = straits.22.e
+		trigger = { TAG = FRA }
+		add_ideas = neutrona_happened
+	}
+}
+
+news_event = {
+	id = straits.23
+	title = straits.23.t 
+	desc = straits.23.d 
+	picture = GFX_news_event_soldiers_marching
+
+	major = yes 
+	trigger = {
+		818 = { is_controlled_by = ENG }
+		818 = { is_owned_by = GER }
+		GER = { has_war_with = ENG }
+		NOT = { has_global_flag = fall_of_gibraltar_ger }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_gibraltar_ger
+	}
+	
+	option = {
+		name = straits.23.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = straits.23.b
+		trigger = { TAG = GER }
+		remove_ideas = aris_bad
+	}
+	option = {
+		name = straits.23.c
+		trigger = { TAG = ENG }
+		white_peace = { tag = GER
+						message = "United Republic Democracy took Nivvia." }
+		transfer_state = 818
+		remove_ideas = urd_bad
+	}
+}
+
+news_event = {
+	id = straits.24
+	title = straits.24.t 
+	desc = straits.24.d 
+	picture = GFX_news_event_soldiers_marching
+
+	major = yes 
+	trigger = {
+		118 = { is_controlled_by = GER }
+		118 = { is_owned_by = ENG }
+		GER = { has_war_with = ENG }
+		OR = { GER = { has_idea = aris_bad }
+				ENG = { has_idea = urd_bad } }
+		NOT = { has_global_flag = fall_of_gibraltar_ger }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_gibraltar_ger
+	}
+	
+
+
+	
+	option = {
+		name = straits.24.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = straits.24.b
+		trigger = { TAG = GER }
+		white_peace = { tag = ENG
+						message = "Arislantia took Gibraltar." }
+		transfer_state = 118
+		remove_ideas = aris_bad
+	}
+	option = {
+		name = straits.24.c
+		trigger = { TAG = ENG }
+		remove_ideas = urd_bad
+	}
+}
+
+# Peaceful Handover
+news_event = {
+	id = straits.25
+	title = straits.25.t
+	desc = straits.25.d 
+	picture = GFX_news_event_generic_rally_2
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = straits.25.a
+		trigger = { NOT = { TAG = ENG
+							TAG = FRA
+							TAG = GER } }
+	}
+	option = {
+		name = straits.25.b
+		trigger = { TAG = ENG }
+	}
+	option = {
+		name = straits.25.c
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = straits.25.e
+		trigger = { TAG = FRA }
+	}
+}
+
+news_event = {
+	id = straits.26
+	title = straits.26.t
+	desc = straits.26.d 
+	picture = GFX_news_event_generic_rally_2
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = straits.26.a
+		trigger = { NOT = { TAG = ENG
+							TAG = FRA
+							TAG = GER } }
+	}
+	option = {
+		name = straits.26.b
+		trigger = { TAG = ENG }
+	}
+	option = {
+		name = straits.26.c
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = straits.26.e
+		trigger = { TAG = FRA }
+	}
+}
+# DEMAND URD CONCESSIONS
+country_event = {
+	id = straits.27
+	title = straits.27.t
+	desc = straits.27.d 
+	picture = GFX_report_event_ast_navy
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.27.a
+		ai_chance = { factor = 15 }
+		GER = { country_event = straits.29 }
+		custom_effect_tooltip = not_gibraltar
+	}
+	option = {
+		name = straits.27.b
+		ai_chance = { factor = 1 }
+		GER = { country_event = straits.28 }
+		custom_effect_tooltip = concede_gibraltar
+	}
+}
+
+country_event = {
+	id = straits.28
+	title = straits.28.t
+	desc = straits.28.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.28.a
+		news_event = { id = straits.26
+						hours = 6 }
+		transfer_state = 118
+		
+	}
+}
+
+country_event = {
+	id = straits.29
+	title = straits.29.t
+	desc = straits.29.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = straits.29.a
+		news_event = { id = straits.30
+						hours = 6 }
+		hidden_effect = { add_ideas = aris_bad }
+	}
+}
+
+news_event = {
+	id = straits.30
+	title = straits.30.t 
+	desc = straits.30.d 
+	picture = GFX_news_event_ast_navy
+	major = yes 
+	is_triggered_only = yes 
+	
+	option = {
+		name = straits.30.a
+		trigger = { TAG = ENG }
+	}
+	option = {
+		name = straits.30.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = straits.30.c
+		trigger = { NOT = { TAG = ENG 
+							TAG = GER } }
+	}
+}
+
+

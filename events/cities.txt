@@ -1,0 +1,582 @@
+add_namespace = cities
+
+news_event = {
+	id = cities.1
+	title = cities.1.t
+	desc = cities.1.d
+	picture = GFX_news_event_soldiers_marching
+
+	major = yes 
+	trigger = {
+		141 = { OR = {
+				is_controlled_by = GER 
+				is_controlled_by = FRA
+				is_controlled_by = ENG } }
+		141 = { is_owned_by = SWE }
+		SWE = { OR = {
+			has_war_with = ENG
+			has_war_with = FRA
+			has_war_with = GER } }
+		NOT = { has_global_flag = fall_of_stockholm_allies}
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_stockholm_allies
+	}
+	
+
+
+	
+	option = {
+		name = cities.1.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = FRA
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = cities.1.b
+		trigger = { NOT = { is_in_faction_with = SWE } 
+					NOT = { TAG = SWE }
+		}
+		
+	}
+	option = {
+		name = cities.1.c
+		trigger = { TAG = SWE }
+	}
+	
+	option = {
+		name = cities.1.e
+		trigger = { NOT = { TAG = ENG
+							TAG = FRA
+							TAG = GER
+							TAG = SWE }
+					is_in_faction_with = SWE } }
+}
+
+# The Fall of London (Kemmtik)
+news_event = {
+	id = cities.2
+	title = cities.2.t
+	desc = cities.2.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		126 = { is_controlled_by = ICE }
+		126 = { is_owned_by = ENG }
+		ICE = { has_war_with = ENG }
+		NOT = { has_global_flag = fall_of_london_kemmtik }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_london_kemmtik
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = cities.2.a
+		trigger = {
+			NOT = {
+				TAG = ICE
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = cities.2.b
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = cities.2.c
+		trigger = { TAG = ENG }
+	}
+}
+# Fall of Paris (Kemmtik)
+news_event = {
+	id = cities.3
+	title = cities.3.t
+	desc = cities.3.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	trigger = {
+		16 = { is_controlled_by = ICE }
+		16 = { is_owned_by = FRA }
+		FRA = { has_war_with = ICE }
+		NOT = { has_global_flag = fall_of_paris_kemmtik }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_paris_kemmtik
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.2.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = cities.2.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = cities.2.c
+		trigger = { TAG = FRA }
+	}
+}
+# Fall of Protonia (Kenu)
+news_event = {
+	id = cities.4
+	title = cities.2.t
+	desc = cities.4.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	trigger = {
+		16 = { is_controlled_by = ITA }
+		16 = { is_owned_by = FRA }
+		FRA = { has_war_with = ITA }
+		NOT = { has_global_flag = fall_of_paris_kenu }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_paris_kenu
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.4.a
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = cities.2.b
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = cities.2.c
+		trigger = { TAG = FRA }
+	}
+}
+
+# Fall of Protonia (Kenu)
+news_event = {
+	id = cities.4
+	title = cities.2.t
+	desc = cities.4.d
+	picture = GFX_news_event_german_soldiers
+	
+	major = yes
+	
+	trigger = {
+		16 = { is_controlled_by = ITA }
+		16 = { is_owned_by = FRA }
+		FRA = { has_war_with = ITA }
+		NOT = { has_global_flag = fall_of_paris_kenu }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_paris_kenu
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.4.a
+		trigger = {
+			NOT = {
+				TAG = ITA
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = cities.2.b
+		trigger = { TAG = ITA }
+	}
+	option = {
+		name = cities.2.c
+		trigger = { TAG = FRA }
+	}
+}
+
+news_event = {
+	id = cities.5
+	title = cities.5.t
+	desc = cities.5.d
+	picture = GFX_news_event_germany_victory
+	
+	major = yes
+	
+	trigger = {
+		10 = { is_controlled_by = GER }
+		10 = { is_owned_by = POL }
+		GER = { has_war_with = POL }
+		NOT = { has_global_flag = fall_of_warsaw_ger }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_warsaw_ger
+	}
+	
+	mean_time_to_happen = {
+		days = 2
+	}
+	
+	option = {
+		name = cities.5.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+		}
+	}
+	option = {
+		name = cities.5.b
+		trigger = { TAG = GER }
+	}
+	option = {
+		name = cities.5.c
+		trigger = { TAG = POL }
+	}
+}
+
+news_event = {
+	id = cities.6
+	title = cities.6.t
+	desc = cities.6.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		100 = { is_controlled_by = FRA }
+		100 = { is_owned_by = ICE }
+		ICE = { has_war_with = FRA }
+		NOT = { has_global_flag = fall_of_reykjavik_fra }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_reykjavik_fra
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.6.a
+		trigger = {
+			NOT = {
+				TAG = ICE
+				TAG = FRA
+			}
+		}
+	}
+	option = {
+		name = cities.6.b
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = cities.6.c
+		trigger = { TAG = FRA }
+	}
+}
+
+news_event = {
+	id = cities.7
+	title = cities.6.t
+	desc = cities.7.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		100 = { is_controlled_by = ENG }
+		100 = { is_owned_by = ICE }
+		ICE = { has_war_with = ENG }
+		NOT = { has_global_flag = fall_of_reykjavik_eng }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_reykjavik_eng
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.6.a
+		trigger = {
+			NOT = {
+				TAG = ICE
+				TAG = ENG
+			}
+		}
+	}
+	option = {
+		name = cities.6.b
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = cities.7.c
+		trigger = { TAG = ENG }
+	}
+}
+
+news_event = {
+	id = cities.8
+	title = cities.6.t
+	desc = cities.8.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		100 = { is_controlled_by = TUD }
+		100 = { is_owned_by = ICE }
+		ICE = { has_war_with = TUD }
+		NOT = { has_global_flag = fall_of_reykjavik_tud }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_reykjavik_tud
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.6.a
+		trigger = {
+			NOT = {
+				TAG = ICE
+				TAG = TUD
+			}
+		}
+	}
+	option = {
+		name = cities.6.b
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = cities.8.c
+		trigger = { TAG = TUD }
+	}
+}
+
+news_event = {
+	id = cities.9
+	title = cities.9.t
+	desc = cities.9.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		64 = { is_controlled_by = SWE }
+		64 = { is_owned_by = GER }
+		GER = { has_war_with = SWE }
+		NOT = { has_global_flag = fall_of_berlin_air }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_berlin_air
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.9.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = SWE
+			}
+		}
+	}
+	option = {
+		name = cities.9.b
+		trigger = { TAG = SWE }
+	}
+	option = {
+		name = cities.9.c
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = cities.10
+	title = cities.9.t
+	desc = cities.10.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		64 = { is_controlled_by = POL }
+		64 = { is_owned_by = GER }
+		POL = { has_war_with = GER }
+		NOT = { has_global_flag = fall_of_berlin_emerald }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_berlin_emerald
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.9.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+		}
+	}
+	option = {
+		name = cities.10.b
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = cities.9.c
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = cities.11
+	title = cities.11.t
+	desc = cities.11.d
+	picture = GFX_news_event_soldiers_marching
+	
+	major = yes
+	
+	trigger = {
+		88 = { is_controlled_by = GER }
+		88 = { is_owned_by = POL }
+		POL = { has_war_with = GER }
+		NOT = { has_global_flag = fall_of_jewelston_ger }
+	}
+	
+	immediate = {
+		set_global_flag = fall_of_jewelston_ger
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = cities.11.a
+		trigger = {
+			NOT = {
+				TAG = GER
+				TAG = POL
+			}
+		}
+	}
+	option = {
+		name = cities.5.c
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = cities.5.b
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = cities.12
+	hidden = yes
+	trigger = { 
+		NOT = { has_global_flag = great_war_fired }
+		any_country = {
+			is_major = yes
+			OR = {
+				AND = {
+					is_in_faction_with = SWE 
+					NOT = { tag = SWE }
+					OR = { has_war_with = ENG
+							has_war_with = ITA
+							has_war_with = FRA
+							has_war_with = GER
+							has_war_with = POL
+							has_war_with = ICE 
+						}
+				}
+				AND = {
+					is_in_faction_with = FRA
+					NOT = { tag = FRA }
+					OR = { has_war_with = ENG
+							has_war_with = ITA
+							has_war_with = SWE
+							has_war_with = GER
+							has_war_with = POL
+							has_war_with = ICE 
+						}
+				}
+				AND = {
+					is_in_faction_with = POL 
+					NOT = { tag = POL }
+					OR = { has_war_with = ENG
+							has_war_with = ITA
+							has_war_with = FRA
+							has_war_with = GER
+							has_war_with = SWE
+							has_war_with = ICE 
+						}
+				}
+			}
+				
+		}
+	}
+	
+	immediate = {
+		set_global_flag = great_war_fired 
+	}
+	
+	option = {
+		name = templetonshift.26.a
+		every_country = {
+			set_country_flag = view_great_war_event
+		}
+	}
+}
+

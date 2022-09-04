@@ -1,0 +1,8 @@
+﻿###########################
+# Turkey Events
+###########################
+
+add_namespace = turkey
+
+# President dies
+

@@ -1,0 +1,4711 @@
+﻿add_namespace = templetonshift 
+ 
+##Event: Slabvian-Armenian Relations Sour
+#Slabvian-Armenian Relations Sour
+news_event = {
+	id = templetonshift.1
+	title = templetonshift.1.title
+	desc = templetonshift.1.desc
+	picture = GFX_news_event_042
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.1.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+##Event: Kemmtik demands Greenland
+country_event = {
+	id = templetonshift.2
+	title = templetonshift.2.title
+	desc = templetonshift.2.desc
+	picture = GFX_news_event_ast_navy
+	fire_only_once = yes
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.2.a
+		ai_chance = { factor = 10}
+		add_political_power= -50
+		ICE = {
+			transfer_state = 101
+			add_state_core = 101
+			transfer_state = 337
+			add_state_core = 337
+			transfer_state = 841
+			add_state_core = 841
+			transfer_state = 839
+			add_state_core = 839
+			transfer_state = 840
+			add_state_core = 840}
+		news_event = { 
+			hours = 2
+			id = templetonshift.24
+			}
+	}
+	option = {
+		name = templetonshift.2.b
+		ai_chance = { factor = 1}
+		ICE = {	create_wargoal= { 
+				type = annex_everything 
+				target = DEN
+				}
+			}
+		news_event = { 
+			hours = 2
+			id = templetonshift.25
+			}
+	}
+}
+
+# Denmark Agrees / Refuses
+news_event = {
+	id = templetonshift.24
+	title = templetonshift.24.title
+	desc = templetonshift.24.desc
+	picture = GFX_news_event_005
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.24.a
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = templetonshift.24.b
+		trigger = { TAG = DEN }
+	}
+	option = {
+		name = templetonshift.24.c
+		trigger = { NOT = {
+		TAG = DEN
+		TAG = ICE
+		} }
+	}
+	}
+
+news_event = {
+	id = templetonshift.25
+	title = templetonshift.25.title
+	desc = templetonshift.25.desc
+	picture = GFX_news_event_ast_navy
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.25.a
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = templetonshift.25.b
+		trigger = { TAG = DEN }
+	}
+	option = {
+		name = templetonshift.25.c
+		trigger = { NOT = {
+		TAG = DEN
+		TAG = ICE
+		} }
+	}
+	}
+		
+##Event: Invitation to the Allies
+country_event = {
+ id = templetonshift.3
+ title = templetonshift.3.title
+ desc = templetonshift.3.desc
+ picture = GFX_report_event_military_planning
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = templetonshift.3.a
+		ai_chance = { factor = 1}
+		FRA = {country_event = {
+id = templetonshift.4
+days = 1
+random = 0 }}
+	}
+	option = {
+		name = templetonshift.3.b
+		ai_chance = { factor = 10}
+		FRA = {country_event = {
+id = templetonshift.5
+days = 1
+random = 0 }}
+	}
+}
+
+##Event: Arislantia refuses to join the Allies
+country_event = {
+ id = templetonshift.4
+ title = templetonshift.4.title
+ desc = templetonshift.4.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = templetonshift.4.a
+		ai_chance = { factor = 1}
+		FRA = { create_wargoal = {
+    type = puppet_wargoal_focus
+    target = GER
+}
+}
+	}
+}
+
+##Event: Arislantia joins the Allies
+country_event = {
+ id = templetonshift.5
+ title = templetonshift.5.title
+ desc = templetonshift.5.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = templetonshift.5.a
+		ai_chance = { factor = 1}
+		FRA = {add_to_faction = GER}
+		GER = { 
+		add_popularity = {
+			ideology = democratic
+			popularity = -0.65
+				}
+		add_popularity = {
+			ideology = parliamentary_democratic
+			popularity = 0.65
+				}
+		set_politics = {
+			ruling_party = parliamentary_democratic
+			}
+		}
+	}
+}
+
+##Event: Invitation to the Allies
+country_event = {
+ id = templetonshift.6
+ title = templetonshift.6.title
+ desc = templetonshift.6.desc
+ picture = GFX_report_event_saf_soldiers_3
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.6.a
+		ai_chance = { factor = 10}
+		add_political_power = 10
+if = {
+    limit = {
+        original_tag = GER
+    }   
+FRA = {country_event = {
+id = templetonshift.9
+days = 1
+random = 0 }}
+}
+else_if = {
+    limit = {
+        original_tag = ENG
+    }
+FRA = {country_event = {
+id = templetonshift.8
+days = 1
+}}
+}
+	}
+	option = {
+		name = templetonshift.6.b
+		ai_chance = { factor = 1}
+		if = {
+    limit = {
+        original_tag = GER
+    }   
+FRA = {country_event = {
+id = templetonshift.10
+days = 1
+}}
+}
+else_if = {
+    limit = {
+        original_tag = ENG
+    }
+FRA = {country_event = {
+id = templetonshift.7
+days = 1
+}}
+}
+	}
+}
+
+##Event: United Republic Democracy Rejects the Offer
+country_event = {
+ id = templetonshift.7
+ title = templetonshift.7.title
+ desc = templetonshift.7.desc
+ picture = GFX_report_event_saf_soldiers_3
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.7.a
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = templetonshift.7.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: United Republic Democracy Accepts the Offer
+country_event = {
+ id = templetonshift.8
+ title = templetonshift.8.title
+ desc = templetonshift.8.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.8.a
+		ai_chance = { factor = 1}
+		FRA = { add_to_faction = ENG }
+	}
+}
+
+##Event: Arislantia Accepts the Offer
+country_event = {
+ id = templetonshift.9
+ title = templetonshift.9.title
+ desc = templetonshift.9.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.9.a
+		ai_chance = { factor = 1}
+		FRA = {add_to_faction = GER}
+	}
+}
+
+##Event: Arislantia Rejects the Offer
+country_event = {
+ id = templetonshift.10
+ title = templetonshift.10.title
+ desc = templetonshift.10.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.10.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: I.S.O.T.O.P.E. Proposes I.S.O.T.U.R.D.
+country_event = {
+ id = templetonshift.11
+ title = templetonshift.11.title
+ desc = templetonshift.11.desc
+ picture = GFX_report_event_hitler_handshake
+ is_triggered_only = yes
+ 
+	option = {
+		name = templetonshift.11.a
+		ai_chance = { factor = 100}
+		hidden_effect = {
+			every_country = { limit = { is_subject_of = ENG  }
+							FRA = { set_autonomy = {
+    target = PREV
+    autonomy_state = autonomy_dominion
+}
+}
+							} }
+		hidden_effect = {
+	every_state = {
+		limit = {					is_core_of = ENG
+				}
+				FRA = {
+					add_state_core = PREV
+				}
+			}
+		}
+		ENG = {
+			every_unit_leader = {
+				set_nationality = FRA
+			}
+		}
+		FRA = {
+			annex_country = { target = ENG transfer_troops = yes }
+		}
+		hidden_effect = {
+			FRA = { set_cosmetic_tag = ISOTURD }
+		}
+	}
+	option = {
+		name = templetonshift.11.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Invitation to the Arislantian Entente ################
+country_event = {
+ id = templetonshift.12
+ title = templetonshift.12.title
+ desc = templetonshift.12.desc
+ picture = GFX_report_event_soldiers_marching
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.12.a
+		ai_chance = { factor = 9}
+		if = {
+limit = {original_tag = TUR}
+GER = {add_to_faction = TUR} 
+else_if = {
+limit = {original_tag = LAT}
+GER = {add_to_faction = LAT} 
+else_if = {
+limit = {original_tag = ARM}
+GER = {add_to_faction = ARM} 
+else_if = {
+limit = {original_tag = YUG}
+GER = {add_to_faction = YUG} } } } } }
+	option = {
+		name = templetonshift.12.b
+		ai_chance = { factor = 1}
+		GER = { country_event = {
+    id = templeshift.13
+    days = 1
+    random = 0
+} }
+	}
+
+}
+
+
+##Event: Invitation Refused
+country_event = {
+ id = templetonshift.13
+ title = templetonshift.13.title
+ desc = templetonshift.13.desc
+ picture = GFX_report_event_ast_army
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.13.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Arislantian Communist Party Demands Negotiations!
+news_event = {
+ id = templetonshift.14
+ title = templetonshift.14.title
+ desc = templetonshift.14.desc
+ picture = GFX_news_event_069
+ fire_only_once = yes
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.14.a
+		ai_chance = { factor = 1}
+		add_ideas = arislantian_strikes
+	}
+}
+
+##Event: Airabor Demands Subjugation!
+country_event = {
+ id = templetonshift.15
+ title = templetonshift.15.title
+ desc = templetonshift.15.desc
+ picture = GFX_report_event_soviet_tanks
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.15.a
+		ai_chance = { factor = 9}
+		SWE = { puppet = DEN}
+		hidden_effect = {
+		news_event = {
+		hours = 6
+		id = templetonshift.17
+		}
+		} 
+	}
+	option = {
+		name = templetonshift.15.b
+		ai_chance = { factor = 1}
+		SWE = { 
+country_event = {
+id = templetonshift.16
+days = 1
+} }
+	}
+}
+
+##Event: Denmark rejects Demands!
+country_event = {
+ id = templetonshift.16
+ title = templetonshift.16.title
+ desc = templetonshift.16.desc
+ picture = GFX_report_event_ast_troops_landing
+ is_triggered_only = yes
+	option = {
+		name = templetonshift.16.a
+		ai_chance = { factor = 1}
+		create_wargoal = {
+    type = puppet_wargoal_focus
+    target = DEN
+}
+	}
+}
+
+##Event: Denmark Government Collapse
+news_event = {
+	id = templetonshift.17
+	title = templetonshift.17.title
+	desc = templetonshift.17.desc
+	picture = GFX_news_event_generic_rally_3
+	
+	major = yes
+	
+	is_triggered_only = yes
+
+	option = {
+		name = templetonshift.17.a
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: Kemmtik claims on Greenland
+news_event = {
+	id = templetonshift.18
+	title = templetonshift.18.title
+	desc = templetonshift.18.desc
+	picture = GFX_news_event_hol_polderen
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = templetonshift.18.a
+		trigger = { 
+		NOT = {
+		TAG = SWE
+		TAG = ICE
+		} }
+		ai_chance = { factor = 1}
+	}
+	option = {
+		name = templetonshift.18.b
+		ai_chance = { factor = 1}
+		trigger = {
+		TAG = SWE
+		TAG = ICE } 
+	}
+}
+
+##Event: Kemmtik claims the Faroe Islands
+news_event = {
+	id = templetonshift.19
+	title = templetonshift.19.title
+	desc = templetonshift.19.desc
+	picture = GFX_news_event_ast_navy
+	major = yes
+	is_triggered_only = yes	
+	option = {
+		name = templetonshift.19.a
+		trigger = {
+			NOT = {
+				TAG = ICE
+				TAG = ITA
+				TAG = SWE
+			}
+		}
+	}
+	option = {
+		name = templetonshift.19.b
+		trigger =  {
+			TAG = ICE
+			TAG = ITA
+			TAG = SWE
+		}
+	}
+}
+
+##Event: Kemmtik and Kenu want to join Axis
+country_event = {
+ id = templetonshift.20
+ title = templetonshift.20.title
+ desc = templetonshift.20.desc
+ picture = GFX_report_event_molotov_ribentrop_handshake
+ is_triggered_only = yes
+ fire_only_once = yes
+	option = {
+		name = templetonshift.20.a
+		ai_chance = { factor = 100}
+		SWE = {
+add_to_faction = ICE
+add_to_faction = ITA
+}
+news_event = { 
+	id = templetonshift.21 
+	days = 0}
+	}
+	option = {
+		name = templetonshift.20.b
+		ai_chance = { factor = 1}
+	}
+}
+
+##Event: The Kairabenu Alliance
+country_event = {
+ id = templetonshift.21
+ title = templetonshift.21.title
+ desc = templetonshift.21.desc
+ picture = GFX_event_test
+ is_triggered_only = yes
+ major = yes
+ fire_only_once = yes
+	option = {
+		name = templetonshift.21.a
+		ai_chance = { factor = 1000}
+		trigger = {
+			TAG = ENG
+			TAG = FRA
+			TAG = GER
+			}
+add_war_support = 0.1
+add_stability = 0.1 }
+	option = {
+		name = templetonshift.21.b
+		ai_chance = { factor = 1}
+	}
+}
+
+
+#MEMEMEMEME
+news_event = {
+	id = templetonshift.23
+	title = templetonshift.23.t
+	desc = templetonshift.23.d
+	picture = GFX_news_event_generic_riot
+	major = yes
+	is_triggered_only = yes
+
+	option = {
+		name = templetonshift.23.a
+		ai_chance = { factor = 1}
+		trigger = { NOT = { original_tag = ITA } }
+			
+	}
+	option = {
+		name = templetonshift.23.b 
+		ai_chance = { factor = 10000000000000 }
+		trigger = {
+			OR = {
+				original_tag = ITA
+				TAG = ITA
+				TAG = D02
+				}
+			has_government = fascism
+		}
+		hidden_effect = {
+			country_event = { id = templetonshift.39
+								days = 100 }
+							}
+						
+	}
+
+}
+# Kenu Civil War
+country_event = {
+	id = templetonshift.22
+	title = templetonshift.22.t
+	desc = templetonshift.22.d
+	picture = GFX_report_event_soldiers_marching
+	fire_only_once = yes
+
+	
+	trigger = {
+		tag = ITA
+		has_defensive_war = no
+		date > 1936.09.01 # Trigger at some point after 1936 elections
+		# testing rn
+	}
+
+	mean_time_to_happen = {
+		days = 40	# Historical outbreak time after elections
+	}
+	immediate = {
+		set_global_flag = kenu_civil_war_fired
+	}
+	
+	option = { # Support Nationalists
+		name = templetonshift.22.fascism
+		ai_chance = { factor = 10000000000 }
+		hidden_effect = {
+			every_country = {
+				set_country_flag = view_kenu_civil_war_event
+			}
+			set_capital = 158
+			start_civil_war = {
+				
+				ideology = communism
+				size = 0.5
+				capital = 2
+				states = { 2 803 117 156 114 831 }
+			}
+			random_other_country = {
+				limit = {
+					original_tag = ITA
+					has_government = communism
+				}
+				set_cosmetic_tag = Kenu_otherside
+				load_oob = "Italy_1936"
+				set_equipment_fraction = 0.35
+				set_stability = 0.9
+				set_war_support = 0.8
+				#country_event = { id = spain.3 days = 1 }
+				add_popularity = {
+					ideology = democratic
+					popularity = 0.35
+				}
+			}
+			news_event = { hours = 6 id = templetonshift.23 }
+			
+			set_politics = {
+				ruling_party = fascism
+				elections_allowed = no
+			}
+			set_equipment_fraction = 0.65
+			set_stability = 0.9
+			set_war_support = 0.8
+			
+			add_popularity = {
+				ideology = fascism
+				popularity = 1
+			}
+			random_other_country = {
+				limit = {
+					original_tag = ITA
+					has_government = communism
+				}
+
+			}
+
+			#country_event = { id = spain.2 days = 7 }
+		}
+		#custom_effect_tooltip = nationalists_chosen
+	}
+	option = { # Support Republicans
+		name = templetonshift.22.communism
+		ai_chance = { factor = 0 }
+		hidden_effect = {
+			start_civil_war = {
+				ideology = fascism
+				size = 0.5
+				capital = 158
+				states = { 158 159 161 162 115 157 802}
+			}
+			random_other_country = {
+				limit = {
+					original_tag = ITA
+					has_government = fascism
+				}
+				set_cosmetic_tag = Kenu_otherside
+				set_equipment_fraction = 0.5
+				set_stability = 0.9
+				set_war_support = 0.8
+				#country_event = { id = spain.2 days = 1 }
+				load_oob = "Italy_1936"
+			}
+			news_event = { hours = 6 id = templetonshift.23 }
+			
+			set_politics = {
+				ruling_party = communism
+				elections_allowed = no
+			}
+			add_popularity = {
+				ideology = communism
+				popularity = 0.8
+			}
+			add_popularity = {
+				ideology = fascism
+				popularity = -1
+			}	
+			random_other_country = {
+				limit = {
+					original_tag = ITA
+					has_government = fascism
+				}
+
+			}
+			
+			set_equipment_fraction = 0.5
+			set_stability = 0.9
+			set_war_support = 0.8
+			
+			#country_event = { id = spain.3 days = 7 }
+		}
+		#custom_effect_tooltip = republicans_chosen
+	}
+}
+
+# HIDDEN TRIGGER
+news_event = {
+	id = templetonshift.26
+	hidden = yes
+	fire_only_once = yes
+	option = {
+		name = templetonshift.26.a
+		news_event = { 
+			days = 2
+			id = templetonshift.76
+		}
+		news_event = {
+			days = 95
+			id = templetonshift.27
+		}
+		news_event = {
+			days = 26
+			id = templetonshift.1
+		}
+		news_event = {
+			days = 500
+			id = templetonshift.38 }
+		
+		TUD = { country_event = {
+			days = 40
+			id = templetonshift.66 } }
+			
+		GER = {
+			country_event = {
+				days = 121
+				id = templetonshift.14
+			}
+		}
+		ENG = { 
+			country_event = {
+				days = 814
+				id = templetonshift.95
+			}
+		} 
+		
+		SUP = {  
+			set_variable = { global.days_countdown = 3 }
+			news_event = entente.6
+			set_global_flag = next_is_phase_1
+			
+			# GER test trigger 
+			country_event = {
+				days = 1003
+				id = supreme.1
+			}
+		}
+		
+		
+	}
+}
+
+# Fascist Gathering Festival
+news_event = {
+	id = templetonshift.27
+	title = templetonshift.27.t
+	desc = templetonshift.27.d
+	picture = GFX_news_event_fascist_gathering
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.27.a
+		trigger = { NOT = {
+		TAG = ICE
+		TAG = SWE
+		} }
+	}
+	option = {
+		name = templetonshift.27.b
+		add_political_power = 100
+		trigger = {
+		TAG = ICE
+		TAG = SWE
+		}
+	}
+}
+
+# Thrace Crisis Event Chain
+# Message to Isotope
+country_event = {
+	id = templetonshift.28
+	title = templetonshift.28.t
+	desc = templetonshift.28.d 
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		# SURE
+		name = templetonshift.28.a
+		ai_chance = { factor = 25 }
+		ENG = { country_event = { id = templetonshift.29 }
+		}
+		}
+	option = {
+		# NO
+		name = templetonshift.28.b
+		ai_chance = { factor = 1 }
+		ENG = { country_event = { id = templetonshift.30 }
+		}
+		add_to_faction = GRE
+		add_war_support = 0.1
+		}
+	}
+# England: Isotope doesn't want to fight
+country_event = { 
+	id = templetonshift.29
+	title = templetonshift.29.t
+	desc = templetonshift.29.d
+	picture = GFX_report_event_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		# YES
+		name = templetonshift.29.a
+		ai_chance = { factor = 25 }
+		GRE = { country_event = { id = templetonshift.31 }
+		}
+		
+		}
+	option = {
+		# SCREW ISOTOPE, WE DEFEND THE WORLD
+		name = templetonshift.29.b
+		ai_chance = { factor = 1 }
+		GRE = { country_event = { id = templetonshift.32 }
+		}
+		create_faction = "Entente"
+		add_to_faction = GRE
+		}
+	}
+# Message to England: Isotope wants to fight
+country_event = { 
+	id = templetonshift.30
+	title = templetonshift.30.t
+	desc = templetonshift.30.d
+	picture = GFX_report_event_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		# YES LET'S FIGHT
+		name = templetonshift.30.a
+		ai_chance = { factor = 100 }
+		GRE = { country_event = { id = templetonshift.32 }
+		}
+		add_war_support = 0.1
+		FRA = { add_to_faction = ENG }
+		}
+	option = {
+		# BYE ISOTOPE
+		name = templetonshift.30.b
+		ai_chance = { factor = 20 }
+		GRE = { country_event = { id = templetonshift.32 }
+		}
+		}
+	}
+# Isotope and URD refuse to help
+country_event = {
+	id = templetonshift.31
+	title = templetonshift.31.t
+	desc = templetonshift.31.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.31.a
+		ai_chance = { factor = 70 }
+		ICE = { country_event = { id = templetonshift.33 } } }
+	option = {
+		name = templetonshift.31.b 
+		ai_chance = { factor = 1 }
+		ICE = { country_event = { id = templetonshift.34 }
+	}
+
+	}
+}
+
+# Isotope / URD / Both want to help
+country_event = {
+	id = templetonshift.32
+	title = templetonshift.32.t
+	desc = templetonshift.32.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.32.a 
+		ai_chance = { factor = 70 }
+		ICE = { country_event = { id = templetonshift.34 }
+	}
+	}
+}
+
+# Kemmtik with no opposition
+country_event = {
+	id = templetonshift.33
+	title = templetonshift.33.t
+	desc = templetonshift.33.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.33.a 
+		ai_chance = { factor = 70 }
+		transfer_state = 184
+		transfer_state = 731
+		news_event = { id = templetonshift.35
+		days = 1 }
+	}
+}
+# Opposition
+country_event = {
+	id = templetonshift.34
+	title = templetonshift.34.t
+	desc = templetonshift.34.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.34.a 
+		create_wargoal = {
+		type = puppet_wargoal_focus
+		target = GRE
+						}
+		news_event = { id = templetonshift.36
+		days = 1 }
+	}
+}
+# WWII averted
+news_event = {
+	id = templetonshift.35
+	title = templetonshift.35.t
+	desc = templetonshift.35.d
+	picture = GFX_report_event_sign_treaty3
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.35.a 
+		trigger = {
+		TAG = FRA
+		TAG = ENG
+		}
+		}
+	option = {
+		name = templetonshift.35.b
+		trigger = { TAG = GRE }
+	}
+	option = {
+		name = templetonshift.36.c }
+	}
+# WWII begins
+news_event = {
+	id = templetonshift.36
+	title = templetonshift.36.t
+	desc = templetonshift.36.d
+	picture = GFX_report_event_generic_military_parade
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.36.a 
+		trigger = {
+		TAG = FRA
+		TAG = ENG
+		TAG = GRE
+		}
+		}
+	option = {
+		name = templetonshift.36.b
+		trigger = { TAG = ICE }
+	}
+	option = {
+		name = templetonshift.36.c }
+	}
+
+news_event = {
+	id = templetonshift.37
+	title = templetonshift.37.t
+	desc = templetonshift.37.d
+	picture = GFX_news_event_ast_navy
+	
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = templetonshift.37.a
+		trigger = {
+		OR = {
+		TAG = FRA
+		TAG = ENG
+		TAG = GER
+		} }
+		add_stability = -0.05
+	}
+	option = {
+		name = templetonshift.37.b
+		trigger = { 
+		OR = { TAG = ICE 
+		TAG = SWE } }
+		add_political_power = 75
+	}
+	option = {
+		name = templetonshift.37.c }
+		trigger = { NOT = { TAG = FRA
+		
+						TAG = GER
+						TAG = ENG
+						TAG = ICE
+						TAG = SWE } }
+	}
+	
+news_event = {
+	id = templetonshift.38
+	title = templetonshift.38.t
+	desc = templetonshift.38.d
+	picture = GFX_news_event_fascist_gathering
+	
+	is_triggered_only = yes
+	major = yes
+	option = {
+		name = templetonshift.38.a
+		trigger = { tag = POL }
+		add_political_power = 150
+	}
+	option = { name = templetonshift.38.b }
+		trigger = { NOT = { tag = POL } }
+	}
+
+country_event = {
+	id = templetonshift.39
+	title = templetonshift.39.t
+	desc = templetonshift.39.d 
+	picture = GFX_report_event_soviet_soldiers
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.39.a
+		add_ideas = { kenu_civil_bonus }
+	}
+}
+
+country_event = {
+	id = templetonshift.40
+	title = templetonshift.40.t
+	desc = templetonshift.40.d
+	picture = GFX_report_event_hitler_handshake 
+	
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.40.a
+		news_event = { id = templetonshift.41 }
+		ai_chance = { factor = 5 } }
+	option = {
+		name = templetonshift.40.b
+		hidden_effect = {
+		FRA = {
+		every_state = {
+		limit = {					is_core_of = GER
+				}
+				FRA = {
+					add_state_core = PREV
+				}
+			}
+		}
+		ENG = {
+			every_unit_leader = {
+				set_nationality = FRA
+			}
+		} }
+		hidden_effect = {
+		FRA = { 
+		annex_country = { target = ENG 
+		transfer_troops = yes }
+		annex_country = { target = GER
+		transfer_troops = yes } 
+		set_cosmetic_tag = WESTERNEUROUNION } }
+		news_event = { id = templetonshift.42 }
+		ai_chance = { factor = 4 }
+		
+	} 
+}
+
+news_event = {
+	id = templetonshift.41
+	title = templetonshift.41.t 
+	desc = templetonshift.41.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes 
+	
+	option = {
+		name = templetonshift.41.a 
+		trigger = { NOT = {
+							TAG = POL
+							TAG = FRA
+							TAG = ENG
+							TAG = GER } }
+	}
+	option = {
+		name = templetonshift.41.b 
+		trigger = { TAG = POL }
+		add_timed_idea = { idea = dellis_says_no
+							days = 180 }
+						}
+	option = {
+		name = templetonshift.41.c
+		trigger = { TAG = FRA
+					TAG = ENG
+					TAG = GER }
+		}
+	}
+
+news_event = {
+	id = templetonshift.42
+	title = templetonshift.42.t 
+	desc = templetonshift.42.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.42.a 
+		trigger = { NOT = {
+							TAG = POL
+							TAG = FRA
+							TAG = ENG
+							TAG = GER } }
+	}
+	option = {
+		name = templetonshift.42.b 
+		trigger = { TAG = POL }
+		}
+	option = {
+		name = templetonshift.42.c
+		trigger = { TAG = FRA
+					TAG = ENG
+					TAG = GER }
+		}
+	}
+
+
+news_event = {
+	id = templetonshift.43
+	title = templetonshift.43.t 
+	desc = templetonshift.43.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.43.a
+		trigger = { TAG = ICE }
+		}
+	option = {
+		name = templetonshift.43.b
+	}
+	option = {
+		name = templetonshift.43.c
+		trigger = { has_idea = watchful_neutrality }
+} }
+	
+# Bosporous Event
+
+country_event = {
+	id = templetonshift.44
+	title = templetonshift.44.t 
+	desc = templetonshift.44.d 
+	picture = GFX_report_event_ast_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.44.a
+		341 = { set_demilitarized_zone = yes }
+		ai_chance = { factor = 1 }
+		news_event = { id = templetonshift.45 }
+		}
+		
+	option = {
+		name = templetonshift.44.b
+		ai_chance = { factor = 100 }
+		ENG = { country_event = { id = templetonshift.46 } } 
+		}
+		trigger = { has_completed_focus = TUR_challengethewest }
+}
+
+news_event = {
+	id = templetonshift.45
+	title = templetonshift.45.t 
+	desc = templetonshift.45.d 
+	picture = GFX_news_event_ast_navy
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.45.a
+		trigger = { TAG = ENG }
+		}
+	option = {
+		name = templetonshift.45.b
+		trigger = { NOT = { TAG = ENG } }
+	}
+	 }
+	
+country_event = {
+	id = templetonshift.46
+	title = templetonshift.46.t 
+	desc = templetonshift.46.d 
+	picture = GFX_report_event_ast_army
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.46.a
+		}
+	option = {
+		name = templetonshift.46.b
+		create_wargoal = { 
+				type = puppet_wargoal_focus
+				target = TUR
+				}
+			}
+			
+}
+
+# Slabvia's attempt to salvage relations
+country_event = {
+	id = templetonshift.47
+	title = templetonshift.47.t
+	desc = templetonshift.47.d
+	picture = GFX_report_event_generic_sign_treaty2
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.46.a
+		give_guarantee = TUR
+		TUR = { give_guarantee = ARM }
+		news_event = templetonshift.48
+		ai_chance = { factor = 10 }
+		}
+	option = {
+		name = templetonshift.46.b
+		news_event = templetonshift.49
+	}
+}
+
+news_event = {
+	id = templetonshift.48
+	title = templetonshift.48.t
+	desc = templetonshift.48.d
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes 
+	
+	option = {
+		name = templetonshift.48.a
+		trigger = { NOT = { TAG = TUR
+							TAG = ARM } }
+		}
+	option = {
+		trigger = { OR = { TAG = TUR
+					TAG = ARM } }
+		add_ideas = treatyoffriends
+		name = templetonshift.48.b
+		
+	}
+} 
+
+news_event = {
+	id = templetonshift.49
+	title = templetonshift.49.t
+	desc = templetonshift.49.d
+	picture = GFX_news_event_ast_navy
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.49.a
+		trigger = { NOT = { TAG = TUR } } }
+		
+	option = {
+		trigger = { TAG = TUR }
+		name = templetonshift.49.b
+		create_wargoal = {
+			target = ARM 
+			type = puppet_wargoal_focus
+		}
+	}
+			
+		
+}
+
+news_event = {
+	id = templetonshift.50
+	title = templetonshift.50.t
+	desc = templetonshift.50.t
+	picture = GFX_news_event_generic_riot
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.50.a
+		trigger = { NOT = { TAG = TUR } } }
+		
+	option = {
+		trigger = { TAG = TUR }
+		name = templetonshift.50.b
+		
+	}
+			
+		
+}
+
+# Demand Cyprus
+
+country_event = {
+	id = templetonshift.51
+	title = templetonshift.51.t
+	desc = templetonshift.51.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.51.a
+		TUR = { country_event = templetonshift.52 }
+
+	}
+	
+	option = {
+		name = templetonshift.51.b
+		TUR = { country_event = templetonshift.53 }
+		
+	}
+			
+		
+}
+
+country_event = {
+	id = templetonshift.52
+	title = templetonshift.52.t
+	desc = templetonshift.52.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.52.a
+		transfer_state = 183
+	}
+			
+		
+}
+
+country_event = {
+	id = templetonshift.53
+	title = templetonshift.53.t
+	desc = templetonshift.53.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.53.a
+		create_wargoal = {
+			target = ENG
+			type = puppet_wargoal_focus
+		}
+	}
+			
+		
+}
+
+# Radicalization of Monroe
+news_event = {
+	id = templetonshift.54
+	title = templetonshift.54.t
+	desc = templetonshift.54.d
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.54.a
+		trigger = { NOT = { TAG = TUD } } 
+
+	}
+	
+	option = {
+		name = templetonshift.54.b
+		trigger = { TAG = TUD } }
+		
+	}
+			
+		
+
+
+# Tudor demands Cuba
+country_event = {
+	id = templetonshift.55
+	title = templetonshift.55.t 
+	desc = templetonshift.55.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.55.a
+		TUD = { country_event = templetonshift.56 }
+
+	}
+	
+	option = {
+	# no
+		name = templetonshift.55.b
+		TUD = { country_event = templetonshift.57 }
+		
+	}
+			
+		
+}
+
+country_event = {
+	id = templetonshift.56
+	title = templetonshift.56.t 
+	desc = templetonshift.56.d
+	picture = GFX_report_event_hitler_handshake
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.56.a
+		puppet = CUB
+
+	}
+	
+			
+}
+	
+country_event = {
+	id = templetonshift.57
+	title = templetonshift.57.t 
+	desc = templetonshift.57.d
+	picture = GFX_report_event_ast_troops_landing
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.57.a
+		create_wargoal = {
+			target = CUB
+			type = puppet_wargoal_focus
+		}
+	}
+	
+			
+}
+
+# Manifest Destiny Reaffirmed
+news_event = {
+	id = templetonshift.58
+	title = templetonshift.58.t
+	desc = templetonshift.58.d
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.58.a
+		trigger = { NOT = { TAG = TUD } } 
+
+	}
+	
+	option = {
+		name = templetonshift.58.b
+		trigger = { TAG = TUD } }
+		
+	}
+	
+# TUD requests to join the Allies
+
+country_event = {
+	id = templetonshift.59
+	title = templetonshift.59.t 
+	desc = templetonshift.59.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.59.a
+		TUD = { country_event = templetonshift.60 }
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+	# no
+		name = templetonshift.59.b
+		TUD = { country_event = templetonshift.61 }
+		ai_chance = { factor = 1 }
+	}
+	
+}
+
+country_event = {
+	id = templetonshift.60
+	title = templetonshift.60.t 
+	desc = templetonshift.60.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.60.a
+		FRA = { add_to_faction = TUD } 
+	}
+}
+
+country_event = {
+	id = templetonshift.61
+	title = templetonshift.61.t 
+	desc = templetonshift.61.d
+	picture = GFX_report_event_sign_treaty2
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# no
+		name = templetonshift.61.a
+	}
+	
+	
+}
+
+# TUD request to have USA join their faction
+
+country_event = {
+	id = templetonshift.62
+	title = templetonshift.62.t 
+	desc = templetonshift.62.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# yes
+		name = templetonshift.62.a
+		TUD = { country_event = templetonshift.63 }
+		ai_chance = { factor = 100 }
+	}
+	
+	option = {
+	# no
+		name = templetonshift.62.b
+		TUD = { country_event = templetonshift.64 }
+		ai_chance = { factor = 1 }
+	}
+	
+}
+
+country_event = {
+	id = templetonshift.63
+	title = templetonshift.63.t 
+	desc = templetonshift.63.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	
+	option = {
+	# yes
+		name = templetonshift.63.a
+		create_faction = "Freedom Alliance"
+		add_to_faction = USA
+		news_event = templetonshift.65
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.64
+	title = templetonshift.64.t 
+	desc = templetonshift.64.d
+	picture = GFX_report_event_sign_treaty1
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# no
+		name = templetonshift.64.a
+
+	}
+	
+	
+}
+
+news_event = {
+	id = templetonshift.65
+	title = templetonshift.65.t
+	desc = templetonshift.65.d 
+	picture = GFX_news_event_generic_rally_3
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.65.a
+		trigger = { OR = { TAG = TUD
+							TAG = USA } }
+	}
+	
+	option = {
+		name = templetonshift.65.a
+		trigger = { NOT = { TAG = TUD
+							TAG = USA } }
+	
+	}
+}
+
+country_event = {
+	id = templetonshift.66
+	title = templetonshift.66.t 
+	desc = templetonshift.66.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# SCAMMER
+		trigger = { NOT = { has_idea = senator_healthcare } }
+		name = templetonshift.66.a
+		add_timed_idea = { idea = senators_sick 
+							days = 50 }
+		hidden_effect = { 
+				news_event = { id = templetonshift.67
+								hours = 8 }
+				country_event = { id = templetonshift.66
+									days = 140 } }
+	}
+	
+	option = {
+	# NO MORE
+		
+		trigger = { has_idea = senator_healthcare }
+		name = templetonshift.66.b
+		add_timed_idea = { idea = senators_sick 
+							days = 50 }
+		hidden_effect = { 
+				news_event = { id = templetonshift.67
+								hours = 8 }
+				country_event = { id = templetonshift.68
+									days = 140 } }
+	}
+	
+	
+}
+
+news_event = {
+	id = templetonshift.67
+	title = templetonshift.67.t 
+	desc = templetonshift.67.d
+	picture = GFX_news_event_069
+	
+	is_triggered_only = yes 
+	major = yes
+	option = {
+	#rip tudor
+		name = templetonshift.67.a
+		
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.68
+	title = templetonshift.68.t 
+	desc = templetonshift.68.d
+	picture = GFX_report_event_military_planning
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# no
+		name = templetonshift.68.a
+		news_event = { id = templetonshift.69
+					hours = 6 }
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.69
+	title = templetonshift.69.t 
+	desc = templetonshift.69.d
+	picture = GFX_news_event_generic_rally_3
+	
+	is_triggered_only = yes 
+	
+	option = {
+	# no
+		name = templetonshift.69.a
+
+	}
+}
+
+news_event = {
+	id = templetonshift.70
+	title = templetonshift.70.t
+	desc = templetonshift.70.d
+	picture = GFX_news_event_fascist_gathering
+	
+	major = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.70.a
+	}
+}
+
+# Murmansk Concessions Chain
+country_event = {
+	id = templetonshift.71
+	title = templetonshift.71.t 
+	desc = templetonshift.71.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#Fine!
+		ai_chance = { 	factor = 15 }
+		name = templetonshift.71.a
+		SWE = { country_event = templetonshift.72 }
+	}
+	
+	option = {
+	#Never!
+		ai_chance = { 	factor = 1 
+					modifier = { factor = 60
+						is_guaranteed_by = ENG } }
+		name = templetonshift.71.b
+		add_war_support = 0.1
+		SWE = { country_event = templetonshift.73 }
+	}
+	
+} 
+
+country_event = {
+	id = templetonshift.72
+	title = templetonshift.72.t 
+	desc = templetonshift.72.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+
+	option = {
+	#Yes!
+		name = templetonshift.72.a
+		transfer_state = 722
+		transfer_state = 147
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.73
+	title = templetonshift.73.t 
+	desc = templetonshift.73.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#Yes!
+		name = templetonshift.73.a
+		create_wargoal = {
+			target = MUR
+			type = annex_everything
+		}
+	}
+	
+	
+}
+
+# STOCKHOLM CHANGES
+news_event = {
+	id = templetonshift.74
+	title = templetonshift.74.t
+	desc = templetonshift.74.d
+	picture = GFX_news_event_fascist_gathering
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.74.a 
+		trigger = { TAG = SWE }
+	}
+	option = {
+		name = templetonshift.74.b
+		trigger = { NOT = { TAG = SWE } }
+	}
+}
+
+# SEIZURE OF VENICE
+news_event = {
+	id = templetonshift.75
+	title = templetonshift.75.t
+	desc = templetonshift.75.d
+	picture = GFX_news_event_ast_navy
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.75.a 
+		trigger = { TAG = GER }
+		transfer_state = 819
+	}
+	option = {
+		name = templetonshift.75.b
+		trigger = { NOT = { TAG = GER
+		TAG = ITA } }
+	}
+	option = {
+		name = templetonshift.75.c
+		trigger = { TAG = ITA }
+	}
+}
+#ENTERTAINING GUESTS LOL
+news_event = {
+	id = templetonshift.76
+	hidden = yes
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { TUD = { has_idea = friday_guests } }
+		#TUD = { add_timed_idea = { idea = entertaining_guests_rip
+							#days = 1 } }
+		news_event = { id = templetonshift.76
+						days = 7 }
+	}
+	option = {
+		trigger = { TUD = { NOT = { has_idea = friday_guests } } }
+	}
+}
+
+## Event from Emeraldia's Open Up Civil Discourse
+news_event = {
+	id = templetonshift.77
+	title = templetonshift.77.t
+	desc = templetonshift.77.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.77.a 
+		trigger = { TAG = POL }
+		set_autonomy = {
+    target = BLR
+    autonomy_state = autonomy_free
+}
+set_autonomy = {
+    target = HUN
+    autonomy_state = autonomy_free
+}
+set_autonomy = {
+    target = UKR
+    autonomy_state = autonomy_free
+}
+dismantle_faction = yes
+	}
+	option = {
+		name = templetonshift.77.b
+		trigger = { NOT = { TAG = POL
+		TAG = BLR 
+		TAG = UKR 
+		TAG = HUN } }
+	}
+	option = {
+		name = templetonshift.77.c
+		trigger = { OR = { TAG = BLR
+							TAG = UKR
+							TAG = HUN } }
+							
+	}
+}
+
+## Invitation to the Gemstone Combine
+country_event = {
+	id = templetonshift.78
+	title = templetonshift.78.t
+	desc = templetonshift.78.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	
+	option = {
+		name = templetonshift.78.a 
+		POL = { country_event = templetonshift.80 }
+		ai_chance = { factor = 10 }
+	}
+	option = {
+		name = templetonshift.78.b
+		POL = { country_event = templetonshift.79 }
+		ai_chance = { factor = 1 }
+	}
+}
+## NO
+country_event = {
+	id = templetonshift.79
+	title = templetonshift.79.t
+	desc = templetonshift.79.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	
+	option = {
+		name = templetonshift.79.a 
+	}
+}
+## YES 
+country_event = {
+	id = templetonshift.80
+	title = templetonshift.80.t
+	desc = templetonshift.80.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes
+
+	
+	option = {
+		name = templetonshift.80.a 
+		add_to_faction = FROM
+	}
+}
+
+# GEMSTONE
+news_event = {
+	id = templetonshift.81
+	title = templetonshift.81.t
+	desc = templetonshift.81.d 
+	picture = GFX_news_event_generic_rally_3
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.81.a
+	}
+}
+
+# CONTINUATION Crisis
+news_event = {
+	id = templetonshift.82
+	title = templetonshift.82.t
+	desc = templetonshift.82.d 
+	picture = GFX_news_event_generic_rally_2
+	is_triggered_only = yes
+	major = yes
+	
+	option = {
+		name = templetonshift.82.a
+		trigger = { TAG = POL }
+	}
+	option = {
+		name = templetonshift.82.b 
+		trigger = { NOT = { TAG = POL } }
+	}
+}
+
+# EMERALDIA'S OFFER SLABVIAN AMBITIONS
+country_event = {
+	id = templetonshift.83
+	title = templetonshift.83.t
+	desc = templetonshift.83.d 
+	picture = GFX_report_event_generic_sign_treaty3
+	is_triggered_only = yes
+		
+	option = {
+		name = templetonshift.83.a
+		ai_chance = { factor = 3 }
+		POL = { country_event = templetonshift.84 }
+	}
+	option = {
+		name = templetonshift.83.b 
+		ai_chance = { factor = 1 }
+		POL = { country_event = templetonshift.85 }
+	}
+}
+
+country_event = {
+	id = templetonshift.84
+	title = templetonshift.84.t
+	desc = templetonshift.84.d 
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes
+	
+	option = {
+		name = templetonshift.84.a
+		TUR = { transfer_state = 352
+							transfer_state = 353
+							transfer_state = 354
+							transfer_state = 231
+							transfer_state = 230
+							transfer_state = 419 }
+		add_to_faction = TUR
+	}
+}
+
+country_event = {
+	id = templetonshift.85
+	title = templetonshift.85.t
+	desc = templetonshift.85.d 
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes
+
+	option = {
+		name = templetonshift.85.a
+	}
+	option = {
+		name = templetonshift.85.b
+		create_wargoal = {
+			type = puppet_wargoal_focus
+			target = TUR
+		}
+	}
+}
+
+news_event = {
+	id = templetonshift.86
+	title = templetonshift.86.t
+	desc = templetonshift.86.d
+	picture = GFX_news_event_generic_rally
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.86.a 
+		trigger = { NOT = { has_government = fascism 
+							TAG = GER } }
+	}
+	
+	option = {
+		name = templetonshift.86.b
+		trigger = { has_government = fascism }
+	}
+	
+	option = {
+		name = templetonshift.86.c
+		trigger = { TAG = GER }
+	}
+}
+
+news_event = {
+	id = templetonshift.87
+	title = templetonshift.87.t
+	desc = templetonshift.87.d
+	picture = GFX_news_event_generic_rally
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.87.a 
+		trigger = { NOT = { has_government = fascism 
+							TAG = GER } }
+	}
+	
+	option = {
+		name = templetonshift.87.b
+		trigger = { has_government = fascism }
+	}
+	
+	option = {
+		name = templetonshift.87.c
+		trigger = { TAG = GER }
+	}
+}
+
+# Invite to Aris Entente Rework
+country_event = {
+	id = templetonshift.88
+	title = templetonshift.12.title
+	desc = templetonshift.12.desc
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.12.a 
+		GER = { country_event = templetonshift.90 }
+		ai_chance = {
+			factor = 15 }
+	}
+	
+	option = {
+		name = templetonshift.12.b
+		ai_chance = {
+			factor = 1
+		}
+		GER = { country_event = templetonshift.89 }
+	}
+
+}
+
+country_event = {
+	id = templetonshift.89
+	title = templetonshift.89.t
+	desc = templetonshift.89.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.89.a 
+		ai_chance = {
+			factor = 15 }
+	}
+	
+
+}
+
+country_event = {
+	id = templetonshift.90
+	title = templetonshift.90.t
+	desc = templetonshift.90.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.90.a 
+		add_to_faction = FROM
+		ai_chance = {
+			factor = 15 }
+	}
+	
+
+}
+
+# consolidate with Parliamentary I.S.O.T.O.P.E. 
+country_event = {
+	id = templetonshift.91
+	title = templetonshift.91.t
+	desc = templetonshift.91.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.91.a 
+		GER = { country_event = templetonshift.92 }
+		ai_chance = {
+			factor = 15 }
+	}
+	
+	option = {
+		name = templetonshift.91.b
+		ai_chance = {
+			factor = 1
+		}
+		GER = { country_event = templetonshift.93 }
+	}
+
+}
+
+country_event = {
+	id = templetonshift.92
+	title = templetonshift.92.t
+	desc = templetonshift.92.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.92.a 
+		ai_chance = {
+			factor = 15 }
+		every_country = { limit = { is_in_faction_with = FRA } 
+						GER = { add_to_faction = PREV } }
+	GER = { add_to_faction = FRA }
+		news_event = { id = templetonshift.94
+							hours = 3}
+	}
+	
+	
+	
+
+}
+
+country_event = {
+	id = templetonshift.93
+	title = templetonshift.93.t
+	desc = templetonshift.93.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.93.a 
+		
+		ai_chance = {
+			factor = 15 }
+	} }
+	
+news_event = {
+	id = templetonshift.94
+	title = templetonshift.94.t 
+	desc = templetonshift.94.d 
+	picture = GFX_news_event_generic_rally
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.94.a 
+		trigger = { OR = { is_in_faction_with = GER 
+							TAG = GER } }
+	}
+	option = {
+		name = templetonshift.94.b 
+		trigger = { NOT = { is_in_faction_with = GER } }
+	}
+}
+
+country_event = {
+	id = templetonshift.95
+	title = templetonshift.95.t 
+	desc = templetonshift.95.d 
+	picture = GFX_report_event_usa_destroyers 
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.95.a 
+		set_global_flag = albert_radu_missing
+		set_country_flag = radu_search_begun
+		if = { 
+			limit = { has_government = democratic }
+			retire_country_leader = yes 
+		}
+		news_event = { id = templetonshift.96
+						hours = 2 }
+		hidden_effect = {
+			every_country = {
+				set_country_flag = view_disappearance_of_radu_event
+			}
+		}
+		unlock_decision_category_tooltip = find_radu_decisions
+		
+		set_variable = { radu_random_1 = random }
+		set_variable = { radu_random_2 = random } 
+		set_variable = { radu_random_3 = random }
+		
+		set_variable = {
+			radu_continent = 5 }
+		multiply_variable = {
+			var = radu_continent 
+			value = radu_random_1 }
+		add_to_variable = {
+			var = radu_continent 
+			value = 1 }
+		set_variable = {
+			radu_region = 4 }
+		multiply_variable = {
+			var = radu_region
+			value = radu_random_2 }
+			
+		add_to_variable = {
+				var = radu_region
+				value = -0.5
+		}
+		add_to_variable = {
+				var = radu_region 
+				value = radu_random_3 
+		}
+		add_to_variable = {
+			var = radu_region
+			value = 1 }
+		
+		round_variable = radu_region 
+		round_variable = radu_continent
+	}
+}
+
+news_event = {
+	id = templetonshift.96
+	title = templetonshift.96.t 
+	desc = templetonshift.96.d 
+	picture = GFX_news_event_ast_navy
+	is_triggered_only = yes 
+	major = yes
+
+	
+	option = {
+		name = templetonshift.96.a 
+		trigger = { NOT = { TAG = ENG } } 
+		country_event = { id = templetonshift.150
+					days = 2 }
+	}
+	option = {
+		name = templetonshift.96.b
+		trigger = { TAG = ENG } }
+}
+	
+news_event = {
+	id = templetonshift.97
+	title = templetonshift.97.t 
+	desc = templetonshift.97.d 
+	picture = GFX_news_event_ast_navy
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.97.a 
+		trigger = { NOT = { TAG = GER } } }
+	option = {
+		name = templetonshift.97.b
+		trigger = { TAG = GER } }
+}
+
+# Generic Join Comintern
+country_event = {
+	id = templetonshift.98
+	title = templetonshift.98.t
+	desc = templetonshift.98.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.98.a 
+		add_to_faction = FROM
+		FROM = { country_event = templetonshift.99 }
+		ai_chance = {
+			factor = 15 }
+	}
+	
+	option = {
+		name = templetonshift.98.b
+		ai_chance = {
+			factor = 1
+		}
+		FROM = { country_event = templetonshift.100 }
+	}
+
+}
+
+country_event = {
+	id = templetonshift.99
+	title = templetonshift.99.t
+	desc = templetonshift.99.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.99.a 
+		ai_chance = {
+			factor = 15 }
+		
+		
+	
+		
+	}
+	
+	
+	
+
+}
+
+country_event = {
+	id = templetonshift.100
+	title = templetonshift.100.t
+	desc = templetonshift.100.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.100.a 
+		
+		ai_chance = {
+			factor = 15 }
+	} }
+	
+# Aris rework intervene in Kenu 
+country_event = {
+	id = templetonshift.101
+	title = templetonshift.101.t
+	desc = templetonshift.101.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.101.a 
+		
+		FROM = { country_event = templetonshift.102 }
+		ai_chance = {
+			factor = 15 }
+	}
+	
+	option = {
+		name = templetonshift.101.b
+		ai_chance = {
+			factor = 1
+		}
+		FROM = { country_event = templetonshift.103 }
+	}
+
+}
+
+country_event = {
+	id = templetonshift.102
+	title = templetonshift.102.t
+	desc = templetonshift.102.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.102.a 
+		ai_chance = {
+			factor = 15 }
+		every_country = {
+			limit = {original_tag = ITA
+			has_government = fascism }
+			declare_war_on = {
+    target = GER
+    type = topple_government
+}
+		}
+	}
+		
+		
+	
+		
+	}
+	
+	
+	
+
+
+
+country_event = {
+	id = templetonshift.103
+	title = templetonshift.103.t
+	desc = templetonshift.103.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.103.a 
+		
+		ai_chance = {
+			factor = 15 }
+	} }
+	
+news_event = {
+	id = templetonshift.104
+	title = templetonshift.104.t
+	desc = templetonshift.104.d
+	picture = GFX_news_event_generic_rally2
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.104.a 
+		trigger = { NOT = { TAG = GER } }
+	} 
+	option = {
+		name = templetonshift.104.b 
+		trigger = { TAG = GER }
+	
+	
+	
+	}
+}
+	
+news_event = {
+	id = templetonshift.105
+	title = templetonshift.105.t
+	desc = templetonshift.105.d
+	picture = GFX_news_event_generic_rally_3
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.105.a 
+		trigger = { NOT = { TAG = GER } }
+	} 
+	option = {
+		name = templetonshift.105.b 
+		trigger = { TAG = GER }
+	
+	
+	
+	}
+}
+
+news_event = {
+	id = templetonshift.106
+	title = templetonshift.106.t
+	desc = templetonshift.106.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.106.a 
+		trigger = { NOT = { TAG = GER } }
+	} 
+	option = {
+		name = templetonshift.106.b 
+		trigger = { TAG = GER }
+	
+	
+	
+	}
+}
+
+# ANSCHLUSS
+country_event = {
+	id = templetonshift.107
+	title = templetonshift.107.t
+	desc = templetonshift.107.d
+	picture = GFX_news_event_generic_parliament
+	is_triggered_only = yes 
+	
+	# yes
+	option = {
+		name = templetonshift.107.a
+		GER = { country_event = { id = templetonshift.108
+								hours = 5} }
+	}
+	# no
+	option = {
+		name = templetonshift.107.b 
+		GER = { country_event = { id = templetonshift.109
+								hours = 5} }
+	}
+}
+# yes 
+country_event = {
+	id = templetonshift.108
+	title = templetonshift.108.t
+	desc = templetonshift.108.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes 
+	
+	# yes
+	option = {
+		name = templetonshift.108.a
+		hidden_effect = {
+	every_state = {
+		limit = {					is_core_of = AUS
+				}
+				GER = {
+					add_state_core = PREV
+				}
+			}
+		}
+		AUS = {
+			every_unit_leader = {
+				set_nationality = GER
+			}
+		}
+		GER = {
+			annex_country = { target = AUS transfer_troops = yes }
+		}
+		news_event = { id = templetonshift.110
+								hours = 5} 
+	}
+
+
+}
+# no 
+country_event = {
+	id = templetonshift.109
+	title = templetonshift.109.t
+	desc = templetonshift.109.d
+	picture = GFX_report_event_generic_parliament
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.109.a
+		create_wargoal = {
+			type = annex_everything 
+			target = AUS 
+		}
+		
+	}
+	
+}
+
+# Anschluss
+news_event = {
+	id = templetonshift.110
+	title = templetonshift.110.t
+	desc = templetonshift.110.d
+	picture = GFX_news_event_generic_parliament
+	is_triggered_only = yes 
+	major = yes
+	
+	# yes
+	option = {
+		name = templetonshift.110.a
+		trigger = { TAG = GER }
+	}
+	# no
+	option = {
+		name = templetonshift.110.b 
+		trigger = { NOT = { TAG = GER } }
+	}
+}
+# Danzig or Alt-F4
+country_event = {
+	id = templetonshift.111
+	title = templetonshift.111.t 
+	desc = templetonshift.111.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#Fine!
+		ai_chance = { 	factor = 1 }
+		name = templetonshift.111.a
+		GER = { country_event = templetonshift.112 }
+	}
+	
+	option = {
+	#Never!
+		ai_chance = { 	factor = 20 }
+		name = templetonshift.111.b
+		add_war_support = 0.1
+		GER = { country_event = templetonshift.113 }
+	}
+	
+} 
+
+country_event = {
+	id = templetonshift.112
+	title = templetonshift.112.t 
+	desc = templetonshift.112.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+
+	option = {
+	#Yes!
+		name = templetonshift.112.a
+		transfer_state = 85
+		transfer_state = 5
+		transfer_state = 763
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.113
+	title = templetonshift.113.t 
+	desc = templetonshift.113.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#I hate you and everything
+		name = templetonshift.113.a
+		create_wargoal = {
+			target = POL
+			type = annex_everything
+		}
+		news_event = templetonshift.114
+	}
+	
+	
+}
+
+news_event = {
+	id = templetonshift.114
+	title = templetonshift.114.t 
+	desc = templetonshift.114.d
+	picture = GFX_news_event_generic_rally_2
+	is_triggered_only = yes 
+	major = yes
+
+	option = {
+	#I hate you and everything
+		name = templetonshift.114.a
+		trigger = { TAG = GER }
+	}
+	option = {
+	#I hate you and everything
+		name = templetonshift.114.b
+		trigger = { TAG = POL }
+	}
+	option = {
+	#I hate you and everything
+		name = templetonshift.114.c
+		trigger = { NOT = { TAG = POL
+							TAG = GER } }
+	}
+	
+	
+}
+
+# Demand LUX
+country_event = {
+	id = templetonshift.115
+	title = templetonshift.115.t 
+	desc = templetonshift.115.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#Fine!
+		ai_chance = { 	factor = 5 }
+		name = templetonshift.115.a
+		GER = { country_event = templetonshift.116 }
+	}
+	
+	option = {
+	#Never!
+		ai_chance = { 	factor = 1 
+					modifier = { GER = { has_war = yes }
+								factor = 50 } }
+		name = templetonshift.115.b
+		add_war_support = 0.1
+		GER = { country_event = templetonshift.117 }
+	 }
+	
+} 
+
+country_event = {
+	id = templetonshift.116
+	title = templetonshift.116.t 
+	desc = templetonshift.116.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+
+	option = {
+	#Yes!
+		name = templetonshift.116.a
+		transfer_state = 8
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.117
+	title = templetonshift.117.t 
+	desc = templetonshift.117.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#I hate you and everything
+		name = templetonshift.117.a
+		create_wargoal = {
+			target = LUX
+			type = annex_everything
+		}
+		
+	}
+	
+	
+}
+
+news_event = {
+	id = templetonshift.118
+	title = templetonshift.118.t
+	desc = templetonshift.118.d
+	picture = GFX_news_event_generic_rally
+	is_triggered_only = yes 
+	major = yes
+
+	option = {
+	#I hate you and everything
+		name = templetonshift.118.a
+		trigger = { TAG = POL }
+		create_wargoal = {
+			target = GER
+			type = annex_everything
+		}
+		add_stability = -0.1
+		add_political_power = -100
+		ai_chance = { factor = 8 }
+		
+	}
+	option = {
+		name = templetonshift.118.b 
+		trigger = { TAG = GER }
+	}
+	
+	option = {
+		name = templetonshift.118.c 
+		trigger = { NOT = { TAG = GER 
+								TAG = POL } }
+	}
+	option = {
+		name = templetonshift.118.e 
+		trigger = { TAG = POL }
+		ai_chance = { factor = 1 }
+	}
+	
+	
+}
+
+
+# OSTPRUSSEUN FOR CZECHIA
+country_event = {
+	id = templetonshift.119
+	title = templetonshift.119.t 
+	desc = templetonshift.119.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#Fine!
+		ai_chance = { 	factor = 5 }
+		name = templetonshift.119.a
+		GER = { country_event = templetonshift.120 }
+	}
+	
+	option = {
+	#Never!
+		ai_chance = { 	factor = 1 }
+		name = templetonshift.119.b
+		GER = { country_event = templetonshift.121 }
+	}
+	
+} 
+
+country_event = {
+	id = templetonshift.120
+	title = templetonshift.120.t 
+	desc = templetonshift.120.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+
+	option = {
+	#Yes!
+		name = templetonshift.120.a
+		transfer_state = 763
+		transfer_state = 5
+		add_state_core = 763
+		add_state_core = 5
+		POL = { transfer_state = 9 
+				transfer_state = 69
+				add_state_core = 9 
+				add_state_core = 69 }
+	}
+	
+	
+}
+
+country_event = {
+	id = templetonshift.121
+	title = templetonshift.121.t 
+	desc = templetonshift.121.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	#I hate you and everything
+		name = templetonshift.121.a
+		
+		
+	}
+	
+	
+}
+
+news_event = {
+	id = templetonshift.122
+	title = templetonshift.122.t 
+	desc = templetonshift.122.d 
+	picture = GFX_news_event_generic_sign_treaty2
+	is_triggered_only = yes 
+	major = yes
+	
+	option = {
+		name = templetonshift.122.a 
+		trigger = { has_government = fascism } }
+	option = {
+		name = templetonshift.122.b
+		trigger = { has_government = democratic} }
+	option = {
+		name = templetonshift.122.c 
+		trigger = { NOT = { has_government = democratic 
+							has_government = fascism } }
+} }
+
+# Kenu seek Democratic intervention - Request
+
+country_event = {
+	id = templetonshift.123
+	title = templetonshift.123.t 
+	desc = templetonshift.123.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+
+	option = {
+	# Yeah we'll give you stuff
+		name = templetonshift.123.a
+		ai_chance = { factor = 5 }
+		FROM = { country_event = { id = templetonshift.124 
+								hours = 6 } }
+		send_equipment = {
+    equipment = infantry_equipment
+    amount = 2500
+    target = FROM
+}
+	}
+	option = {
+	# Nah man
+		name = templetonshift.123.b
+		ai_chance = { factor = 4 
+						modifier = { has_government = fascism 
+									factor = 0 }
+						modifier = { FROM = { tag = ROM }
+									factor = 0 }}
+		FROM = {country_event = templetonshift.125}
+	
+ }
+}
+country_event = {
+	id = templetonshift.124
+	title = templetonshift.124.t 
+	desc = templetonshift.124.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+
+	option = {
+	# Yay ok
+		name = templetonshift.124.a
+		effect_tooltip = {
+			add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 5000
+    producer = FROM
+}
+}
+hidden_effect = {
+add_equipment_to_stockpile = {
+    type = infantry_equipment
+    amount = 2500
+    producer = FROM
+}
+	}
+} }
+
+country_event = {
+	id = templetonshift.125
+	title = templetonshift.125.t 
+	desc = templetonshift.125.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+
+	option = {
+	# oh no
+		name = templetonshift.125.a
+	}
+}
+
+news_event = {
+	id = templetonshift.126
+	title = templetonshift.126.t 
+	desc = templetonshift.126.d
+	picture = GFX_news_event_generic_parliament
+	is_triggered_only = yes 
+	major = yes
+	option = {
+		trigger = { original_tag = ITA }
+		name = templetonshift.126.a
+		add_stability = 0.05
+		add_war_support = 0.05
+	}
+	option = {
+		trigger = { NOT = { original_tag = ITA } }
+		name = templetonshift.126.b
+	}
+} 
+
+#Venetian Referendum
+country_event = {
+	id = templetonshift.127
+	title = templetonshift.127.t
+	desc = templetonshift.127.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.127.a
+		FROM = { transfer_state = 819 }
+		add_stability = 0.05
+		FROM = { country_event = { id = templetonshift.128
+									days = 3 }
+	} }
+	option = {
+		ai_chance = { factor = 1
+						modifier = { OR = { has_government = fascism 
+											has_government = neutrality } 
+									 factor = 50 } }
+		name = templetonshift.127.b
+		add_stability = -0.1
+		custom_effect_tooltip = not_venice
+		FROM = { country_event = templetonshift.129 }
+	}
+} 
+
+# They said yes
+country_event = {
+	id = templetonshift.128
+	title = templetonshift.128.t
+	desc = templetonshift.128.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.128.a
+		add_stability = 0.05
+	}
+} 
+# They said no
+country_event = {
+	id = templetonshift.129
+	title = templetonshift.129.t
+	desc = templetonshift.129.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.129.a
+		create_wargoal= { 
+				type = puppet_wargoal_focus
+				target = GER
+				}
+			
+	}
+} 
+
+# Greater Veneto request 
+country_event = {
+	id = templetonshift.130
+	title = templetonshift.130.t
+	desc = templetonshift.130.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.130.a
+		FROM = { transfer_state = 160 }
+		add_stability = 0.05
+		FROM = { country_event = { id = templetonshift.131
+									days = 3 }
+	} }
+	option = {
+		ai_chance = { factor = 1
+						modifier = { OR = { has_government = fascism 
+											has_government = neutrality
+has_government = communism											} 
+									 factor = 50 } }
+		name = templetonshift.130.b
+		add_stability = -0.1
+		custom_effect_tooltip = not_venice
+		FROM = { country_event = templetonshift.132 }
+	}
+} 
+
+# They said yes
+country_event = {
+	id = templetonshift.131
+	title = templetonshift.131.t
+	desc = templetonshift.131.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.131.a
+		add_stability = 0.05
+	}
+} 
+# They said no
+country_event = {
+	id = templetonshift.132
+	title = templetonshift.132.t
+	desc = templetonshift.132.d
+	picture = GFX_report_event_sign_treaty1
+	is_triggered_only = yes 
+	option = {
+		ai_chance = { factor = 10 }
+		name = templetonshift.132.a
+		if = { limit = { GER = { OR = { has_government = fascism 
+										has_government = communism } } }
+						create_wargoal= { 
+				type = puppet_wargoal_focus
+				target = GER
+				} }	
+								
+	}
+} 
+
+# UWU QUESTIONS?
+country_event = {
+	id = templetonshift.133
+	title = templetonshift.133.t
+	desc = templetonshift.133.d
+	picture = GFX_report_event_radu_uwu
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.133.a
+		add_stability = 0.025				
+	}
+	option = {
+		name = templetonshift.133.b
+		add_war_support = 0.025
+		custom_effect_tooltip = radu_mad
+		hidden_effect = { 
+			set_country_flag = no_uwu }
+	}
+} 
+# Try Using Beds
+country_event = {
+	id = templetonshift.134
+	title = templetonshift.134.t
+	desc = templetonshift.134.d
+	picture = GFX_report_event_radu_uwu
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.134.a
+		add_stability = 0.025
+		unlock_decision_tooltip = experiment_with_beds
+		hidden_effect = { set_global_flag = radusaidusebeds }
+	}
+} 
+# The Hunt for Netherite
+news_event = {
+	id = templetonshift.135
+	title = templetonshift.135.t
+	desc = templetonshift.135.d
+	picture = GFX_news_event_005
+	major = yes 
+	is_triggered_only = yes 
+	option = {
+		trigger = { tag = ROM }
+		name = templetonshift.135.a
+		add_ideas = netherite_tools
+	}
+	option = {
+		trigger = { NOT = { tag = ROM } }
+		name = templetonshift.135.b
+	}
+} 
+
+# Wilbur and the WORLD
+news_event = {
+	id = templetonshift.136
+	title = templetonshift.136.t
+	desc = templetonshift.136.d
+	picture = GFX_news_event_wilbur
+	major = yes 
+	is_triggered_only = yes 
+	option = {
+		trigger = { tag = ROM }
+		name = templetonshift.136.a
+	}
+	option = {
+		trigger = { NOT = { tag = ROM } }
+		name = templetonshift.136.b
+	}
+} 
+
+# Campaign for the Senate 
+
+news_event = {
+	id = templetonshift.137
+	title = templetonshift.137.t
+	desc = templetonshift.137.d
+	picture = GFX_news_event_fascist_gathering
+	is_triggered_only = yes 
+	major = yes
+	option = {
+		trigger = { tag = ROM }
+		name = templetonshift.137.a
+		
+	}
+	option = {
+		trigger = { NOT = { tag = ROM } }
+		name = templetonshift.137.b
+	}
+} 
+
+#STAL
+news_event = {
+	id = templetonshift.138
+	title = templetonshift.138.t
+	desc = templetonshift.138.d
+	picture = GFX_news_event_stal
+	is_triggered_only = yes 
+	major = yes
+	option = {
+		trigger = { original_tag = ROM }
+		name = templetonshift.138.a
+		
+	}
+	option = {
+		trigger = { NOT = { tag = ROM } }
+		name = templetonshift.138.b
+	}
+} 
+
+#SENOR RAUD
+news_event = {
+	id = templetonshift.139
+	title = templetonshift.139.t
+	desc = templetonshift.139.d
+	picture = GFX_news_event_final_countdown
+	is_triggered_only = yes 
+	major = yes
+	option = {
+		trigger = { original_tag = ROM }
+		name = templetonshift.139.a
+		
+	}
+	option = {
+		trigger = { NOT = { tag = ROM } }
+		name = templetonshift.139.b
+	}
+}
+
+# Fallen Government 
+# End of the URD
+news_event = {
+	id = templetonshift.140
+	title = templetonshift.140.t
+	desc = templetonshift.140.d
+	picture = GFX_news_event_generic_riot
+	is_triggered_only = yes 
+	major = yes
+	option = {
+		trigger = { original_tag = ENG }
+		name = templetonshift.140.a
+		
+	}
+	option = {
+		trigger = { NOT = { tag = ENG } }
+		name = templetonshift.140.b
+		ai_chance = { factor = 1 }
+	}
+}
+	
+country_event = { 
+	id = templetonshift.141
+	title = templetonshift.141.t
+	desc = templetonshift.141.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.141.a
+		SPF = {
+			transfer_state = 120
+			transfer_state = 133
+			transfer_state = 121
+			transfer_state = 136
+			load_oob = "SPF_divisions" }
+		set_popularities = {
+			democratic = 35
+			neutrality = 30
+			fascism = 30
+			communism = 5
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48}
+		news_event = { id = templetonshift.140
+						hours = 4 }
+		every_country = {
+			limit = { is_subject_of = ENG }
+			ENG = { end_puppet = PREV }
+			
+		}
+		leave_faction = yes
+		if = { limit = { FRA = { OR = { has_government = democratic 
+										has_government = parliamentary_democratic } } }
+										FRA = { country_event = { id = templetonshift.157 
+															hours = 4 } }
+							}
+	}
+	option = {
+		name = templetonshift.142.a
+		custom_effect_tooltip = "Play as the Scapa Flow Empire."
+		hidden_effect = {
+		SPF = {
+			transfer_state = 120
+			transfer_state = 133
+			transfer_state = 121
+			transfer_state = 136
+			load_oob = "SPF_divisions" }
+		set_popularities = {
+			democratic = 35
+			neutrality = 30
+			fascism = 30
+			communism = 5
+		}
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+			last_election = "1935.12.17"
+			election_frequency = 48}
+		news_event = { id = templetonshift.140
+						hours = 4 }
+		every_country = {
+			limit = { is_subject_of = ENG }
+			ENG = { end_puppet = PREV }
+		}
+		if = { limit = { FRA = { OR = { has_government = democratic 
+										has_government = parliamentary_democratic } } }
+										FRA = { country_event = { id = templetonshift.157 
+															hours = 4 } }
+							}
+		SPF = { change_tag_from = ENG }
+		}
+	}
+}
+# revive the european entente
+country_event = {
+	id = templetonshift.142
+	title = templetonshift.142.t
+	desc = templetonshift.142.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.142.a
+		ai_chance = { factor = 2 }
+		ENG = { country_event = templetonshift.144 }
+	}
+	option = {
+		name = templetonshift.142.b
+		ai_chance = { factor = 25 
+					modifier = { has_government = fascism 
+									factor = 0 }
+		modifier = { has_government = communism
+									factor = 2 }		
+		modifier = { has_government = neutrality
+									factor = 1 }}
+		
+		ENG = { country_event = templetonshift.143 }
+		give_guarantee = ENG 
+		ENG = { give_guarantee = PREV } 
+		add_stability = 0.05
+	}
+}
+
+country_event = {
+	id = templetonshift.143
+	title = templetonshift.143.t
+	desc = templetonshift.143.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.143.a
+		ai_chance = { factor = 1 }
+		add_stability = 0.05
+	}
+}
+country_event = {
+	id = templetonshift.144
+	title = templetonshift.144.t
+	desc = templetonshift.144.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.144.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+	}
+}
+# demand balearics 
+country_event = {
+	id = templetonshift.145
+	title = templetonshift.145.t
+	desc = templetonshift.145.d
+	picture = GFX_report_event_generic_sign_treaty2
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.145.a
+		ai_chance = { factor = 7 
+					modifier = { is_in_faction = yes 
+									factor = 0 }}
+		add_stability = -0.05
+		ENG = { country_event = templetonshift.146 }
+	}
+	option = {
+		name = templetonshift.145.a
+		ai_chance = { factor = 1 }
+		add_war_support = 0.05
+		ENG = { country_event = templetonshift.147 }
+	}
+}
+
+country_event = {
+	id = templetonshift.146
+	title = templetonshift.146.t
+	desc = templetonshift.146.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.146.a
+		ai_chance = { factor = 1 }
+		add_stability = 0.05
+		transfer_state = 177
+	} 
+}
+
+country_event = {
+	id = templetonshift.147
+	title = templetonshift.147.t
+	desc = templetonshift.147.d
+	picture = GFX_report_event_soldiers_marching
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.147.a
+		ai_chance = { factor = 1 }
+		add_stability = -0.05
+		create_wargoal = {
+			target = SPR 
+			type = puppet_wargoal_focus }
+	}
+}
+
+country_event = { 
+	id = templetonshift.148
+	title = templetonshift.148.t
+	desc = templetonshift.148.d 
+	picture = GFX_report_event_sign_treaty3
+	major = yes
+	trigger = {
+		date > 1935.11.29
+		NOT = { has_global_flag = supreme_activated }
+	}
+
+	mean_time_to_happen = {
+		days = 5	# Historical outbreak time after elections
+	}
+	immediate = { set_global_flag = supreme_activated 
+				hidden_effect = { country_event = {
+							days = 30
+							id = templetonshift.158
+						} } }
+	option = {
+		name = templetonshift.148.a
+		ai_chance = { factor = 1 }
+		unlock_decision_category_tooltip = supreme_favour_decisions
+		hidden_effect = {
+						country_event = {
+							days = 30
+							id = templetonshift.4198
+						}
+						set_global_flag = supreme_activated
+						set_variable = {
+							var = supreme_favour
+							value = 5
+						}
+						set_variable = {
+							var = army_xp_cost
+							value = 20
+						}
+						set_variable = {
+							var = navy_xp_cost
+							value = 20
+						}
+						set_variable = {
+							var = air_xp_cost
+							value = 20
+						}
+					
+						set_variable = {
+							var = pp_cost
+							value = 50
+						}
+						if = {
+							limit = { OR = {
+									original_tag = ENG
+									original_tag = FRA
+									original_tag = GER
+									original_tag = SWE
+									original_tag = ICE
+									original_tag = ITA
+									original_tag = POL
+									original_tag = ROM
+									original_tag = TUD
+									original_tag = LAT 
+									original_tag = TUR
+									 }	}
+										
+						set_variable = { bingo1 = random }
+						set_variable = { bingo2 = random } 
+						set_variable = { bingo3 = random }
+						set_variable = { bingo4 = random }
+						set_variable = { bingo5 = random } 
+						set_variable = { bingo6 = random }
+						set_variable = { bingo7 = random }
+						set_variable = { bingo8 = random } 
+						set_variable = { bingo9 = random }
+						set_variable = { bingo10 = random }
+						set_variable = { bingo11 = random }
+						set_variable = { bingo12 = random } 
+						set_variable = { bingo13 = random }
+						set_variable = { bingo14 = random }
+						set_variable = { bingo15 = random } 
+						set_variable = { bingo16 = random }
+						set_variable = { bingo17 = random }
+						set_variable = { bingo18 = random } 
+						set_variable = { bingo19 = random }
+						set_variable = { bingo20 = random } 
+						set_variable = { bingo21 = random }
+						set_variable = { bingo22 = random }
+						set_variable = { bingo23 = random } 
+						set_variable = { bingo24 = random }
+						set_variable = { bingo25 = random }
+
+						multiply_variable = {
+							var = bingo1
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo1 
+							value = 0.5 }
+						round_variable = bingo1
+					
+						multiply_variable = {
+							var = bingo2
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo2
+							value = 0.5 }
+						add_to_variable = {
+							var = bingo2 
+							value = bingo1 }
+						round_variable = bingo2
+						
+						multiply_variable = {
+							var = bingo3
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo3 
+							value = bingo2 }
+						
+						add_to_variable = {
+							var = bingo3
+							value = 0.5 }
+						round_variable = bingo3
+						
+						multiply_variable = {
+							var = bingo4
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo4 
+							value = bingo3 }
+						add_to_variable = {
+							var = bingo4
+							value = 0.5 }
+						round_variable = bingo4
+						
+						multiply_variable = {
+							var = bingo5
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo5
+							value = bingo4 }
+						add_to_variable = {
+							var = bingo5
+							value = 0.5 }
+						round_variable = bingo5
+						
+						
+						######## COL 2 ############
+						
+						multiply_variable = {
+							var = bingo6
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo6
+							value = 15.5 }
+						add_to_variable = {
+							var = bingo16
+							value = 0.5 }
+						round_variable = bingo6
+					
+						multiply_variable = {
+							var = bingo7
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo7 
+							value = bingo6 }
+						add_to_variable = {
+							var = bingo7 
+							value = 0.5 }
+						round_variable = bingo7
+						
+						multiply_variable = {
+							var = bingo8
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo8 
+							value = bingo7 }
+						add_to_variable = {
+							var = bingo8
+							value = 0.5 }
+						round_variable = bingo8
+						
+						multiply_variable = {
+							var = bingo9
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo9 
+							value = bingo8 }
+						add_to_variable = {
+							var = bingo9
+							value = 0.5 }
+						round_variable = bingo9
+						
+						multiply_variable = { 
+							var = bingo10
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo10
+							value = bingo9 }
+						add_to_variable = {
+							var = bingo10 
+							value = 0.5 }
+						round_variable = bingo10
+						
+						################ COL 3#####################
+						multiply_variable = {
+							var = bingo11
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo11 
+							value = 30.5 }
+						add_to_variable = {
+							var = bingo11
+							value = 0.5 }
+						round_variable = bingo11
+					
+						multiply_variable = {
+							var = bingo12
+							value = 4
+						}
+						add_to_variable = {
+							var = bingo12 
+							value = bingo11 }
+						add_to_variable = {
+							var = bingo12
+							value = 0.5 }
+						round_variable = bingo12
+						
+						multiply_variable = {
+							var = bingo14
+							value = 4
+						}
+						add_to_variable = {
+							var = bingo14 
+							value = bingo12 }
+						add_to_variable = {
+							var = bingo14
+							value = 0.5 }
+						round_variable = bingo14
+						
+						multiply_variable = {
+							var = bingo15
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo15
+							value = bingo14 }
+						add_to_variable = {
+							var = bingo15
+							value = 0.5 }
+						round_variable = bingo15
+						
+						
+						############ COL 4 #################
+						multiply_variable = {
+							var = bingo16
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo16
+							value = 45.5 }
+						add_to_variable = {
+							var = bingo16
+							value = 0.5 }
+						round_variable = bingo16
+					
+						multiply_variable = {
+							var = bingo17
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo17 
+							value = bingo16 }
+						add_to_variable = {
+							var = bingo17
+							value = 0.5 }
+						round_variable = bingo17
+						
+						multiply_variable = {
+							var = bingo18
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo18 
+							value = bingo17 }
+						add_to_variable = {
+							var = bingo18
+							value = 0.5 }
+						round_variable = bingo18
+						
+						multiply_variable = {
+							var = bingo19
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo19 
+							value = bingo18 }
+						add_to_variable = {
+							var = bingo19
+							value = 0.5 }
+						round_variable = bingo19
+						
+						multiply_variable = {
+							var = bingo20
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo20
+							value = bingo19 }
+						add_to_variable = {
+							var = bingo20
+							value = 0.5 }
+						round_variable = bingo20
+						
+						######### COL 5 ############
+						
+						multiply_variable = {
+							var = bingo21
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo21 
+							value = 60.5 }
+						add_to_variable = {
+							var = bingo21
+							value = 0.5 }
+						round_variable = bingo21
+					
+						multiply_variable = {
+							var = bingo22
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo22 
+							value = bingo21 }
+						add_to_variable = {
+							var = bingo22
+							value = 0.5 }
+						round_variable = bingo22
+						
+						multiply_variable = {
+							var = bingo23
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo23 
+							value = bingo22 }
+						add_to_variable = {
+							var = bingo23
+							value = 0.5 }
+						round_variable = bingo23
+						
+						multiply_variable = {
+							var = bingo24
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo24 
+							value = bingo23 }
+						add_to_variable = {
+							var = bingo24
+							value = 0.5 }
+						round_variable = bingo24
+						
+						multiply_variable = {
+							var = bingo25
+							value = 3
+						}
+						add_to_variable = {
+							var = bingo25
+							value = bingo24 }
+						add_to_variable = {
+							var = bingo25
+							value = 0.5 }
+						round_variable = bingo25
+						
+						set_variable = { number_1_1 = bingo1 }
+						set_variable = { number_2_1 = bingo2 }
+						set_variable = { number_3_1 = bingo3 }
+						set_variable = { number_4_1 = bingo4 }
+						set_variable = { number_5_1 = bingo5 }
+						set_variable = { number_1_2 = bingo6 }
+						set_variable = { number_2_2 = bingo7 }
+						set_variable = { number_3_2 = bingo8 }
+						set_variable = { number_4_2 = bingo9 }
+						set_variable = { number_5_2 = bingo10 }
+						set_variable = { number_1_3 = bingo11 }
+						set_variable = { number_2_3 = bingo12 }
+						set_variable = { number_4_3 = bingo14 }
+						set_variable = { number_5_3 = bingo15 }
+						set_variable = { number_1_4 = bingo16 }
+						set_variable = { number_2_4 = bingo17 }
+						set_variable = { number_3_4 = bingo18 }
+						set_variable = { number_4_4 = bingo19 }
+						set_variable = { number_5_4 = bingo20 }
+						set_variable = { number_1_5 = bingo21 }
+						set_variable = { number_2_5 = bingo22 }
+						set_variable = { number_3_5 = bingo23 }
+						set_variable = { number_4_5 = bingo24 }
+						set_variable = { number_5_5 = bingo25 }
+						
+						
+						
+						
+						}
+}
+}
+}
+
+country_event = {
+	id = templetonshift.149
+	title = templetonshift.149.t
+	desc = templetonshift.149.d
+	is_triggered_only = yes 
+	option = {
+		name = templetonshift.149.a
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = fascism
+			popularity = 0.1
+		}
+	}
+	option = {
+		name = templetonshift.149.b
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = communism
+			popularity = 0.1
+		}
+	}	
+	option = {
+		name = templetonshift.149.c
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = democratic
+			popularity = 0.1
+		}
+	}
+	option = {
+		name = templetonshift.149.f
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = neutrality
+			popularity = 0.1
+		}
+	}
+	option = {
+		name = templetonshift.149.e
+		ai_chance = { factor = 1 }
+		add_popularity = {
+			ideology = parliamentary_democratic
+			popularity = 0.1
+		}
+	}
+}
+
+country_event = {
+	id = templetonshift.150
+	title = templetonshift.150.t
+	desc = templetonshift.150.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_radu_uwu
+	immediate = { set_country_flag = radu_search_begun }
+	option = {
+		name = templetonshift.150.a 
+		unlock_decision_category_tooltip = find_radu_decisions_1
+	}
+ }
+ 
+ 
+ #radu continent search failed 
+country_event = {
+	id = templetonshift.151
+	title = templetonshift.151.t
+	desc = templetonshift.151.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_romanian_soldiers
+	option = {
+		name = templetonshift.151.a 
+	}
+ }
+	
+ 
+ # radu continent search success!
+country_event = {
+	id = templetonshift.152
+	title = templetonshift.152.t
+	desc = templetonshift.152.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_gre_officers_chatting
+	immediate = { set_country_flag = radu_continent_found } 
+	option = {
+		name = templetonshift.152.a 
+		unlock_decision_category_tooltip = find_radu_decisions_2
+	}
+ }
+ 
+  # radu region search success!
+country_event = {
+	id = templetonshift.153
+	title = templetonshift.153.t
+	desc = templetonshift.153.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_gre_officers_chatting
+	immediate = { set_country_flag = radu_found } 
+	option = {
+		name = templetonshift.153.a 
+		add_tech_bonus = {
+			category = nuclear
+			bonus = 1.5
+			uses = 1
+		}
+		add_tech_bonus = {
+			category = armor
+			bonus = 1.5
+			uses = 2
+		}
+		add_political_power = 100
+		trigger = { NOT = { tag = ENG } 
+					NOT = { has_war_with = ENG } }
+		ENG = { add_opinion_modifier = {
+    target = ROOT
+    modifier = large_increase
+} }
+ENG = { country_event = { id = templetonshift.156
+							hours = 6 } }
+	} 
+	option = {
+		name = templetonshift.153.b
+		custom_effect_tooltip = imprison_radu
+		trigger = { OR = { AND = { NOT = { tag = ENG } 
+									 }
+							AND = { tag = ENG 
+									NOT = { has_government = democratic }
+									NOT = { has_government = parliamentary_democratic } 
+					 } } }
+		ENG = { add_opinion_modifier = {
+    target = ROOT
+    modifier = betrayed_guarantee
+} }
+ENG = { add_opinion_modifier = {
+    target = ROOT
+    modifier = faction_traitor
+} }
+news_event = { id = templetonshift.155
+							hours = 6 }
+	}
+	option = {
+		name = templetonshift.153.c
+		custom_effect_tooltip = imprison_radu_1
+		add_research_slot = 1
+		add_political_power = -250
+		add_stability = -0.05
+		add_war_support = -0.05
+		trigger = { OR = { AND = { NOT = { tag = ENG } 
+									NOT = { is_in_faction_with = ENG } }
+							AND = { tag = ENG 
+									NOT = { has_government = democratic }
+									NOT = { has_government = parliamentary_democratic } 
+					 } } }
+		ENG = { add_opinion_modifier = {
+    target = ROOT
+    modifier = betrayed_guarantee
+} }
+ENG = { add_opinion_modifier = {
+    target = ROOT
+    modifier = faction_traitor
+} }
+news_event = { id = templetonshift.155
+							hours = 6 }
+	}
+	
+	option = {
+		name = templetonshift.153.e
+		trigger = { tag = ENG 
+					OR = { has_government = democratic 
+							has_government = parliamentary_democratic } }
+							 
+		add_research_slot = 1
+		add_tech_bonus = {
+			category = nuclear
+			bonus = 1.5
+			uses = 1
+		}
+		add_tech_bonus = {
+			category = armor
+			bonus = 1.5
+			uses = 2
+		}
+		retire_country_leader = yes
+		news_event = { id = templetonshift.154 
+							hours = 6 }
+
+	}
+	
+	option = {
+		name = templetonshift.153.e
+		trigger = { ENG = { NOT = { has_government = democratic 
+											has_government = parliamentary_democratic }
+									}
+							has_idea = western_european_entente_member
+							}
+			
+		add_research_slot = 1
+		add_tech_bonus = {
+			category = nuclear
+			bonus = 1.5
+			uses = 1
+		}
+		add_tech_bonus = {
+			category = armor
+			bonus = 1.5
+			uses = 2
+		}
+		news_event = { id = templetonshift.154 
+							hours = 6 }
+
+	}
+ }
+ # radu returns home safe 
+ 
+
+ 
+news_event = {
+	id = templetonshift.154
+	title = templetonshift.154.t
+	desc = templetonshift.154.d
+	is_triggered_only = yes 
+	major = yes
+	immediate = { clr_global_flag = albert_radu_missing
+					set_global_flag = radu_back }
+	picture = GFX_news_event_final_countdown
+	option = {
+		name = templetonshift.154.a 
+		trigger = { tag = ENG }
+	}
+	option = {
+		name = templetonshift.154.b 
+		trigger = { NOT = { tag = ENG } } 
+	}
+ }
+ # radu not home
+news_event = {
+	id = templetonshift.155
+	title = templetonshift.155.t
+	desc = templetonshift.155.d
+	is_triggered_only = yes 
+	major = yes
+	immediate = { clr_global_flag = albert_radu_missing }
+	picture = GFX_news_event_generic_rally2
+	option = {
+		name = templetonshift.155.a 
+		trigger = { tag = ENG }
+		create_wargoal = {
+			type = topple_government 
+			target = FROM 
+		}
+	}
+	option = {
+		name = templetonshift.155.b
+		trigger = { NOT = { tag = ENG } }
+	}
+ }
+# radu returns home safe report
+country_event = {
+	id = templetonshift.156
+	title = templetonshift.156.t
+	desc = templetonshift.156.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_radu_uwu
+	immediate = { set_global_flag = radu_back }
+	option = {
+		name = templetonshift.156.a 
+		trigger = { tag = ENG }
+		add_research_slot = 1
+		add_tech_bonus = {
+			category = nuclear
+			bonus = 1.5
+			uses = 1
+		}
+		add_tech_bonus = {
+			category = armor
+			bonus = 1.5
+			uses = 2
+		}
+		retire_country_leader = yes
+		news_event = { id = templetonshift.154 
+							hours = 6 }
+		ai_chance = { factor = 10 }
+	}
+	option = {
+		name = templetonshift.156.b
+		trigger = { tag = ENG }
+		add_research_slot = 1
+		add_tech_bonus = {
+			category = nuclear
+			bonus = 1.5
+			uses = 1
+		}
+		add_tech_bonus = {
+			category = armor
+			bonus = 1.5
+			uses = 2
+		}
+		news_event = { id = templetonshift.154 
+							hours = 6 }
+		ai_chance = { factor = 1 }
+	}
+ }
+ 
+ 
+ #ISOTOPE decision to invite 
+ country_event = {
+	id = templetonshift.157
+	title = templetonshift.157.t
+	desc = templetonshift.157.d
+	is_triggered_only = yes 
+	picture = GFX_report_event_radu_uwu
+	immediate = { set_global_flag = radu_back }
+	option = {
+		name = templetonshift.157.a 
+		ai_chance = { factor = 250 }
+		CAN = { country_event = generic.5 }
+		SAF = { country_event = generic.5 }
+		MAL = { country_event = generic.5 }
+		RAJ = { country_event = generic.5 }
+		EGY = { country_event = generic.5 }
+	}
+	option = {
+		name = templetonshift.157.b
+		ai_chance = { factor = 1 }
+		add_stability = 0.15
+	}
+ }
+ 
+ 
+# Supreme Bingo Events
+news_event = {
+	id = templetonshift.158
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { temp_draw = random }
+		multiply_variable = {
+						var = temp_draw
+						value = 75 }
+		round_variable = temp_draw
+					
+		clamp_variable = {
+						var = temp_draw
+						min = 1
+						max = 75
+					}
+					
+		while_loop_effect = {
+			limit = { is_in_array = {
+						array = global.bingo_draws
+						value = temp_draw
+				} }
+			
+			set_variable = { temp_draw = random }
+		multiply_variable = {
+						var = temp_draw
+						value = 75 }
+		round_variable = temp_draw
+					
+		clamp_variable = {
+						var = temp_draw
+						min = 1
+						max = 75
+					}
+		}			
+		
+		
+		set_variable = { global.last_month_draw_number = temp_draw }
+		
+		add_to_array = {
+			array = global.bingo_draws
+			value = global.last_month_draw_number
+		}
+		every_country = {
+				if = {
+							limit = { OR = {
+									original_tag = ENG
+									original_tag = FRA
+									original_tag = GER
+									original_tag = SWE
+									original_tag = ICE
+									original_tag = ITA
+									original_tag = POL
+									original_tag = ROM
+									original_tag = TUD
+									original_tag = LAT 
+									original_tag = TUR
+									 }	}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_1_1
+									compare = equals
+											} }
+							set_country_flag = bingo_1_1
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_1_2
+									compare = equals
+											} }
+							set_country_flag = bingo_1_2
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_1_3
+									compare = equals
+											} }
+							set_country_flag = bingo_1_3
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_1_4
+									compare = equals
+											} }
+							set_country_flag = bingo_1_4
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_1_5
+									compare = equals
+											} }
+							set_country_flag = bingo_1_5
+					}
+					
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_2_1
+									compare = equals
+											} }
+							set_country_flag = bingo_2_1
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_2_2
+									compare = equals
+											} }
+							set_country_flag = bingo_2_2
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_2_3
+									compare = equals
+											} }
+							set_country_flag = bingo_2_3
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_2_4
+									compare = equals
+											} }
+							set_country_flag = bingo_2_4
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_2_5
+									compare = equals
+											} }
+							set_country_flag = bingo_2_5
+					}
+					
+					
+					
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_3_1
+									compare = equals
+											} }
+							set_country_flag = bingo_3_1
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_3_2
+									compare = equals
+											} }
+							set_country_flag = bingo_3_2
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_3_4
+									compare = equals
+											} }
+							set_country_flag = bingo_3_4
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_3_5
+									compare = equals
+											} }
+							set_country_flag = bingo_3_5
+					}
+					
+					
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_4_1
+									compare = equals
+											} }
+							set_country_flag = bingo_4_1
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_4_2
+									compare = equals
+											} }
+							set_country_flag = bingo_4_2
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_4_3
+									compare = equals
+											} }
+							set_country_flag = bingo_4_3
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_4_4
+									compare = equals
+											} }
+							set_country_flag = bingo_4_4
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_4_5
+									compare = equals
+											} }
+							set_country_flag = bingo_4_5
+					}
+					
+					
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_5_1
+									compare = equals
+											} }
+							set_country_flag = bingo_5_1
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_5_2
+									compare = equals
+											} }
+							set_country_flag = bingo_5_2
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_5_3
+									compare = equals
+											} }
+							set_country_flag = bingo_5_3
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_5_4
+									compare = equals
+											} }
+							set_country_flag = bingo_5_4
+					}
+					if = {
+							limit = {
+								check_variable = {
+									var = global.last_month_draw_number
+									value = number_5_5
+									compare = equals
+											} }
+							set_country_flag = bingo_5_5
+					}
+					
+					if = { limit = {
+								OR = {
+									AND = {
+										has_country_flag = bingo_1_1
+										has_country_flag = bingo_1_2
+										has_country_flag = bingo_1_3
+										has_country_flag = bingo_1_4
+										has_country_flag = bingo_1_5
+									}
+									AND = {
+										has_country_flag = bingo_2_1
+										has_country_flag = bingo_2_2
+										has_country_flag = bingo_2_3
+										has_country_flag = bingo_2_4
+										has_country_flag = bingo_2_5
+									}
+									AND = {
+										has_country_flag = bingo_3_1
+										has_country_flag = bingo_3_2
+										has_country_flag = bingo_3_4
+										has_country_flag = bingo_3_5
+									}
+									AND = {
+										has_country_flag = bingo_4_1
+										has_country_flag = bingo_4_2
+										has_country_flag = bingo_4_3
+										has_country_flag = bingo_4_4
+										has_country_flag = bingo_4_5
+									}
+									AND = {
+										has_country_flag = bingo_5_1
+										has_country_flag = bingo_5_2
+										has_country_flag = bingo_5_3
+										has_country_flag = bingo_5_4
+										has_country_flag = bingo_5_5
+									}
+									AND = {
+										has_country_flag = bingo_1_1
+										has_country_flag = bingo_2_1
+										has_country_flag = bingo_3_1
+										has_country_flag = bingo_4_1
+										has_country_flag = bingo_5_1
+									}
+									AND = {
+										has_country_flag = bingo_1_2
+										has_country_flag = bingo_2_2
+										has_country_flag = bingo_3_2
+										has_country_flag = bingo_4_2
+										has_country_flag = bingo_5_2
+									}
+									AND = {
+										has_country_flag = bingo_1_3
+										has_country_flag = bingo_2_3
+										has_country_flag = bingo_4_3
+										has_country_flag = bingo_5_3
+									}
+									AND = {
+										has_country_flag = bingo_1_4
+										has_country_flag = bingo_2_4
+										has_country_flag = bingo_3_4
+										has_country_flag = bingo_4_4
+										has_country_flag = bingo_5_4
+									}
+									AND = {
+										has_country_flag = bingo_1_5
+										has_country_flag = bingo_2_5
+										has_country_flag = bingo_3_5
+										has_country_flag = bingo_4_5
+										has_country_flag = bingo_5_5
+									}
+									AND = {
+										has_country_flag = bingo_1_5
+										has_country_flag = bingo_2_4
+										has_country_flag = bingo_4_2
+										has_country_flag = bingo_5_1
+									}
+									AND = {
+										has_country_flag = bingo_1_1
+										has_country_flag = bingo_2_2
+										has_country_flag = bingo_4_4
+										has_country_flag = bingo_5_5
+									}
+								}
+								
+						}
+						set_country_flag = bingo_redeemable
+					}
+			}
+		}
+	}
+	option = {
+		
+		country_event = {
+			days = 30
+			id = templetonshift.158
+		}
+		
+	}
+}
+
+
+news_event = {
+	id = templetonshift.159
+	title = templetonshift.159.t
+	desc = templetonshift.159.d
+	picture = GFX_news_event_generic_parliament
+	major = yes
+	is_triggered_only = yes
+	option = {
+		name = templetonshift.159.a
+		ai_chance = { factor = 1 }
+	}
+}
+
+news_event = {
+	id = templetonshift.160
+	hidden = yes
+	trigger = {
+		NOT = { has_global_flag = russia_one_last_chance }
+		any_country = {
+			has_idea = RUS_unquenchable_spirit
+			has_defensive_war_with = POL
+		}
+	}
+	
+	immediate = {
+		set_global_flag = russia_one_last_chance
+	}
+	option = {
+		name = templetonshift.26.a		
+		random_country = {
+			limit = { has_idea = RUS_unquenchable_spirit 
+					num_of_factories > 5
+					NOT = { tag = PRE }
+					NOT = { tag = MEK }
+				}
+			create_faction = "United Russian Federation"
+			
+		}
+		
+		every_country = {
+			limit = { has_idea = RUS_unquenchable_spirit 
+				}
+			country_event = templetonshift.161
+		}
+		
+		every_country = {
+				set_country_flag = view_one_last_chance_event
+			}
+		
+	}
+}
+
+country_event = {
+	id = templetonshift.161
+	title = templetonshift.161.t
+	desc = templetonshift.161.d
+	picture = GFX_report_event_generic_military_parade
+	is_triggered_only = yes
+	option = { 
+		name = templetonshift.161.a
+		ai_chance = { factor = 1 }
+		every_country = {
+			limit = { has_idea = RUS_unquenchable_spirit 
+					has_war_with = PREV }
+			white_peace = PREV 
+		}
+		add_political_power = 2
+		leave_faction = yes
+		if = {
+			limit = { NOT = { is_faction_leader = yes } }
+			random_country = {
+				limit = { has_idea = RUS_unquenchable_spirit 
+							is_faction_leader = yes }
+				add_to_faction = PREV 
+			}
+			
+		}
+		else = {
+			add_political_power = 200
+		}
+		
+		POL = { declare_war_on = { target = PREV
+									type = puppet_wargoal_focus } }
+		
+		
+	}
+}
+
+
+
+
+	
+	

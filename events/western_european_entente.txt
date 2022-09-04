@@ -1,0 +1,847 @@
+add_namespace = entente
+
+
+# New resolution selecting event
+news_event = {
+	id = entente.1
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = { 
+				clr_global_flag = next_is_phase_1
+				clr_global_flag = voting_done
+				clr_global_flag = resolution_passed
+				clr_global_flag = resolution_failed			
+				set_variable = { global.resolution_floored = 0 }
+				set_variable = { global.resolution_floored_queued = 0 }
+				set_variable = { global.days_countdown = 30 }
+				GER = { set_variable = { entente_vote = 0 } 
+						set_country_flag = voting_blocked
+						clr_country_flag = entente_turn 
+						clr_country_flag = resolution_done 
+						clr_country_flag = voting_on_resolution 
+						clr_country_flag = proposing_resolution}
+				FRA = { set_variable = { entente_vote = 0 }  
+						set_country_flag = voting_blocked
+						clr_country_flag = entente_turn
+						clr_country_flag = resolution_done 
+						clr_country_flag = voting_on_resolution
+						clr_country_flag = proposing_resolution}
+				ENG = { set_variable = { entente_vote = 0 } 
+						set_country_flag = voting_blocked
+						clr_country_flag = entente_turn
+						clr_country_flag = resolution_done 
+						clr_country_flag = voting_on_resolution 
+						clr_country_flag = proposing_resolution}
+					
+				
+				if = { 
+					limit = {
+						check_variable = {
+							var = global.next_entente_turn
+							value = 2
+							compare = equals
+						}
+					
+					}
+					set_variable = { global.next_entente_turn = 0 }
+				}
+				else = {
+						add_to_variable = {
+							var = global.next_entente_turn 
+							value = 1
+						}
+				}
+				
+				if = {
+					limit = {
+						check_variable = {
+							var = global.next_entente_turn
+							value = 0
+							compare = equals
+						}
+					}
+					
+					if = { 
+						limit = { GER = { NOT = { has_idea = western_european_entente_member } }
+									}
+						add_to_variable = {
+							var = global.next_entente_turn 
+							value = 1
+						}
+					}
+					else = {
+						GER = { set_country_flag = entente_turn }
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = global.next_entente_turn
+							value = 1
+							compare = equals
+						}
+					}
+					if = { 
+						limit = { FRA = { NOT = { has_idea = western_european_entente_member } }
+									}
+						add_to_variable = {
+							var = global.next_entente_turn 
+							value = 1
+						}
+					}
+					else = {
+						FRA = { set_country_flag = entente_turn }
+					}
+					
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							var = global.next_entente_turn
+							value = 2
+							compare = equals
+						}
+					}
+					if = { 
+						limit = { ENG = { NOT = { has_idea = western_european_entente_member } }
+									}
+						add_to_variable = {
+							var = global.next_entente_turn 
+							value = 1
+						}
+					}
+					else = {
+						ENG = { set_country_flag = entente_turn }
+					}
+				}
+					
+					
+			
+			
+			}
+	option = {
+		name = entente.1.a 
+		news_event = { id = entente.6
+						days = 1 }
+		set_global_flag = next_is_phase_2
+	}
+	
+	
+	 
+}
+
+# End resolution selecting phase / start voting phase
+news_event = {
+	id = entente.2
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = { 
+		clr_global_flag = next_is_phase_2
+		set_variable = { global.days_countdown = 30 }
+		GER = { clr_country_flag = entente_turn 
+				clr_country_flag = voting_blocked 
+				 }
+		FRA = { clr_country_flag = entente_turn 
+				clr_country_flag = voting_blocked
+				 }
+		ENG = { clr_country_flag = entente_turn 
+				clr_country_flag = voting_blocked
+				} 
+		set_variable = { global.resolution_floored = global.resolution_floored_queued }
+		if = {
+			limit = {
+				check_variable = {
+					var = global.next_entente_turn
+					value = 0
+					compare = equals
+				}
+			}
+			GER = { set_country_flag = voting_on_resolution  
+					set_variable = { entente_vote = 1 } }
+			
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					var = global.next_entente_turn
+					value = 1
+					compare = equals
+				}
+			}
+			FRA = { set_country_flag = voting_on_resolution  
+					set_variable = { entente_vote = 1 } }
+			
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					var = global.next_entente_turn
+					value = 2
+					compare = equals
+				}
+			}
+			ENG = { set_country_flag = voting_on_resolution  
+					set_variable = { entente_vote = 1 } }
+		}
+	}
+	option = {
+		name = entente.1.a 
+		news_event = { id = entente.6
+						days = 1 }
+		set_global_flag = next_is_phase_3
+	}
+}
+
+# End voting phase / start recess
+
+news_event = {
+	id = entente.3
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		clr_global_flag = next_is_phase_3
+		set_variable = { global.days_countdown = 30 }
+		if = { 
+			limit = {
+				OR = { 
+					check_variable = {
+							var = GER.entente_vote
+							value = 2
+							compare = equals
+						}
+					check_variable = {
+							var = FRA.entente_vote
+							value = 2
+							compare = equals
+						}
+					check_variable = {
+							var = ENG.entente_vote
+							value = 2
+							compare = equals
+						}
+				}
+			}
+			set_global_flag = resolution_failed
+		}
+		else_if = {
+			limit = { 
+				OR = {
+					AND = { 
+						check_variable = {
+							var = GER.entente_vote
+							value = 1
+							compare = equals
+						}
+						check_variable = {
+							var = FRA.entente_vote
+							value = 1
+							compare = equals
+						}
+					}
+					AND = { 
+						check_variable = {
+							var = ENG.entente_vote
+							value = 1
+							compare = equals
+						}
+						check_variable = {
+							var = FRA.entente_vote
+							value = 1
+							compare = equals
+						}
+					}
+					AND = { 
+						check_variable = {
+							var = GER.entente_vote
+							value = 1
+							compare = equals
+						}
+						check_variable = {
+							var = ENG.entente_vote
+							value = 1
+							compare = equals
+						}
+					}
+				}
+			}
+			set_global_flag = resolution_passed
+		}	
+		else = {
+			set_global_flag = resolution_failed
+		}
+			
+		# IF resolution passed, handle rewards
+		if = {
+			limit = { 
+				has_global_flag = resolution_passed 
+			}
+			if = {
+				limit = {
+					check_variable = {
+							var = ENG.entente_vote
+							value = 1
+							compare = equals
+						}
+				}
+				ENG = { add_stability = 0.02 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+							var = FRA.entente_vote
+							value = 1
+							compare = equals
+						}
+				}
+				FRA = { add_stability = 0.02 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+							var = GER.entente_vote
+							value = 1
+							compare = equals
+						}
+				}
+				GER = { add_stability = 0.02 }
+			}
+			if = {
+				limit = {
+					check_variable = {
+							var = ENG.entente_vote
+							value = 1
+							compare = equals
+						}
+					check_variable = {
+							var = GER.entente_vote
+							value = 1
+							compare = equals
+						}
+					check_variable = {
+							var = FRA.entente_vote
+							value = 1
+							compare = equals
+						}
+				}
+				add_to_variable = {
+					var = global.entente_cohesion
+					value = 1
+				}
+			}
+			else = {
+				add_to_variable = {
+					var = global.entente_cohesion
+					value = 0
+				}
+			}
+			
+			if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 1
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { OR = { has_idea = western_european_entente_member 
+							is_puppet_of = ENG 
+							is_puppet_of = FRA 
+							is_puppet_of = GER }
+							
+						}
+					add_timed_idea = { 
+								idea = ENT_stability_campaign_idea
+								days = 120
+							} 
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 2
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { 
+								idea = ENT_lowered_tariffs
+								days = 120
+							} 
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 3
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_war_support = -0.05
+				}
+				add_to_variable = {
+					var = global.entente_cohesion
+					value = 1
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 4
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_open_borders 
+										days = 200 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 5
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_production_subsidies
+										days = 120 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 6
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_coordinate_production
+										days = 180 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 7
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_war_support_campaign
+										days = 180 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 8
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_added_tension_amount > 10
+					}
+					add_timed_idea = { idea = ENT_introduce_sanctions
+										days = 200 }
+					every_country = {
+						limit = { has_idea = western_european_entente_member
+						}
+						add_opinion_modifier = {
+							target = PREV
+							modifier = embargo
+						}
+					}					
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 9
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_canasian_commitment1
+										days = 365 }
+				}
+				LAT = {
+					add_timed_idea = { idea = ENT_canasian_commitment2
+										days = 365 }
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+							var = global.resolution_floored
+							value = 10
+							compare = equals
+						}
+				}
+				every_country = {
+					limit = { has_idea = western_european_entente_member
+						}
+					add_timed_idea = { idea = ENT_colonial_expansions
+										days = 200 }
+				}
+			}
+		}
+			
+			
+		# IF resolution failed, handle debuffs
+		if = {
+			limit = { has_global_flag = resolution_failed }
+			if = {
+				limit = {
+					OR = { 
+						AND = { 
+							check_variable = {
+							var = ENG.entente_vote
+							value = 2
+							compare = equals
+							}
+							check_variable = {
+							var = GER.entente_vote
+							value = 2
+							compare = equals
+							}
+						}
+						AND = { 
+							check_variable = {
+							var = FRA.entente_vote
+							value = 2
+							compare = equals
+							}
+							check_variable = {
+							var = GER.entente_vote
+							value = 2
+							compare = equals
+							}
+						}
+						AND = { 
+							check_variable = {
+							var = ENG.entente_vote
+							value = 2
+							compare = equals
+							}
+							check_variable = {
+							var = FRA.entente_vote
+							value = 2
+							compare = equals
+							}
+						}
+					}
+				}
+				every_country = {
+					if = { limit = { has_country_flag = voting_on_resolution }
+						add_stability = -0.025
+					}
+				}
+				GER = { add_stability = -0.025 }
+				FRA = { add_stability = -0.025 }
+				ENG = { add_stability = -0.025 }
+				
+			}
+			else_if = {
+				limit = {
+				OR = { 
+					check_variable = {
+							var = GER.entente_vote
+							value = 2
+							compare = equals
+						}
+					check_variable = {
+							var = FRA.entente_vote
+							value = 2
+							compare = equals
+						}
+					check_variable = {
+							var = ENG.entente_vote
+							value = 2
+							compare = equals
+						}
+				}
+				}
+				GER = { add_stability = -0.02 }
+				FRA = { add_stability = -0.02 }
+				ENG = { add_stability = -0.02 }
+			}
+			add_to_variable = {
+					var = global.entente_cohesion 
+					value = -1
+				}
+		}
+		set_global_flag = voting_done
+		GER = { clr_country_flag = voting_on_resolution 
+				set_country_flag = voting_blocked }
+		FRA = { clr_country_flag = voting_on_resolution 
+				set_country_flag = voting_blocked }
+		ENG = { clr_country_flag = voting_on_resolution 
+				set_country_flag = voting_blocked }
+	}
+	option = {
+		name = entente.1.a 
+		news_event = { id = entente.6
+						days = 1 }
+		set_global_flag = next_is_phase_1
+	}
+}
+
+# countdown - phase 1 to phase 2
+news_event = {
+	id = entente.4
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		add_to_variable = {
+			var = global.days_countdown 
+			value = -1
+		}
+	}
+	
+	option = {
+		name = entente.1.a 
+		if = {
+			limit = {
+				check_variable = {
+							var = global.days_countdown
+							value = 0
+							compare = equals
+						}
+					}
+			if = {
+				limit = { 
+					check_variable = {
+							var = global.resolution_floored_queued
+							value = 0
+							compare = equals
+						}
+					}
+				set_variable = { global.days_countdown = 60 }
+				set_global_flag = resolution_failed 
+				every_country = {
+					if = { limit = { has_country_flag = entente_turn }
+						add_stability = -0.05
+					}
+				}
+				set_variable = { global.resolution_floored = -1 }
+				FRA = { clr_country_flag = entente_turn }
+				GER = { clr_country_flag = entente_turn }
+				ENG = { clr_country_flag = entente_turn }
+				news_event = entente.6
+			}
+			else = {
+			news_event = entente.2 }
+		}
+		else = {
+			news_event = { id = entente.4
+							days = 1 }
+		}
+	}
+	
+}
+# countdown - phase 2 to 3
+news_event = {
+	id = entente.5
+	hidden = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		add_to_variable = {
+			var = global.days_countdown 
+			value = -1 
+		}
+	}
+	
+	option = {
+		name = entente.1.a 
+		if = {
+			limit = {
+				check_variable = {
+							var = global.days_countdown
+							value = 0
+							compare = equals
+						}
+					}
+			news_event = entente.3
+		}
+		else = {
+			news_event = { id = entente.5
+							days = 1 }
+		}
+	}
+	
+}
+
+#news_event = {
+#	id = entente.6
+#	hidden = yes
+#	is_triggered_only = yes
+#	
+#	immediate = {
+#		add_to_variable = {
+#			var = global.days_countdown 
+#			value = -1
+#		}
+#	}
+#	
+#	option = {
+#		name = entente.1.a 
+#		if = {
+#			limit = {
+#				check_variable = {
+#							var = global.days_countdown
+#							value = 0
+#							compare = equals
+#						}
+#					}
+#			news_event = entente.1
+#		}
+#		else = {
+#			news_event = { id = entente.6
+#							days = 1 }
+#		}
+#	}
+#	
+#}
+# countdown - phase 3 to 1
+## testing: MASTER COUNTDOWN
+news_event = { 
+	id = entente.6
+	hidden = yes
+	is_triggered_only = yes
+	
+	#immediate = {
+	#	add_to_variable = {
+	#		var = global.days_countdown 
+	#		value = -1
+	#	}
+	#}
+	
+	option = {
+		name = entente.1.a 
+		add_to_variable = {
+			var = global.days_countdown 
+			value = -1
+		}
+		if = {
+			limit = {
+				check_variable = {
+							var = global.days_countdown
+							value = 0 
+							compare = equals
+						}
+					}
+			if = { limit = { has_global_flag = next_is_phase_1 }
+				news_event = entente.1 
+			}
+			else_if = { limit = { has_global_flag = next_is_phase_2 }
+				if = {
+				limit = { 
+					check_variable = {
+							var = global.resolution_floored_queued
+							value = 0
+							compare = equals
+						}
+					}
+				set_variable = { global.days_countdown = 60 }
+				set_global_flag = resolution_failed 
+				every_country = {
+					if = { limit = { has_country_flag = entente_turn }
+						add_stability = -0.05
+					}
+				}
+				set_variable = { global.resolution_floored = -1 }
+				FRA = { clr_country_flag = entente_turn 
+						set_country_flag = you_got_here }
+				GER = { clr_country_flag = entente_turn }
+				ENG = { clr_country_flag = entente_turn }
+				
+				clr_global_flag = next_is_phase_2
+				set_global_flag = next_is_phase_1
+				news_event = { id = entente.6 
+								days = 1 }
+				}
+				else = {
+					news_event = entente.2 }
+			}
+			else_if = { limit = { has_global_flag = next_is_phase_3 }
+				news_event = entente.3
+			}
+		}
+		else = {
+			# move this IF statement to add_to_variable or immediate if you add more GUIs
+			if = { limit = {
+				any_country = {
+					has_idea = western_european_entente_member 
+				}
+				}
+				news_event = { id = entente.6
+							days = 1 }
+			}
+		}
+	}
+	
+}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			

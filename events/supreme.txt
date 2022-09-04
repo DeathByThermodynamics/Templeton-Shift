@@ -1,0 +1,55 @@
+add_namespace = supreme
+
+country_event = {
+    id = supreme.1
+    hidden = yes
+	fire_only_once = yes
+	is_triggered_only = yes 
+	
+	option = {
+		name = templetonshift.26.a
+		if = { 
+			limit = { has_global_flag = aris_security_tightened }
+			GER = { country_event = supreme.3 }
+		}
+		else = {
+			GER = { country_event = supreme.2 }
+		}
+	
+	}
+}
+
+country_event = {
+	id = supreme.2
+	title = supreme.2.t 
+	desc = supreme.2.d
+	picture = GFX_report_event_china_ledo_road
+	is_triggered_only = yes 
+
+	option = {
+	# all good
+		name = supreme.2.a
+		hidden_effect = {
+			add_to_variable = {
+			var = global.supreme_anger
+			value = 1 }
+			set_global_flag = GER_supreme_infiltrated
+		}
+	}
+}
+
+country_event = {
+	id = supreme.3
+	title = supreme.3.t 
+	desc = supreme.3.d
+	picture = GFX_report_event_china_ledo_road
+	is_triggered_only = yes 
+
+	option = {
+	# bruh
+		name = supreme.3.a
+		add_stability = 0.1
+		add_war_support = 0.05
+		add_political_power = 200
+	}
+}
