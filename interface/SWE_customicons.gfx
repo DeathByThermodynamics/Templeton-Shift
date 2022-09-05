@@ -1,0 +1,7 @@
+spriteTypes = { 
+##Icon For: 2039621
+ SpriteType = { 
+ name = "GFX_establishthewanggang" 
+ texturefile = "gfx/interface/goals/GFX_establishthewanggang.tga" 
+ } 
+ }

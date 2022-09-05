@@ -1,0 +1,383 @@
+spriteTypes = { 
+	##Icon For: Civilian Investments
+	SpriteType = { 
+		name = "GFX_SAX_civilian_investments-85362"
+		texturefile = "gfx/interface/goals/GFX_SAX_civilian_investments-85362.dds"
+	}
+
+	##Icon Shine For: Civilian Investments
+	SpriteType = { 
+		name = "GFX_SAX_civilian_investments-85362_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_civilian_investments-85362.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_civilian_investments-85362.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_civilian_investments-85362.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Democratic Investment
+	SpriteType = { 
+		name = "GFX_SAX_democratic_investment-116794"
+		texturefile = "gfx/interface/goals/GFX_SAX_democratic_investment-116794.dds"
+	}
+
+	##Icon Shine For: Democratic Investment
+	SpriteType = { 
+		name = "GFX_SAX_democratic_investment-116794_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_democratic_investment-116794.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_democratic_investment-116794.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_democratic_investment-116794.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Fascist Investment
+	SpriteType = { 
+		name = "GFX_SAX_fascist_investment-116793"
+		texturefile = "gfx/interface/goals/GFX_SAX_fascist_investment-116793.dds"
+	}
+
+	##Icon Shine For: Fascist Investment
+	SpriteType = { 
+		name = "GFX_SAX_fascist_investment-116793_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_fascist_investment-116793.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_fascist_investment-116793.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_fascist_investment-116793.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Walk the Dark Path
+	SpriteType = { 
+		name = "GFX_SAX_walk_the_dark_path-116791"
+		texturefile = "gfx/interface/goals/GFX_SAX_walk_the_dark_path-116791.dds"
+	}
+
+	##Icon Shine For: Walk the Dark Path
+	SpriteType = { 
+		name = "GFX_SAX_walk_the_dark_path-116791_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_walk_the_dark_path-116791.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_walk_the_dark_path-116791.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_walk_the_dark_path-116791.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Self-Sustainability
+	SpriteType = { 
+		name = "GFX_SAX_selfsustainability-116682"
+		texturefile = "gfx/interface/goals/GFX_SAX_selfsustainability-116682.dds"
+	}
+
+	##Icon Shine For: Self-Sustainability
+	SpriteType = { 
+		name = "GFX_SAX_selfsustainability-116682_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_selfsustainability-116682.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_selfsustainability-116682.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_selfsustainability-116682.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Secure U.R.D. Investors
+	SpriteType = { 
+		name = "GFX_SAX_secure_urd_investors-125198"
+		texturefile = "gfx/interface/goals/GFX_SAX_secure_urd_investors-125198.dds"
+	}
+
+	##Icon Shine For: Secure U.R.D. Investors
+	SpriteType = { 
+		name = "GFX_SAX_secure_urd_investors-125198_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_secure_urd_investors-125198.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_secure_urd_investors-125198.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_secure_urd_investors-125198.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Approach Arislantia
+	SpriteType = { 
+		name = "GFX_SAX_approach_arislantia-125201"
+		texturefile = "gfx/interface/goals/GFX_SAX_approach_arislantia-125201.dds"
+	}
+
+	##Icon Shine For: Approach Arislantia
+	SpriteType = { 
+		name = "GFX_SAX_approach_arislantia-125201_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_approach_arislantia-125201.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_approach_arislantia-125201.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_approach_arislantia-125201.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Airish Interventionism
+	SpriteType = { 
+		name = "GFX_SAX_airish_interventionism-125202"
+		texturefile = "gfx/interface/goals/GFX_SAX_airish_interventionism-125202.dds"
+	}
+
+	##Icon Shine For: Airish Interventionism
+	SpriteType = { 
+		name = "GFX_SAX_airish_interventionism-125202_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_airish_interventionism-125202.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_airish_interventionism-125202.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_airish_interventionism-125202.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: The Stalwart Blossom
+	SpriteType = { 
+		name = "GFX_SAX_the_stalwart_blossom-129149"
+		texturefile = "gfx/interface/goals/GFX_SAX_the_stalwart_blossom-129149.dds"
+	}
+
+	##Icon Shine For: The Stalwart Blossom
+	SpriteType = { 
+		name = "GFX_SAX_the_stalwart_blossom-129149_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_the_stalwart_blossom-129149.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_the_stalwart_blossom-129149.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_the_stalwart_blossom-129149.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Enemy Infiltration
+	SpriteType = { 
+		name = "GFX_SAX_enemy_infiltration-129150"
+		texturefile = "gfx/interface/goals/GFX_SAX_enemy_infiltration-129150.dds"
+	}
+
+	##Icon Shine For: Enemy Infiltration
+	SpriteType = { 
+		name = "GFX_SAX_enemy_infiltration-129150_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_enemy_infiltration-129150.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_enemy_infiltration-129150.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_enemy_infiltration-129150.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }

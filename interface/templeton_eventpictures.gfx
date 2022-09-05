@@ -1,0 +1,20 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_report_event_radu_uwu"
+		texturefile = "gfx/event_pictures/report_event_radu_uwu.dds"
+	}
+	spriteType = {
+		name = "GFX_news_event_wilbur"
+		texturefile = "gfx/event_pictures/news_event_wilbur.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_stal"
+		texturefile = "gfx/event_pictures/news_event_stal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_news_event_final_countdown"
+		texturefile = "gfx/event_pictures/news_event_final_countdown.dds"
+	}
+}

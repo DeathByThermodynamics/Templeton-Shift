@@ -1,0 +1,126 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_idea_bureau_of_diplomacy"
+		texturefile = "gfx/interface/ideas/bureau_of_diplomacy.dds"
+	}
+	spriteType = {
+		name = "GFX_idea_ROM_netherite_tools"
+		texturefile = "gfx/interface/ideas/netherite_tools.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_TUR_challenge_the_west"
+		texturefile = "gfx/interface/ideas/idea_tur_challenge_the_west.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_TUR_accept_urd_dominance"
+		texturefile = "gfx/interface/ideas/idea_accept_urd_dominance.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ROM_simpban"
+		texturefile = "gfx/interface/ideas/ROM_simpban.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ROM_vibing"
+		texturefile = "gfx/interface/ideas/ministry_of_vibing.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_ROM_javrata"
+		texturefile = "gfx/interface/ideas/ROM_javrata.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_tank_program"
+		texturefile = "gfx/interface/ideas/tankprogramidea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Alex_Minister"
+		texturefile = "gfx/interface/ideas/Alex_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Wilbur_Soot_Minister"
+		texturefile = "gfx/interface/ideas/Wilbur_Soot_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Alex2_Minister"
+		texturefile = "gfx/interface/ideas/Alex2_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Jack_Minister"
+		texturefile = "gfx/interface/ideas/Jack_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Elaine_Minister"
+		texturefile = "gfx/interface/ideas/Elaine_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Dylan_Minister"
+		texturefile = "gfx/interface/ideas/Dylan_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Annie_Minister"
+		texturefile = "gfx/interface/ideas/Annie_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Mia_Minister"
+		texturefile = "gfx/interface/ideas/Mia_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Lina_Conundrum_Minister"
+		texturefile = "gfx/interface/ideas/Lina_Conundrum_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Sofya_Minister"
+		texturefile = "gfx/interface/ideas/Sofya_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Ben_Minister"
+		texturefile = "gfx/interface/ideas/Ben_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Alex3_Minister"
+		texturefile = "gfx/interface/ideas/Alex3_Minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Aryan_Minister"
+		texturefile = "gfx/interface/ideas/aryan_idea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Shubham_Minister"
+		texturefile = "gfx/interface/ideas/shubham_idea.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Chair_Minister"
+		texturefile = "gfx/interface/ideas/chair_minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_David_Minister"
+		texturefile = "gfx/interface/ideas/david_minister.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_idea_Noah"
+		texturefile = "gfx/interface/ideas/noah.dds"
+	}
+}

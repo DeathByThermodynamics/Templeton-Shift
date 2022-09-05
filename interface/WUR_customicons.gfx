@@ -1,0 +1,193 @@
+spriteTypes = { 
+	##Icon For: Tips from Austin
+	SpriteType = { 
+		name = "GFX_WUR_tips_from_austin-129219"
+		texturefile = "gfx/interface/goals/GFX_WUR_tips_from_austin-129219.dds"
+	}
+
+	##Icon Shine For: Tips from Austin
+	SpriteType = { 
+		name = "GFX_WUR_tips_from_austin-129219_shine"
+		texturefile = "gfx/interface/goals/GFX_WUR_tips_from_austin-129219.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_tips_from_austin-129219.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_tips_from_austin-129219.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Seize Siberia
+	SpriteType = { 
+		name = "GFX_WUR_seize_siberia-50762"
+		texturefile = "gfx/interface/goals/GFX_WUR_seize_siberia-50762.dds"
+	}
+
+	##Icon Shine For: Seize Siberia
+	SpriteType = { 
+		name = "GFX_WUR_seize_siberia-50762_shine"
+		texturefile = "gfx/interface/goals/GFX_WUR_seize_siberia-50762.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_seize_siberia-50762.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_seize_siberia-50762.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Claim the Far East
+	SpriteType = { 
+		name = "GFX_WUR_claim_the_far_east-129220"
+		texturefile = "gfx/interface/goals/GFX_WUR_claim_the_far_east-129220.dds"
+	}
+
+	##Icon Shine For: Claim the Far East
+	SpriteType = { 
+		name = "GFX_WUR_claim_the_far_east-129220_shine"
+		texturefile = "gfx/interface/goals/GFX_WUR_claim_the_far_east-129220.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_claim_the_far_east-129220.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_claim_the_far_east-129220.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Absolute War Economy
+	SpriteType = { 
+		name = "GFX_WUR_absolute_war_economy-129221"
+		texturefile = "gfx/interface/goals/GFX_WUR_absolute_war_economy-129221.dds"
+	}
+
+	##Icon Shine For: Absolute War Economy
+	SpriteType = { 
+		name = "GFX_WUR_absolute_war_economy-129221_shine"
+		texturefile = "gfx/interface/goals/GFX_WUR_absolute_war_economy-129221.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_absolute_war_economy-129221.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_absolute_war_economy-129221.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Seek Tudor Assistance
+	SpriteType = { 
+		name = "GFX_WUR_seek_tudor_assistance-116580"
+		texturefile = "gfx/interface/goals/GFX_WUR_seek_tudor_assistance-116580.dds"
+	}
+
+	##Icon Shine For: Seek Tudor Assistance
+	SpriteType = { 
+		name = "GFX_WUR_seek_tudor_assistance-116580_shine"
+		texturefile = "gfx/interface/goals/GFX_WUR_seek_tudor_assistance-116580.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_seek_tudor_assistance-116580.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_WUR_seek_tudor_assistance-116580.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }

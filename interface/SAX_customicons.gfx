@@ -1,0 +1,155 @@
+spriteTypes = { 
+	##Icon For: Reevaluate the State of the Continent
+	SpriteType = { 
+		name = "GFX_SAX_reevaluate_the_state_of_the_continent-116785"
+		texturefile = "gfx/interface/goals/GFX_SAX_reevaluate_the_state_of_the_continent-116785.dds"
+	}
+
+	##Icon Shine For: Reevaluate the State of the Continent
+	SpriteType = { 
+		name = "GFX_SAX_reevaluate_the_state_of_the_continent-116785_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_reevaluate_the_state_of_the_continent-116785.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_reevaluate_the_state_of_the_continent-116785.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_reevaluate_the_state_of_the_continent-116785.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Appeal to the European Entente
+	SpriteType = { 
+		name = "GFX_SAX_appeal_to_the_european_entente-116800"
+		texturefile = "gfx/interface/goals/GFX_SAX_appeal_to_the_european_entente-116800.dds"
+	}
+
+	##Icon Shine For: Appeal to the European Entente
+	SpriteType = { 
+		name = "GFX_SAX_appeal_to_the_european_entente-116800_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_appeal_to_the_european_entente-116800.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_appeal_to_the_european_entente-116800.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_appeal_to_the_european_entente-116800.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Authoritarianism
+	SpriteType = { 
+		name = "GFX_SAX_authoritarianism-129220"
+		texturefile = "gfx/interface/goals/GFX_SAX_authoritarianism-129220.dds"
+	}
+
+	##Icon Shine For: Authoritarianism
+	SpriteType = { 
+		name = "GFX_SAX_authoritarianism-129220_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_authoritarianism-129220.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_authoritarianism-129220.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_authoritarianism-129220.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Sea of Thieves
+	SpriteType = { 
+		name = "GFX_SAX_sea_of_thieves-129238"
+		texturefile = "gfx/interface/goals/GFX_SAX_sea_of_thieves-129238.dds"
+	}
+
+	##Icon Shine For: Sea of Thieves 
+	SpriteType = { 
+		name = "GFX_SAX_sea_of_thieves-129238_shine"
+		texturefile = "gfx/interface/goals/GFX_SAX_sea_of_thieves-129238.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_sea_of_thieves-129238.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_SAX_sea_of_thieves-129238.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }

@@ -1,0 +1,646 @@
+spriteTypes = { 
+	##Icon For: The Uwunion
+	SpriteType = { 
+		name = "GFX_ROM_the_uwunion-23737"
+		texturefile = "gfx/interface/goals/GFX_ROM_the_uwunion-23737.dds"
+	}
+
+	##Icon Shine For: The Uwunion
+	SpriteType = { 
+		name = "GFX_ROM_the_uwunion-23737_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_the_uwunion-23737.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_the_uwunion-23737.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_the_uwunion-23737.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	##Icon For: Await radu
+	SpriteType = { 
+		name = "GFX_ROM_await_radu"
+		texturefile = "gfx/interface/goals/GFX_ROM_await_radu.dds"
+	}
+
+	##Icon Shine For: radu restoration
+	SpriteType = { 
+		name = "GFX_ROM_await_radu_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_await_radu.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_await_radu.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_await_radu.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	##Icon For: Radu restoration
+	SpriteType = { 
+		name = "GFX_ROM_senor_raud"
+		texturefile = "gfx/interface/goals/GFX_ROM_senor_raud.dds"
+	}
+
+	##Icon Shine For: radu restoration
+	SpriteType = { 
+		name = "GFX_ROM_senor_raud_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_senor_raud.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_senor_raud.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_senor_raud.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+	##Icon For: Embrace the UWU
+	SpriteType = { 
+		name = "GFX_ROM_embrace_the_uwu-23737"
+		texturefile = "gfx/interface/goals/GFX_ROM_embrace_the_uwu-23737.dds"
+	}
+
+	##Icon Shine For: Embrace the UWU
+	SpriteType = { 
+		name = "GFX_ROM_embrace_the_uwu-23737_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_embrace_the_uwu-23737.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_embrace_the_uwu-23737.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_embrace_the_uwu-23737.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Invite Javra Ta
+	SpriteType = { 
+		name = "GFX_ROM_invite_javra_ta-23758"
+		texturefile = "gfx/interface/goals/GFX_ROM_invite_javra_ta-23758.dds"
+	}
+
+	##Icon Shine For: Invite Javra Ta
+	SpriteType = { 
+		name = "GFX_ROM_invite_javra_ta-23758_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_invite_javra_ta-23758.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_invite_javra_ta-23758.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_invite_javra_ta-23758.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: The Hunt for Netherite
+	SpriteType = { 
+		name = "GFX_ROM_the_hunt_for_netherite-23778"
+		texturefile = "gfx/interface/goals/GFX_ROM_the_hunt_for_netherite-23778.dds"
+	}
+
+	##Icon Shine For: The Hunt for Netherite
+	SpriteType = { 
+		name = "GFX_ROM_the_hunt_for_netherite-23778_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_the_hunt_for_netherite-23778.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_the_hunt_for_netherite-23778.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_the_hunt_for_netherite-23778.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: STAL
+	SpriteType = { 
+		name = "GFX_ROM_stal-23734"
+		texturefile = "gfx/interface/goals/GFX_ROM_stal-23734.dds"
+	}
+
+	##Icon Shine For: STAL
+	SpriteType = { 
+		name = "GFX_ROM_stal-23734_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_stal-23734.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_stal-23734.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_stal-23734.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Empower the Church of Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_empower_the_church_of_wilbur-23735"
+		texturefile = "gfx/interface/goals/GFX_ROM_empower_the_church_of_wilbur-23735.dds"
+	}
+
+	##Icon Shine For: Empower the Church of Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_empower_the_church_of_wilbur-23735_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_empower_the_church_of_wilbur-23735.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_empower_the_church_of_wilbur-23735.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_empower_the_church_of_wilbur-23735.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Seek Defense with the Tudor States
+	SpriteType = { 
+		name = "GFX_ROM_seek_defense_with_the_tudor_states-23761"
+		texturefile = "gfx/interface/goals/GFX_ROM_seek_defense_with_the_tudor_states-23761.dds"
+	}
+
+	##Icon Shine For: Seek Defense with the Tudor States
+	SpriteType = { 
+		name = "GFX_ROM_seek_defense_with_the_tudor_states-23761_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_seek_defense_with_the_tudor_states-23761.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_seek_defense_with_the_tudor_states-23761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_seek_defense_with_the_tudor_states-23761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Go with Tudor
+	SpriteType = { 
+		name = "GFX_ROM_go_with_tudor-23761"
+		texturefile = "gfx/interface/goals/GFX_ROM_go_with_tudor-23761.dds"
+	}
+
+	##Icon Shine For: Go with Tudor
+	SpriteType = { 
+		name = "GFX_ROM_go_with_tudor-23761_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_go_with_tudor-23761.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_go_with_tudor-23761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_go_with_tudor-23761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Arrest Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_arrest_wilbur-23732"
+		texturefile = "gfx/interface/goals/GFX_ROM_arrest_wilbur-23732.dds"
+	}
+
+	##Icon Shine For: Arrest Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_arrest_wilbur-23732_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_arrest_wilbur-23732.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_arrest_wilbur-23732.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_arrest_wilbur-23732.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Ban UWU
+	SpriteType = { 
+		name = "GFX_ROM_ban_uwu-23736"
+		texturefile = "gfx/interface/goals/GFX_ROM_ban_uwu-23736.dds"
+	}
+
+	##Icon Shine For: Ban UWU
+	SpriteType = { 
+		name = "GFX_ROM_ban_uwu-23736_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_ban_uwu-23736.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_ban_uwu-23736.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_ban_uwu-23736.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Cabinet Restoration
+	SpriteType = { 
+		name = "GFX_ROM_cabinet_restoration-50761"
+		texturefile = "gfx/interface/goals/GFX_ROM_cabinet_restoration-50761.dds"
+	}
+
+	##Icon Shine For: Cabinet Restoration
+	SpriteType = { 
+		name = "GFX_ROM_cabinet_restoration-50761_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_cabinet_restoration-50761.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_cabinet_restoration-50761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_cabinet_restoration-50761.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: A War for Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_a_war_for_wilbur-50762"
+		texturefile = "gfx/interface/goals/GFX_ROM_a_war_for_wilbur-50762.dds"
+	}
+
+	##Icon Shine For: A War for Wilbur
+	SpriteType = { 
+		name = "GFX_ROM_a_war_for_wilbur-50762_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_a_war_for_wilbur-50762.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_a_war_for_wilbur-50762.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_a_war_for_wilbur-50762.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Encourage Good Anakinism
+	SpriteType = { 
+		name = "GFX_ROM_encourage_good_anakinism-24035"
+		texturefile = "gfx/interface/goals/GFX_ROM_encourage_good_anakinism-24035.dds"
+	}
+
+	##Icon Shine For: Encourage Good Anakinism
+	SpriteType = { 
+		name = "GFX_ROM_encourage_good_anakinism-24035_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_encourage_good_anakinism-24035.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_encourage_good_anakinism-24035.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_encourage_good_anakinism-24035.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Funding for the Orchestra
+	SpriteType = { 
+		name = "GFX_ROM_funding_for_the_orchestra-24033"
+		texturefile = "gfx/interface/goals/GFX_ROM_funding_for_the_orchestra-24033.dds"
+	}
+
+	##Icon Shine For: Funding for the Orchestra
+	SpriteType = { 
+		name = "GFX_ROM_funding_for_the_orchestra-24033_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_funding_for_the_orchestra-24033.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_funding_for_the_orchestra-24033.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_funding_for_the_orchestra-24033.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+	##Icon For: Coastland for the Swim Team
+	SpriteType = { 
+		name = "GFX_ROM_coastland_for_the_swim_team-24034"
+		texturefile = "gfx/interface/goals/GFX_ROM_coastland_for_the_swim_team-24034.dds"
+	}
+
+	##Icon Shine For: Coastland for the Swim Team
+	SpriteType = { 
+		name = "GFX_ROM_coastland_for_the_swim_team-24034_shine"
+		texturefile = "gfx/interface/goals/GFX_ROM_coastland_for_the_swim_team-24034.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_coastland_for_the_swim_team-24034.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = -90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		animation = {
+			animationmaskfile = "gfx/interface/goals/GFX_ROM_coastland_for_the_swim_team-24034.dds"
+			animationtexturefile = "gfx/interface/goals/shine_overlay.dds"
+			animationrotation = 90.0
+			animationlooping = no
+			animationtime = 0.75
+			animationdelay = 0
+			animationblendmode = "add"
+			animationtype = "scrolling"
+			animationrotationoffset = { x = 0.0 y = 0.0 }
+			animationtexturescale = { x = 1.0 y = 1.0 } 
+		}
+		legacy_lazy_load = no
+	}
+
+ 
+ }

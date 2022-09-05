@@ -1,0 +1,616 @@
+@SENATE_TEXT_X = 320
+@HOUSE_TEXT_X = 212
+@HEADERS_Y = 60
+@STATUS_Y = 52
+
+# Up / Down is 80
+# Left / Right is 110
+###### BINGO GUI #######
+guiTypes = {
+	containerWindowType = {
+		name = "bingo_button"
+		#position = { x = 975 y = 230 }  
+		position = { x = -100 y = -400 } 
+		size = { width = 0 height = 0 } 
+		orientation = LOWER_RIGHT
+		origo = center 
+		moveable = no
+		clipping = no
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_bingo_background"
+		}
+		
+		buttonType = {
+			name = "open_bingo"
+			spriteType = "GFX_bingo_button"
+			position = { x = 0 y = 12 }
+			scale = 1.0
+			pdx_tooltip = "bingo_tooltip"
+			shortcut = "shift+b"
+			
+		} 
+		
+		buttonType = {
+			name = "open_bingo_2"
+			spriteType = "GFX_bingo_button_green"
+			position = { x = 0 y = 12 }
+			scale = 1.0
+			pdx_tooltip = "bingo_tooltip"
+		}  
+		
+		buttonType = { 
+			name = "bingo_icon"  
+			spriteType = "GFX_bingo_icon"  
+			position = { x= -2	 y = 12  } 
+			pdx_tooltip = "bingo_tooltip" 
+		} 
+	} 
+	containerWindowType = {
+		name = "test_gui"
+		position = { x = -340 y = -360 } 
+		size = { width = 0 height = 0 } 
+		orientation = center 
+		origo = upper_left 
+		moveable = yes
+		clipping = no
+		fade_time = 300
+		fade_type = linear
+		
+		background = {
+			name = "Background"		
+			quadTextureSprite ="GFX_scripted_gui_window_background2"
+		}
+		
+		buttonType = { 
+			name = "close_bingo"  
+			spriteType = "GFX_close_button"  
+			position = { x= 610	 y = 10  }   
+		} 
+		
+		
+		
+		buttonType = {  
+			name = "redeem_bingo"  
+			spriteType = "GFX_small_button"  
+			position = { x= 450	 y = 570  }  
+			scale = 1.7
+			pdx_tooltip = "redeem_bingo_text"
+			pdx_tooltip_delayed = "redeem_bingo_text_effects"
+		} 
+		
+		instantTextboxType = {
+			name = "redeem_text"
+			position = { x= 475	 y = 570  }  
+			font = "hoi_24header"
+			text = "Redeem Bingo"
+			maxWidth = 80
+			maxHeight = 23
+			format = center 
+			alwaystransparent = yes
+		}
+		
+		iconType = {  
+			name = "redeem_bingo_block"  
+			spriteType = "GFX_small_button"  
+			position = { x= 450	 y = 570  }  
+			scale = 1.7
+			pdx_tooltip = "redeem_bingo_text_blocked"
+			pdx_tooltip_delayed = "redeem_bingo_text_effects"
+			
+		}  
+		 
+		instantTextboxType = {
+			name = "redeem_text_2"
+			position = { x= 475	 y = 570  }  
+			font = "hoi_24header"
+			text = "No Bingo"
+			maxWidth = 80
+			maxHeight = 23 
+			format = center   
+			alwaystransparent = yes
+			pdx_tooltip = "No Bingo" 
+		} 
+		
+		
+		
+		instantTextboxType = {
+			name = "last_month_text"
+			position = { x= 150	 y = 590  }  
+			font = "hoi_24header"
+			text = "last_month_draw"
+			maxWidth = -1
+			maxHeight = 23
+			format = center 
+			alwaystransparent = yes
+		}
+		 
+		instantTextboxType = { 
+			name = "last_month_text_number"
+			position = { x= 260	 y = 583  }   
+			font = "hoi_36header" 
+			text = "last_month_draw_number" 
+			maxWidth = -1 
+			maxHeight = 23
+			format = left 
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "bingo_1_1_text"
+			position = { x= 82	 y = 185  } 
+			font = "hoi_36header"
+			text = "bingo_1_1"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_1_2_text"
+			position = { x= 192	 y = 185  } 
+			font = "hoi_36header"
+			text = "bingo_1_2"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_1_3_text"
+			position = { x= 302	 y = 185  } 
+			font = "hoi_36header"
+			text = "bingo_1_3"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_1_4_text"
+			position = { x= 414	 y = 185  } 
+			font = "hoi_36header"
+			text = "bingo_1_4"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextboxType = { 
+			name = "bingo_1_5_text"
+			position = { x= 525	 y = 185  } 
+			font = "hoi_36header"
+			text = "bingo_1_5"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "bingo_2_1_text"
+			position = { x= 82	 y = 265  } 
+			font = "hoi_36header"
+			text = "bingo_2_1"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_2_2_text"
+			position = { x= 192	 y = 265  } 
+			font = "hoi_36header"
+			text = "bingo_2_2"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		 
+		instantTextboxType = { 
+			name = "bingo_2_3_text"
+			position = { x= 302	 y = 265  } 
+			font = "hoi_36header"
+			text = "bingo_2_3"
+			maxWidth = 50
+			maxHeight = 23
+			format = center 
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_2_4_text"
+			position = { x= 414	 y = 265  } 
+			font = "hoi_36header"
+			text = "bingo_2_4"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextboxType = {  
+			name = "bingo_2_5_text"
+			position = { x= 525	 y = 265  } 
+			font = "hoi_36header"
+			text = "bingo_2_5"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "bingo_3_1_text"
+			position = { x= 82	 y = 345  } 
+			font = "hoi_36header"
+			text = "bingo_3_1"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_3_2_text"
+			position = { x= 192	 y = 345  } 
+			font = "hoi_36header" 
+			text = "bingo_3_2"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		 
+		instantTextboxType = { 
+			name = "bingo_3_3_text"
+			position = { x= 275	 y = 330  } 
+			font = "loadscreen_header"  
+			text = "bingo_3_3"
+			maxWidth = 100
+			maxHeight = 26
+			format = center 
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_3_4_text"
+			position = { x= 414	 y = 345  } 
+			font = "hoi_36header"
+			text = "bingo_3_4"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextboxType = {  
+			name = "bingo_3_5_text"
+			position = { x= 525	 y = 345  } 
+			font = "hoi_36header"
+			text = "bingo_3_5"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "bingo_4_1_text"
+			position = { x= 82	 y = 425  } 
+			font = "hoi_36header"
+			text = "bingo_4_1"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_4_2_text"
+			position = { x= 192	 y = 425  } 
+			font = "hoi_36header"
+			text = "bingo_4_2"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		 
+		instantTextboxType = { 
+			name = "bingo_4_3_text"
+			position = { x= 302	 y = 425  } 
+			font = "hoi_36header"
+			text = "bingo_4_3"
+			maxWidth = 50
+			maxHeight = 23
+			format = center 
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_4_4_text"
+			position = { x= 414	 y = 425  } 
+			font = "hoi_36header"
+			text = "bingo_4_4"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextboxType = {  
+			name = "bingo_4_5_text"
+			position = { x= 525	 y = 425  } 
+			font = "hoi_36header"
+			text = "bingo_4_5"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = {
+			name = "bingo_5_1_text"
+			position = { x= 82	 y = 505  } 
+			font = "hoi_36header"
+			text = "bingo_5_1"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_5_2_text"
+			position = { x= 192	 y = 505  } 
+			font = "hoi_36header"
+			text = "bingo_5_2"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		 
+		instantTextboxType = { 
+			name = "bingo_5_3_text"
+			position = { x= 302	 y = 505  } 
+			font = "hoi_36header"
+			text = "bingo_5_3"
+			maxWidth = 50
+			maxHeight = 23
+			format = center 
+			alwaystransparent = yes
+		}
+		
+		instantTextboxType = { 
+			name = "bingo_5_4_text"
+			position = { x= 414	 y = 505  } 
+			font = "hoi_36header"
+			text = "bingo_5_4"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+		
+		
+		instantTextboxType = {  
+			name = "bingo_5_5_text"
+			position = { x= 525	 y = 505  } 
+			font = "hoi_36header"
+			text = "bingo_5_5"
+			maxWidth = 50
+			maxHeight = 23
+			format = center
+			alwaystransparent = yes
+		}
+
+		iconType = {
+			name = "icon_1_1"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 76	 y = 170  } 
+		} 
+		
+		iconType = {
+			name ="icon_1_2"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 186	 y = 170  } 
+		} 
+		
+		iconType = {
+			name ="icon_1_3"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 296	 y = 170  }  
+		}
+		
+		iconType = {
+			name ="icon_1_4"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 406	 y = 170  }  
+		}
+		
+		iconType = {
+			name ="icon_1_5"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 516	 y = 170  }  
+		}
+		
+		iconType = {
+			name ="icon_2_1"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 76	 y = 250  } 
+		} 
+		
+		iconType = {
+			name ="icon_2_2"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 186	 y = 250  } 
+		} 
+		
+		iconType = {
+			name ="icon_2_3"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 296	 y = 250  }  
+		}
+		
+		iconType = {
+			name ="icon_2_4"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 406	 y = 250  }  
+		}
+		
+		iconType = {
+			name ="icon_2_5"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 516	 y = 250  }  
+		}
+		
+		iconType = {
+			name ="icon_3_1"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 76	 y = 330  } 
+		} 
+		
+		iconType = {
+			name ="icon_3_2"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 186	 y = 330  } 
+		} 
+		
+		iconType = {
+			name ="free_icon"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 296	 y = 330  }  
+		}
+		
+		iconType = {
+			name ="icon_3_4"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 406	 y = 330  }  
+		}
+		
+		iconType = {
+			name ="icon_3_5"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 516	 y = 330  }  
+		}
+		
+		iconType = {
+			name ="icon_4_1"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 76	 y = 410  } 
+		} 
+		
+		iconType = {
+			name ="icon_4_2"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 186	 y = 410  } 
+		}
+		
+		iconType = {
+			name ="icon_4_3"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 296	 y = 410  } 
+		}
+		
+		iconType = {
+			name ="icon_4_4"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 406	 y = 410  }  
+		}
+		
+		iconType = {
+			name ="icon_4_5"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 516	 y = 410  }  
+		} 
+		
+		iconType = {
+			name ="icon_5_1"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 76	 y = 490  } 
+		} 
+		
+		iconType = {
+			name ="icon_5_2"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 186	 y = 490  } 
+		}
+		
+		iconType = {
+			name ="icon_5_3"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 296	 y = 490  } 
+		}
+		
+		iconType = {
+			name ="icon_5_4"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 406	 y = 490  }  
+		}
+		
+		iconType = {
+			name ="icon_5_5"  
+			spriteType = "GFX_bingo_circle"  
+			position = { x= 516	 y = 490  }  
+		} 
+		
+		instantTextBoxType = {
+			name ="senate_support_header"
+			position = { x = @SENATE_TEXT_X y = @HEADERS_Y }
+			font = "loadscreen_header"
+			text = "supreme_bingo"
+			format = center
+			maxHeight = -1
+			maxWidth = -1
+		}
+		#
+		#instantTextBoxType = {
+		#	name ="status_senate"
+		#	position = { x = @SENATE_TEXT_X y = @STATUS_Y }
+		#	font = "hoi_18mbs"
+		#	text = "USA_congress_senate_support_amount"
+		#	format = center
+		#}
+		#
+		#iconType = {
+		#	name ="house_icon"
+		#	spriteType = "GFX_decision_category_usa_congress_house_ui"
+		#	position = { x= 280 y = -17 }
+		#}
+		#
+		#instantTextBoxType = {
+		#	name ="status_house"
+		#	position = { x= @HOUSE_TEXT_X y = @STATUS_Y }
+		#	font = "hoi_18mbs"
+		#	text = "USA_congress_house_support_amount"
+		#	format = center
+		#	fixedsize = yes
+		#	maxWidth = 280
+		#}
+		#
+		#instantTextBoxType = {
+		#	name ="house_support_header"
+		#	position = { x= @HOUSE_TEXT_X y = @HEADERS_Y }
+		#	font = "hoi_24header"
+		#	text = "USA_congress_house_support_header"
+		#	format = center
+		#	maxHeight = 24
+		#	fixedsize = yes
+		#	maxWidth = 280
+		#}
+
+	}
+}

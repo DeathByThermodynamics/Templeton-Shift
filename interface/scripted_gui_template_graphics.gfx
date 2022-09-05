@@ -1,0 +1,173 @@
+spriteTypes = {
+ 
+	spriteType = {
+		name = "GFX_scripted_gui_window_background" 
+		textureFile = "/gfx/interface/scripted_gui_graphics/scripted_gui_background.dds"
+	} 
+	
+	spriteType = {  
+		name = "GFX_scripted_gui_window_background2"  
+		textureFile = "/gfx/interface/scripted_gui_graphics/pol_goal_popup_bg.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_bingo_circle"
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_circle.dds"
+	}
+	
+	spriteType = {   
+		name = "GFX_bingo_circle_none"    
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_circle_none.dds"
+	} 
+	
+	spriteType = {  
+		name = "GFX_great_war_event"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/the_war_begins_lintsec.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_kenu_civil_war_super_event"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/kenu_civil_war_lintsec.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_end_of_the_line_super_event"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/end_of_the_line_lintsec.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_disappearance_of_radu_super_event"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/disappearance_of_radu_lintsec.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_one_last_chance_super_event"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/one_last_chance_lintsec.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_bigger_button"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/big_button.dds"
+	}
+	  
+	spriteType = {  
+		name = "GFX_bigger_button_green"    
+		textureFile = "/gfx/interface/scripted_gui_graphics/big_button_green.dds" 
+	}
+	
+	spriteType = {  
+		name = "GFX_close_button"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/cancel_button.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_bingo_button"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_button.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_bingo_background"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_background.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_bingo_icon"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_icon.dds"
+	}
+	
+	spriteType = {  
+		name = "GFX_small_button"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/small_button.dds"  
+	}
+	 
+	spriteType = {  
+		name = "GFX_bingo_button_green"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_button_green.dds"   
+	}
+	
+	spriteType = {  
+		name = "GFX_bingo_button_yellow"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_button_yellow.dds"   
+	} 
+	
+	spriteType = {  
+		name = "GFX_bingo_button_red"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/bingo_button_red.dds"   
+	}
+	
+	spriteType = {  
+		name = "GFX_big_bg"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/big_background.dds"   
+	} 
+	
+	spriteType = {     
+		name = "GFX_western_entente_icon"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/west_euro_entente.dds"       
+	} 
+	
+	spriteType = {    
+		name = "GFX_urd_flag"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/urd.dds"       
+	}
+	
+	spriteType = {    
+		name = "GFX_arislantia_flag"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/arislantia.dds"       
+	}
+	
+	spriteType = {    
+		name = "GFX_isotope_flag"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/isotope.dds"       
+	}
+	
+	spriteType = {    
+		name = "GFX_flag_background"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/flag_bg.dds"       
+	}
+	
+	spriteType = {    
+		name = "GFX_partition"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/partition.dds"        
+	}
+	
+	spriteType = {     
+		name = "GFX_yes"           
+		textureFile = "/gfx/interface/scripted_gui_graphics/yes.dds"        
+	}
+	spriteType = {    
+		name = "GFX_no"                     
+		textureFile = "/gfx/interface/scripted_gui_graphics/nah_bro.dds"        
+	}
+	spriteType = {    
+		name = "GFX_maybe"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/maybe.dds"         
+	}
+	spriteType = {    
+		name = "GFX_infobox"
+		textureFile = "/gfx/interface/scripted_gui_graphics/parch_bg.dds" 
+	}
+	spriteType = {    
+		name = "GFX_small_background"
+		textureFile = "/gfx/interface/scripted_gui_graphics/smaller_box.dds"   
+	}
+	
+	spriteType = {    
+		name = "GFX_small_length_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/small_length_button.dds"   
+	}
+	
+	spriteType = {     
+		name = "GFX_small_length_button_green"
+		textureFile = "/gfx/interface/scripted_gui_graphics/small_length_button_green.dds"   
+	}
+	
+	spriteType = {    
+		name = "GFX_medium_length_button"
+		textureFile = "/gfx/interface/scripted_gui_graphics/medium_length_button.dds"    
+	}
+	
+	spriteType = {    
+		name = "GFX_medium_length_button_green"   
+		textureFile = "/gfx/interface/scripted_gui_graphics/medium_length_button_green.dds"     
+	}
+} 

@@ -1,0 +1,776 @@
+guiTypes = {
+	containerWindowType = {
+		name = "entente_toggle_button"
+		#position = { x = 975 y = 130 }  
+		position = { x = -100 y = -500 }  
+		size = { width = 0 height = 0 } 
+		orientation = LOWER_RIGHT
+		origo = center
+		moveable = no
+		clipping = no
+		
+		
+		
+		background = {
+			name = "actual_Background"		
+			quadTextureSprite ="GFX_bingo_background"
+		}
+		
+		buttonType = {
+			name = "normal_button"
+			spriteType = "GFX_bingo_button"
+			position = { x = 0 y = 12 }
+			scale = 1.0
+			pdx_tooltip = "west_entente_tooltip"
+			shortcut = "shift+b"
+			
+		} 
+		
+
+		buttonType = {
+			name = "yellow_button"
+			spriteType = "GFX_bingo_button_yellow"
+			position = { x = 0 y = 12 }   
+			scale = 1.0
+			pdx_tooltip = "west_entente_tooltip"
+		}		
+		
+		
+		buttonType = {
+			name = "green_button"  
+			spriteType = "GFX_bingo_button_green"
+			position = { x = 0 y = 12 } 
+			scale = 1.0
+			pdx_tooltip = "west_entente_tooltip"
+		} 
+
+		buttonType = {
+			name = "red_button"
+			spriteType = "GFX_bingo_button_red"
+			position = { x = 0 y = 12 } 
+			scale = 1.0
+			pdx_tooltip = "west_entente_tooltip"
+		}
+		
+		buttonType = {   
+			name = "entente_icon"  
+			spriteType = "GFX_western_entente_icon"
+			position = { x = -1 y = 12 }  
+			pdx_tooltip = "west_entente_tooltip" 
+		}  
+		
+		#buttonType = { 
+		#	name = "bingo_icon"  
+		#	spriteType = "GFX_bingo_icon"  
+		#	position = { x= -2	 y = 12  } 
+		#	alwaystransparent = yes 
+		#} 
+	} 
+	
+	containerWindowType = {
+		name = "entente_window"
+		position = { x = 0 y = 0}	
+		size = { width = 800 height= -650 }
+		orientation = center
+		origo = center
+		fade_time = 100
+		moveable = yes
+		fade_type = linear
+		click_to_front = no
+		clipping = no
+		
+		background = {  
+			name = "Background"		
+			quadTextureSprite ="GFX_big_bg"
+		}
+		
+		buttonType = { 
+			name = "close_interface"  
+			spriteType = "GFX_close_button"  
+			position = { x= 990	 y = 10  }   
+			shortcut = "esc"
+		} 
+		
+		
+		 
+		instantTextboxType = {
+			name = "title" 
+			position = { x = 520 y = 39 }
+			font = "hoi_36header"
+			borderSize = {x = 0 y = 0}
+			text = "Western European Entente"
+			maxWidth = -1
+			format = center 
+			maxHeight = 20
+			fixedsize = yes
+		}
+		iconType = {
+			name = "isotope_bg"
+			spriteType = "GFX_flag_background"
+			position = { x = 713 y = 158 } 
+		}
+		# -17, -12
+		iconType = {
+			name = "isotope_flag"
+			spriteType = "GFX_isotope_flag"
+			position = { x = 730 y = 170 }
+		}
+		
+		
+		iconType = {
+			name = "urd_bg"
+			spriteType = "GFX_flag_background"
+			position = { x = 713 y = 258 } 
+		} 
+		iconType = {
+			name = "urd_flag"
+			spriteType = "GFX_urd_flag"
+			position = { x = 730 y = 270 }
+		}
+		iconType = {
+			name = "aris_bg"
+			spriteType = "GFX_flag_background"
+			position = { x = 713 y = 358 }  
+		}
+		iconType = {
+			name = "arislantia_flag"
+			spriteType = "GFX_arislantia_flag"
+			position = { x = 730 y = 370 } 
+		}
+		
+		instantTextboxType = {
+			name = "vote_title"
+			position = { x = 750 y = 110 }
+			font = "loadscreen_header" 
+			borderSize = {x = 0 y = 0}
+			text = "vote_status"
+			maxWidth = 400
+			maxHeight = 20
+			fixedsize = yes
+		}
+		
+		instantTextboxType = {
+			name = "whose_turn"
+			position = { x = 75 y = 110 }     
+			font = "hoi_24header" 
+			borderSize = {x = 0 y = 0}
+			text = "west_euro_next_turn_actual" 
+			maxWidth = 4000
+			maxHeight = 20
+			fixedsize = yes
+		}
+		
+		instantTextboxType = {
+			name = "entente_stats"
+			position = { x = 75 y = 160 }      
+			font = "hoi_24header"  
+			borderSize = {x = 0 y = 0}
+			text = "entente_stats"  
+			maxWidth = -1   
+			maxHeight = 20
+			fixedsize = yes
+		} 
+		
+		instantTextboxType = {
+			name = "current_title"
+			position = { x = 418 y = 160 }     
+			font = "loadscreen_header"  
+			borderSize = {x = 0 y = 0}
+			text = "Current Resolution"  
+			maxWidth = -1   
+			maxHeight = 20
+			fixedsize = yes
+		} 
+		
+		instantTextboxType = {
+			name = "entente_introduction"
+			position = { x = 75 y = 200 }      
+			font = "hoi4_typewriter22"  
+			borderSize = {x = 0 y = 0}
+			text = "entente_intro"  
+			maxWidth = 300  
+			maxHeight = 100
+			pdx_tooltip = "entente_cohesion_rules"  
+		} 
+		
+		buttonType = {
+			name = "propose_resolution"     
+			spriteType = "GFX_bigger_button_green"    
+			position = { x = 100 y = 470 }       
+			font = "hoi_24header" 
+			text = "Propose Resolution"
+			pdx_tooltip = "resolution_text"
+		} 
+		
+		iconType = {
+			name = "propose_resolution_blocked"
+			spriteType = "GFX_bigger_button"
+			position = { x = 100 y = 470 }           
+			pdx_tooltip = "resolution_blocked_text"  			
+		} 
+		
+		instantTextboxType = {
+			name = "propose_resolution_blocked_text"
+			position = { x = 82 y = 476 }       
+			font = "hoi_24header"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Propose Resolution"   
+			maxWidth = 300  
+			maxHeight = 100
+			alwaystransparent = yes
+		} 
+		# VOTE YES
+		buttonType = {
+			name = "vote_yes"
+			spriteType = "GFX_bigger_button_green"
+			position = { x = 410 y = 440 }       
+			font = "hoi_24header" 
+			text = "vote_for"      
+			pdx_tooltip = "vote_yes_text" 			
+		} 
+		
+		iconType = {
+			name = "vote_yes_blocked"
+			spriteType = "GFX_bigger_button"
+			position = { x = 410 y = 440 }           
+			pdx_tooltip = "vote_yes_blocked_text"  			
+		} 
+		
+		instantTextboxType = {
+			name = "vote_yes_blocked_text"
+			position = { x = 392 y = 446 }       
+			font = "hoi_24header"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Vote For"   
+			maxWidth = 300  
+			maxHeight = 100
+			alwaystransparent = yes
+		} 
+		# VOTE NO
+		buttonType = {
+			name = "vote_no"
+			spriteType = "GFX_bigger_button_green"  
+			position = { x = 410 y = 470 }        
+			font = "hoi_24header" 
+			text = "vote_against"  
+			pdx_tooltip = "vote_no_text" 				
+		} 
+		
+		iconType = {
+			name = "vote_no_blocked"
+			spriteType = "GFX_bigger_button"
+			position = { x = 410 y = 470 }           
+			pdx_tooltip = "vote_no_blocked_text"  			
+		} 
+		
+		instantTextboxType = {
+			name = "vote_no_blocked_text"
+			position = { x = 392 y = 476 }       
+			font = "hoi_24header"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Vote Against"   
+			maxWidth = 300  
+			maxHeight = 100
+			alwaystransparent = yes
+		} 
+		# RESOLUTIONS WINDOW
+		iconType = {
+			name = "resolutions_window"
+			spriteType = "GFX_small_background"  
+			position = { x = -280 y = 0 }       
+			borderSize = {x = 0 y = 0} 
+			maxWidth = 4000
+			maxHeight = 20
+			fixedsize = yes                   
+		} 
+		
+		#### ENTENTE MEMBER VOTES HANDLING #####
+		iconType = {         
+			name = "aris_vote_maybe"
+			spriteType = "GFX_maybe" 
+			position = { x = 860 y = 370 }       
+			scale = 2
+		}
+		iconType = {  
+			name = "isotope_vote_maybe"       
+			spriteType = "GFX_maybe"     
+			position = { x = 860 y = 170 }    
+			scale = 2
+		}
+		iconType = {
+			name = "urd_vote_maybe"
+			spriteType = "GFX_maybe" 
+			position = { x = 860 y = 270 }    
+			scale = 2
+		}
+		
+		
+		iconType = {         
+			name = "aris_vote_yes"
+			spriteType = "GFX_yes" 
+			position = { x = 862 y = 375 }       
+			scale = 2
+		}
+		iconType = {  
+			name = "isotope_vote_yes"       
+			spriteType = "GFX_yes"     
+			position = { x = 862 y = 175 }    
+			scale = 2
+		}
+		iconType = {
+			name = "urd_vote_yes"
+			spriteType = "GFX_yes" 
+			position = { x = 862 y = 275 }    
+			scale = 2
+		}
+		
+		iconType = {         
+			name = "aris_vote_no"
+			spriteType = "GFX_no" 
+			position = { x = 865 y = 379}        
+			scale = 2
+		} 
+		iconType = {  
+			name = "isotope_vote_no"       
+			spriteType = "GFX_no"     
+			position = { x = 865 y = 179 }    
+			scale = 2
+		}
+		iconType = {
+			name = "urd_vote_no"
+			spriteType = "GFX_no" 
+			position = { x = 865 y = 279 }    
+			scale = 2
+		}
+		# RESOLUTIONS BOX ###########
+		iconType = {  
+			name = "resolution_infobox"
+			spriteType = "GFX_infobox" 
+			position = { x = 400 y = 199 }       
+			scale = 1
+		} 
+		
+		buttonType = { 
+			name = "close_resolution_interface"  
+			spriteType = "GFX_close_button"  
+			position = { x= -33	 y = 10  }   
+			shortcut = "esc"
+		} 
+		
+		instantTextboxType = {
+			name = "resolutions_title"
+			position = { x = -280 y = 40 }       
+			font = "hoi_36header"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Resolutions"   
+			maxWidth = 300  
+			maxHeight = 100   
+			pdx_tooltip = ""  
+		} 
+		# resolution info 
+		instantTextboxType = { 
+			name = "proposed_resolution_title"
+			position = { x = 395 y = 210 }         
+			font = "hoi_24header"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "proposed_resolution_title"      
+			maxWidth = 300  
+			maxHeight = 100  
+			alwaystransparent = yes
+		} 
+		instantTextboxType = { 
+			name = "proposed_resolution_body"
+			position = { x = 410 y = 240 }         
+			font = "hoi4_typewriter22"       
+			format = left 
+			borderSize = {x = 0 y = 0}
+			text = "proposed_resolution_body"      
+			maxWidth = 280
+			maxHeight = 100
+			alwaystransparent = yes
+		} 
+		# resolution confirm button
+		buttonType = { 
+			name = "resolution_confirm_button"  
+			spriteType = "GFX_small_length_button_green"   
+			position = { x= -210	 y = 477  }      
+			font = "hoi_20bs" 
+			text = "Confirm"
+			pdx_tooltip = "resolution_confirm_text"
+			format = center
+		} 
+		
+		iconType = { 
+			name = "resolution_confirm_button_blocked"  
+			spriteType = "GFX_small_length_button"   
+			position = { x= -210 y = 477  }    
+			pdx_tooltip = "resolution_confirm_text_blocked"
+		} 
+		
+		instantTextboxType = { 
+			name = "resolution_confirm_button_blocked_text"
+			position = { x = -286 y = 485 }        
+			font = "hoi_20bs"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Confirm"      
+			maxWidth = 300  
+			maxHeight = 100
+			pdx_tooltip = "resolution_confirm_text_blocked"    
+			alwaystransparent = yes
+		} 
+		# stability campaigns resolution
+		buttonType = { 
+			name = "resolution_stability_campaign"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 94  }      
+			font = "hoi_20bs" 
+			text = "resolution_stability_campaign_title_key"
+			pdx_tooltip = "resolution_stability_campaign"
+			format = center
+		} 
+		
+		iconType = { 
+			name = "resolution_stability_campaign_blocked"  
+			spriteType = "GFX_medium_length_button"   
+			position = { x= -245 y = 94  }    
+			pdx_tooltip = "resolution_stability_campaign_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_stability_campaign_blocked_text"
+			position = { x = -283 y = 102 }       
+			font = "hoi_20bs"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Stability Campaigns"      
+			maxWidth = 300  
+			maxHeight = 100
+			pdx_tooltip = "resolution_stability_campaign_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# lowered tariffs resolution
+		buttonType = { 
+			name = "resolution_lowered_tariffs"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 128  }       
+			font = "hoi_20bs" 
+			text = "resolution_lowered_tariffs_title_key"
+			pdx_tooltip = "resolution_lowered_tariffs" 
+			format = center   
+		} 
+		
+		iconType = { 
+			name = "resolution_lowered_tariffs_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 128  }    
+			pdx_tooltip = "resolution_lowered_tariffs_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_lowered_tariffs_blocked_text"
+			position = { x = -283 y = 136 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Lowered Tariffs"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_lowered_tariffs_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# increase_cohesion
+		buttonType = {   
+			name = "resolution_increase_cohesion"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 162  }       
+			font = "hoi_20bs" 
+			text = "resolution_increase_cohesion_title_key"
+			pdx_tooltip = "resolution_increase_cohesion" 
+			format = center   
+		}  
+		
+		iconType = { 
+			name = "resolution_increase_cohesion_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 162  }     
+			pdx_tooltip = "resolution_increase_cohesion_blocked_text"
+		}
+		 
+		instantTextboxType = { 
+			name = "resolution_increase_cohesion_blocked_text" 
+			position = { x = -283 y = 170 }       
+			font = "hoi_20bs"  
+			format = center
+			borderSize = {x = 0 y = 0}
+			text = "Increase Cohesion"       
+			maxWidth = 300  
+			maxHeight = 100
+			pdx_tooltip = "resolution_increase_cohesion_blocked_text"     
+			alwaystransparent = yes
+		}
+
+		# open borders
+		buttonType = { 
+			name = "resolution_open_borders"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 196  }       
+			font = "hoi_20bs" 
+			text = "resolution_open_borders_title_key"
+			pdx_tooltip = "resolution_open_borders" 
+			format = center   
+		} 
+		
+		iconType = {  
+			name = "resolution_open_borders_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 196  }    
+			pdx_tooltip = "resolution_open_borders_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_open_borders_blocked_text"
+			position = { x = -283 y = 204 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Relaxed Borders"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_open_borders_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# production subsidies 
+		buttonType = { 
+			name = "resolution_production_subsidies"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 230  }       
+			font = "hoi_20bs" 
+			text = "resolution_production_subsidies_title_key"
+			pdx_tooltip = "resolution_production_subsidies" 
+			format = center   
+		} 
+		
+		iconType = {  
+			name = "resolution_production_subsidies_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 230  }    
+			pdx_tooltip = "resolution_production_subsidies_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_production_subsidies_blocked_text"
+			position = { x = -283 y = 238 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Production Subsidies"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_production_subsidies_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		
+		# coordinate production
+		buttonType = {   
+			name = "resolution_coordinate_production"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 264  }       
+			font = "hoi_20bs" 
+			text = "resolution_coordinate_production_title_key" 
+			pdx_tooltip = "resolution_coordinate_production" 
+			format = center   
+		} 
+		
+		iconType = {  
+			name = "resolution_coordinate_production_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 264  }    
+			pdx_tooltip = "resolution_coordinate_production_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_coordinate_production_blocked_text"
+			position = { x = -283 y = 272 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Coordinate Production"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_coordinate_production_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# war_support_campaign
+		buttonType = { 
+			name = "resolution_war_support_campaign"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 298  }       
+			font = "hoi_20bs" 
+			text = "resolution_war_support_campaign_title_key"
+			pdx_tooltip = "resolution_war_support_campaign" 
+			format = center   
+		} 
+		
+		iconType = {   
+			name = "resolution_war_support_campaign_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 298  }     
+			pdx_tooltip = "resolution_war_support_campaign_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_war_support_campaign_blocked_text"
+			position = { x = -283 y = 306 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "War Support Campaign"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_war_support_campaign_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# introduce sanctions
+		buttonType = { 
+			name = "resolution_introduce_sanctions"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 332  }        
+			font = "hoi_20bs" 
+			text = "resolution_introduce_sanctions_title_key" 
+			pdx_tooltip = "resolution_introduce_sanctions" 
+			format = center   
+		} 
+		
+		iconType = {   
+			name = "resolution_introduce_sanctions_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 332  }     
+			pdx_tooltip = "resolution_introduce_sanctions_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_introduce_sanctions_blocked_text"
+			position = { x = -283 y = 340 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Introduce Sanctions"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_introduce_sanctions_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# canasian commitments
+		buttonType = { 
+			name = "resolution_canasian_commitments"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 366  }        
+			font = "hoi_20bs" 
+			text = "resolution_canasian_commitments_title_key" 
+			pdx_tooltip = "resolution_canasian_commitments" 
+			format = center   
+		} 
+		
+		iconType = {   
+			name = "resolution_canasian_commitments_blocked"  
+			spriteType = "GFX_medium_length_button"     
+			position = { x= -245 y = 366  }     
+			pdx_tooltip = "resolution_canasian_commitments_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_canasian_commitments_blocked_text"
+			position = { x = -283 y = 374 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Canasian Commitments"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_canasian_commitments_blocked_text"    
+			alwaystransparent = yes
+		}
+		
+		# colonial_expansions
+		buttonType = { 
+			name = "resolution_colonial_expansions"  
+			spriteType = "GFX_medium_length_button_green"   
+			position = { x= -245	 y = 400  }        
+			font = "hoi_20bs" 
+			text = "resolution_colonial_expansions_title_key" 
+			pdx_tooltip = "resolution_colonial_expansions" 
+			format = center   
+		} 
+		
+		iconType = {   
+			name = "resolution_colonial_expansions_blocked"  
+			spriteType = "GFX_medium_length_button"    
+			position = { x= -245 y = 400  }     
+			pdx_tooltip = "resolution_colonial_expansions_blocked_text"
+		}
+		
+		instantTextboxType = { 
+			name = "resolution_colonial_expansions_blocked_text"
+			position = { x = -283 y = 408 }       
+			font = "hoi_20bs"  
+			format = center 
+			borderSize = {x = 0 y = 0}
+			text = "Colonial Expansions"      
+			maxWidth = 300  
+			maxHeight = 100 
+			pdx_tooltip = "resolution_colonial_expansions_blocked_text"    
+			alwaystransparent = yes
+		}
+
+		
+		
+		# Final Resolution status (passed/failed)
+		
+		instantTextboxType = {  
+			name = "resolution_status_key" 
+			position = { x = 535  y = 400 }     
+			font = "loadscreen_header"  
+			borderSize = {x = 0 y = 0} 
+			text = "resolution_pass_fail"    
+			maxWidth = -1   
+			maxHeight = 20
+			fixedsize = yes
+			format = center
+		}  
+
+		
+		
+	
+ 
+		#iconType ={
+		#	name ="production_header_bg"
+		#	spriteType = "GFX_header_bg"
+		#	position = { x= 5 y = 7 }
+		#	Orientation = "UPPER_LEFT"
+		#}	
+
+		#instantTextboxType = {
+		#	name = "political_title"
+		#	position = { x = 45 y = 8 }
+		#	font = "hoi_36header"
+		#	borderSize = {x = 0 y = 0}
+		#	text = "POLITICAL_POLITICAL"
+		#	maxWidth = 400
+		#	maxHeight = 20
+		#	fixedsize = yes
+		#}
+	}
+}
